@@ -15,11 +15,11 @@ export const conTheme = createTheme({
   },
   typography: {
     fontFamily: [
+      '"Helvetica Neue"',
       "-apple-system",
       "BlinkMacSystemFont",
       "system-ui",
       "Roboto",
-      '"Helvetica Neue"',
       '"Segoe UI"',
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
