@@ -8,4 +8,4 @@ export const MainCenterContainer = styled.div`
   gap: 15px;
   margin-top: 10px;
   padding-bottom: 30px;
-`
+`;
