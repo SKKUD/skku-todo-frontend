@@ -9,4 +9,4 @@ export const MainCenterContainer = styled.div`
   margin-top: 10px;
   padding-bottom: 30px;
   padding-top: 10px;
-`
+`;
