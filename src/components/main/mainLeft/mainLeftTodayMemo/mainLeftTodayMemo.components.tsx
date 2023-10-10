@@ -14,7 +14,7 @@ import MainLeftTodayMemoSize from "./mainLeftTodayMemoSize/mainLeftTodayMemoSize
 
 const MainLeftTodayMemo = () => {
   // state
-  const [currentFontSize, setCurrentFontSize] = useState<string>("14");
+  const [currentFontSize, setCurrentFontSize] = useState<string>("18");
   const [year, setYear] = useState<number>();
   const [month, setMonth] = useState<number>();
   const [date, setDate] = useState<number>();
@@ -45,12 +45,17 @@ const MainLeftTodayMemo = () => {
     if (localStorage.getItem("message_content")) {
       setMessage(localStorage.getItem("message_content")!)
     }
+
+    if (localStorage.getItem("message_fontSize")) {
+      console.log("exist in local storage font size")
+      setCurrentFontSize(localStorage.getItem("message_fontSize")!)
+    }
   }, [])
 
   return (
     <MainLeftTodayMemoContainer>
       <MainLeftTodayMemoDate>{year}년 {month}월 {date}일</MainLeftTodayMemoDate>
-      <MainLeftTodayMemoContent onChange={() => handleContent} value={message} style={{fontSize:`${currentFontSize}px`}} />
+      <MainLeftTodayMemoContent onChange={(event) => handleContent(event)} value={message} style={{fontSize:`${currentFontSize}px`}} />
       <MainLeftTodayMemoSizeWrapper>
         <MainLeftTodayMemoSize setFontSize={setCurrentFontSize}/>
       </MainLeftTodayMemoSizeWrapper>

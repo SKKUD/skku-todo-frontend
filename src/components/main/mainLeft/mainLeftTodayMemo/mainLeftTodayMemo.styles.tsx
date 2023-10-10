@@ -29,7 +29,7 @@ export const MainLeftTodayMemoContent = styled.textarea`
   height: 243px;
   margin-top: 5px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Pretendard-Regular";
   border: none;
   resize: none;

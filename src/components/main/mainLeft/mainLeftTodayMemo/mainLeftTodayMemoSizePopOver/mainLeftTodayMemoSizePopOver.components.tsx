@@ -23,14 +23,17 @@ const MainLeftTodayMemoSizePopover: FC<IMainLeftTodayMemoSizePopOver> = ({
 }) => {
   const handleSmall = () => {
     setFontSize("12");
+    localStorage.setItem("message_fontSize", "12");
   }
 
   const handleMiddle = () => {
     setFontSize("18")
+    localStorage.setItem("message_fontSize", "18");
   }
 
   const handleBig = () => {
     setFontSize("24")
+    localStorage.setItem("message_fontSize", "24");
   }
 
   return (
