@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const MainLeftTodayMemoContainer = styled.div`
-  width: 384px;
+  width: 100%;
   height: 320px;
   padding-top: 20px;
   background-color: white;
@@ -12,7 +12,7 @@ export const MainLeftTodayMemoContainer = styled.div`
 `;
 
 export const MainLeftTodayMemoDate = styled.div`
-  width: 358px;
+  width: 95%;
   height: 40px;
   text-align: center;
   color: var(--grey1, #5F5F5F);
@@ -24,7 +24,7 @@ export const MainLeftTodayMemoDate = styled.div`
 `;
 
 export const MainLeftTodayMemoContent = styled.div`
-  width: 358px;
+  width: 95%;
   height: 243px;
   background-color: #F3F2F0;
   border-radius: 5px;
