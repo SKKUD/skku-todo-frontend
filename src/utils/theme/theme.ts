@@ -15,6 +15,7 @@ export const conTheme = createTheme({
   },
   typography: {
     fontFamily: [
+      '"Cafe24Ssurround"',
       '"Helvetica Neue"',
       "-apple-system",
       "BlinkMacSystemFont",
