@@ -18,6 +18,7 @@ export const MainLeftProfilePhoto = styled.img`
 export const MainLeftProfileHello = styled.div`
   height: 42px;
   display: flex;
+  font-family: "Pretendard-Regular";
   align-items: center;
   color: #000;
   font-size: 24px;
