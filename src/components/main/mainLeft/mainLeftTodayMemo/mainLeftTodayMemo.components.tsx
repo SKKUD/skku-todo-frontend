@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { ChangeEvent } from "react";
+
 // import styled-components
 import { 
   MainLeftTodayMemoContainer,
@@ -16,20 +18,39 @@ const MainLeftTodayMemo = () => {
   const [year, setYear] = useState<number>();
   const [month, setMonth] = useState<number>();
   const [date, setDate] = useState<number>();
-  
+  const [message, setMessage] = useState<string>("");
+
+  const handleContent = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(event.target.value);
+    console.log(event.target.value)
+  }
+
+  useEffect(() => {
+    if (message) {
+      console.log("set in local storage " + message);
+      localStorage.setItem("message_content", message);
+    }
+  }, [message])
+
   // get date
   useEffect(() => {
+    // Date
     let today = new Date();   
     
     setYear(today.getFullYear());
     setMonth(today.getMonth() + 1)
     setDate(today.getDay())
+    
+    // message
+    if (localStorage.getItem("message_content")) {
+      setMessage(localStorage.getItem("message_content")!)
+    }
   }, [])
 
   return (
     <MainLeftTodayMemoContainer>
       <MainLeftTodayMemoDate>{year}년 {month}월 {date}일</MainLeftTodayMemoDate>
-      <MainLeftTodayMemoContent style={{fontSize:`${currentFontSize}px`}} />
+      <MainLeftTodayMemoContent onChange={() => handleContent} value={message} style={{fontSize:`${currentFontSize}px`}} />
       <MainLeftTodayMemoSizeWrapper>
         <MainLeftTodayMemoSize setFontSize={setCurrentFontSize}/>
       </MainLeftTodayMemoSizeWrapper>
