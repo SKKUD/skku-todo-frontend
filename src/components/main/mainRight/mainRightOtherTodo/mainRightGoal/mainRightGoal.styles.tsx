@@ -7,7 +7,7 @@ export const MainRightGoalContainer = styled.div`
 `;
 
 export const MainRightGoalHeader = styled.div`
-  width: 368px;
+  width: 95%;
   height: 32px;
   background-color: #f3f2f0;
   border-radius: 2px;

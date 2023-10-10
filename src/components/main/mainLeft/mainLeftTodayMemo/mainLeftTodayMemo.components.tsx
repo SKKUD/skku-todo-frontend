@@ -6,6 +6,7 @@ import {
   MainLeftTodayMemoDate,
   MainLeftTodayMemoContent,
 } from "./mainLeftTodayMemo.styles";
+
 const MainLeftTodayMemo = () => {
   return (
     <MainLeftTodayMemoContainer>

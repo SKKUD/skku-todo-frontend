@@ -28,5 +28,15 @@ export const HeaderLogoContainer = styled.div`
 export const HeaderButtonContainer = styled.div`
   width: 200px;
   height: 48px;
-  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
 `;
+
+export const HeaderButtonContent = styled.img`
+  width: 28px;
+  height: 28px;
+`

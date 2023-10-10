@@ -8,7 +8,7 @@ export const MainRightTodoContainer = styled.div`
 `;
 
 export const MainRightTodoContent = styled.div`
-  width: 320px;
+  width: 95%;
   height: 32px;
   border-radius: 2px;
   color: #2c2c2c;

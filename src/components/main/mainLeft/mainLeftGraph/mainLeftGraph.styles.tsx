@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const MainLeftSubProfileContainer = styled.div`
-  width: 384px;
+  width: 100%;
   height: 208px;
   background-color: white;
   border-radius: 15px;
