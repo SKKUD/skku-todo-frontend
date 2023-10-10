@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // import styled-components
 import { 
@@ -13,10 +13,22 @@ import MainLeftTodayMemoSize from "./mainLeftTodayMemoSize/mainLeftTodayMemoSize
 const MainLeftTodayMemo = () => {
   // state
   const [currentFontSize, setCurrentFontSize] = useState<string>("14");
+  const [year, setYear] = useState<number>();
+  const [month, setMonth] = useState<number>();
+  const [date, setDate] = useState<number>();
   
+  // get date
+  useEffect(() => {
+    let today = new Date();   
+    
+    setYear(today.getFullYear());
+    setMonth(today.getMonth() + 1)
+    setDate(today.getDay())
+  }, [])
+
   return (
     <MainLeftTodayMemoContainer>
-      <MainLeftTodayMemoDate>2023년 9월 24일</MainLeftTodayMemoDate>
+      <MainLeftTodayMemoDate>{year}년 {month}월 {date}일</MainLeftTodayMemoDate>
       <MainLeftTodayMemoContent style={{fontSize:`${currentFontSize}px`}} />
       <MainLeftTodayMemoSizeWrapper>
         <MainLeftTodayMemoSize setFontSize={setCurrentFontSize}/>
