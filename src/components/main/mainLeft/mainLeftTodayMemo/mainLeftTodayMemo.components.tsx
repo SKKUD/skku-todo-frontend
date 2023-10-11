@@ -35,11 +35,11 @@ const MainLeftTodayMemo = () => {
   // get date
   useEffect(() => {
     // Date
-    let today = new Date();   
-    
-    setYear(today.getFullYear());
+    const today = new Date();   
+    // parse Date
+    setYear(today.getFullYear()); 
     setMonth(today.getMonth() + 1)
-    setDate(today.getDay())
+    setDate(today.getDate())
     
     // message
     if (localStorage.getItem("message_content")) {
