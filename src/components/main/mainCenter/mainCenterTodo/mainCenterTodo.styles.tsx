@@ -9,6 +9,7 @@ export const MainCenterTodoContainer = styled.div`
   gap: 10px;
   margin: auto;
   padding-left: 15px;
+  font-family: "Pretendard-Regular";
 `;
 
 export const MainCenterTodoCheckBox = styled.div`
@@ -17,7 +18,20 @@ export const MainCenterTodoCheckBox = styled.div`
   border-radius: 2px;
   border: 0.5px solid #B2B2B2;
   background: #EDEDED;
+  flex-grow:0
 `;
+
+export const MainCenterTodoCheckBoxChecked = styled.img`
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  border: 0.5px solid #B2B2B2;
+  background: #EDEDED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 
 export const MainCenterTodoContent = styled.div`
   width: 296px;

@@ -9,16 +9,21 @@ import {
 import MainCenterTop from "./mainCenterTop/mainCenterTop.components";
 import MainCenterGoal from "./mainCenterGoal/mainCenterGoal.components";
 
+import { TodoDummy } from "../../../utils/data/dummy";
+
 const MainCenter = () => {
   return (
     <MainCenterContainer>
       {/* Top part */}
       <MainCenterTop />
-
-      {/* Goal List */}
-      <MainCenterGoal />
-      <MainCenterGoal />
-      <MainCenterGoal />
+      
+      {
+        TodoDummy.map((Todo) => {
+          return (
+            <MainCenterGoal goal={Todo.goal} todoList={Todo.todo}/>
+          )
+        })
+      }
 
     </MainCenterContainer>
   )

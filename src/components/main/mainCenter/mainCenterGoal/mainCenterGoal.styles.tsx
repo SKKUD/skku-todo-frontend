@@ -19,6 +19,8 @@ export const MainCenterGoalContainer = styled.div`
   border-radius: 2px;
   background: var(--back1, #F3F2F0);
   margin: auto;
+  font-family: "Pretendard-Regular";
+  padding-right: 5px;
 `;
 
 export const MainCenterGoalNameContainer = styled.div`

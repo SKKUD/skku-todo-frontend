@@ -8,9 +8,6 @@ import {
   MainLeftCalendarContent,
 } from "./mainLeftCalendar.styles";
 
-// import Calendar library
-import Calendar from 'react-calendar';
-
 // type for Calendar
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];

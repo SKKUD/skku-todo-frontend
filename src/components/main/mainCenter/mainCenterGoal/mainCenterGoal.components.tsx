@@ -15,23 +15,32 @@ import plusButton from "../../../../assets/images/plus.svg";
 
 import MainCenterTodo from "../mainCenterTodo/mainCenterTodo.components";
 
-const MainCenterGoal = () => {
+interface IMainCenterGoal {
+  goal: string,
+  todoList: Array<string>
+}
+
+const MainCenterGoal = ({goal, todoList}: IMainCenterGoal) => {
   return (
     <MainCenterGoalWrapper>
       {/* My Goal */}
       <MainCenterGoalContainer>
         <MainCenterGoalNameContainer>
           <MainCenterGoalNameDash />
-          <MainCenterGoalName>학교수업</MainCenterGoalName>
+          <MainCenterGoalName>{goal}</MainCenterGoalName>
         </MainCenterGoalNameContainer>
         <MainCenterGoalAddButton src={plusButton}/>
       </MainCenterGoalContainer>
 
       {/* Todo List */}
       <MainCenterGoalTodoList>
-        <MainCenterTodo />
-        <MainCenterTodo />
-        <MainCenterTodo />
+        {
+          todoList.map((todo) => {
+            return (
+              <MainCenterTodo todoContent={todo}/>
+            )
+          })
+        }
       </MainCenterGoalTodoList>
     </MainCenterGoalWrapper>
   )

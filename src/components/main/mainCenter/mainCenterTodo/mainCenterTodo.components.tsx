@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { 
   MainCenterTodoContainer,
   MainCenterTodoCheckBox,
   MainCenterTodoContent,
+  MainCenterTodoCheckBoxChecked
 } from "./mainCenterTodo.styles";
-const MainCenterTodo = () => {
+
+import Check from "../../../../assets/images/check.svg";
+
+interface IMainCenterTodo {
+  todoContent: string,
+}
+
+const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
+  const [check, setCheck] = useState<boolean>(false)
+
+  const handleCheck = () => {
+    setCheck(!check);
+  };
+
+  const handleNotCheck = () => {
+    setCheck(!check);
+  };
+
   return (
     <MainCenterTodoContainer>
-      <MainCenterTodoCheckBox />
-      <MainCenterTodoContent>문화산업과데이터분석 5주차 강의 듣기</MainCenterTodoContent>
+      {
+        check ? (
+          <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} src={Check}/>
+        ) : (
+          <MainCenterTodoCheckBox onClick={handleCheck}/>
+        )
+      }
+      
+      <MainCenterTodoContent>{todoContent}</MainCenterTodoContent>
     </MainCenterTodoContainer>
   )
 }
