@@ -58,7 +58,7 @@ const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
       {/* check box point */}
       {
         check ? (
-          <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} src={Check}/>
+          <MainCenterTodoCheckBoxChecked onClick={handleNotCheck}/>
         ) : (
           <MainCenterTodoCheckBox onClick={handleCheck}/>
         )

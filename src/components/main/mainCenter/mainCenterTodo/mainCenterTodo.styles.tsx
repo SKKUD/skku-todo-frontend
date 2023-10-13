@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import CheckIcon from '@mui/icons-material/Check'; // check icon
 
 export const MainCenterTodoContainer = styled.div`
   width: 95%;
@@ -31,9 +32,10 @@ export const MainCenterTodoCheckBox = styled.div`
   flex-grow: 0;
 `;
 
-export const MainCenterTodoCheckBoxChecked = styled.img`
+export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)`
   width: 17px;
   height: 17px;
+  color: #00DDA8;
   border-radius: 2px;
   border: 0.5px solid #B2B2B2;
   background: #EDEDED;
