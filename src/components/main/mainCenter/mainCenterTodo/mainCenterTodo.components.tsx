@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { ChangeEvent } from "react";
 
 import { 
   MainCenterTodoContainer,
   MainCenterTodoCheckBox,
   MainCenterTodoContent,
+  MainCenterTodoContentEdit,
   MainCenterTodoCheckBoxChecked,
   MainCenterTodoButtonContainer,
   MainCenterTodoIconContainer,
@@ -20,6 +22,7 @@ interface IMainCenterTodo {
 }
 
 const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
+  const [currentTodo, setCurrentTodo] = useState<string>(todoContent);
   const [check, setCheck] = useState<boolean>(false)
   const [editMode, setEditMode] = useState<boolean>(false);
 
@@ -46,9 +49,13 @@ const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
     console.log("click ");
   };
 
+  const handleOnChangeTodo = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setCurrentTodo(event.target.value);
+  };
 
   return (
     <MainCenterTodoContainer className="todo_hover_point">
+      {/* check box point */}
       {
         check ? (
           <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} src={Check}/>
@@ -57,7 +64,16 @@ const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
         )
       }
       
-      <MainCenterTodoContent>{todoContent}</MainCenterTodoContent>
+      {/* todo content show */}
+      {
+        editMode ? (
+          <MainCenterTodoContentEdit onChange={handleOnChangeTodo} value={currentTodo} />
+        ) : (
+          <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
+        )
+      }
+
+      {/* todo button (edit, delete) */}
       <MainCenterTodoButtonContainer className="todo_function_container">
         {
           editMode ? (

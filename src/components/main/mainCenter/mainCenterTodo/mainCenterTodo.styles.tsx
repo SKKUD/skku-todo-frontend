@@ -10,7 +10,8 @@ export const MainCenterTodoContainer = styled.div`
   margin: auto;
   padding-left: 15px;
   font-family: "Pretendard-Regular";
-
+  cursor: pointer;
+  
   &:hover {
     .todo_function_container {
       display: flex;
@@ -43,12 +44,28 @@ export const MainCenterTodoCheckBoxChecked = styled.img`
 export const MainCenterTodoContent = styled.div`
   width: 75%;
   color: var(--black, #2C2C2C);
+  font-family: "Pretendard-Regular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
 `;
+
+export const MainCenterTodoContentEdit = styled.textarea`
+  width: 75%;
+  border: none;
+  border-bottom: 1px solid black;
+  color: var(--black, #2C2C2C);
+  padding: 0px;
+  resize: none;
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.28px;
+`
 
 export const MainCenterTodoButtonContainer = styled.div`
   opacity: 0;
