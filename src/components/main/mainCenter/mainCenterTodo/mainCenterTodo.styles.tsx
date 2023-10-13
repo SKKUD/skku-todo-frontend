@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+
 export const MainCenterTodoContainer = styled.div`
   width: 95%;
   display: flex;
@@ -11,7 +13,7 @@ export const MainCenterTodoContainer = styled.div`
   padding-left: 15px;
   font-family: "Pretendard-Regular";
   cursor: pointer;
-  
+
   &:hover {
     .todo_function_container {
       display: flex;
@@ -52,7 +54,7 @@ export const MainCenterTodoContent = styled.div`
   letter-spacing: -0.28px;
 `;
 
-export const MainCenterTodoContentEdit = styled.textarea`
+export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
   width: 75%;
   border: none;
   border-bottom: 1px solid black;
