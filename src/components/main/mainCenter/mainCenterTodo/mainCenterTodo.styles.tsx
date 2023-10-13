@@ -10,6 +10,13 @@ export const MainCenterTodoContainer = styled.div`
   margin: auto;
   padding-left: 15px;
   font-family: "Pretendard-Regular";
+
+  &:hover {
+    .todo_function_container {
+      display: flex;
+      opacity: 1;
+    }
+  }
 `;
 
 export const MainCenterTodoCheckBox = styled.div`
@@ -18,7 +25,7 @@ export const MainCenterTodoCheckBox = styled.div`
   border-radius: 2px;
   border: 0.5px solid #B2B2B2;
   background: #EDEDED;
-  flex-grow:0
+  flex-grow: 0;
 `;
 
 export const MainCenterTodoCheckBoxChecked = styled.img`
@@ -34,11 +41,30 @@ export const MainCenterTodoCheckBoxChecked = styled.img`
 
 
 export const MainCenterTodoContent = styled.div`
-  width: 296px;
+  width: 75%;
   color: var(--black, #2C2C2C);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
+`;
+
+export const MainCenterTodoButtonContainer = styled.div`
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+`;
+
+export const MainCenterTodoIconContainer = styled.div`
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 `;
