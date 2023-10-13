@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // import styles
 import { 
@@ -8,15 +8,18 @@ import {
 // import components
 import MainCenterTop from "./mainCenterTop/mainCenterTop.components";
 import MainCenterGoal from "./mainCenterGoal/mainCenterGoal.components";
+import MainCenterMakeGoal from "./mainCenterMakeGoal/mainCenterMakeGoal.components";
 
 import { TodoDummy } from "../../../utils/data/dummy";
 
 const MainCenter = () => {
+  const [makeGoal, setMakeGoal] = useState<boolean>(false);
   return (
     <MainCenterContainer>
       {/* Top part */}
-      <MainCenterTop />
-      
+      <MainCenterTop setMakeGoal={setMakeGoal} />
+
+      {/* Goal mapping */}
       {
         TodoDummy.map((TodoObject) => {
           return (
@@ -25,6 +28,10 @@ const MainCenter = () => {
         })
       }
 
+      {/* new goal added */}
+      {
+        makeGoal && <MainCenterMakeGoal />
+      }
     </MainCenterContainer>
   )
 }

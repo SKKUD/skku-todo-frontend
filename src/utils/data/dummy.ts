@@ -52,11 +52,4 @@ export const TodoDummy = [
       }
     ]
   },
-  {
-    "goalID": "goal3",
-    "goal": "새로운 목표 이름을 입력해주세요",
-    "todo": [
-      
-    ]
-  },
 ];
