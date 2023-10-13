@@ -18,9 +18,9 @@ const MainCenter = () => {
       <MainCenterTop />
       
       {
-        TodoDummy.map((Todo) => {
+        TodoDummy.map((TodoObject) => {
           return (
-            <MainCenterGoal goal={Todo.goal} todoList={Todo.todo}/>
+            <MainCenterGoal key={TodoObject.goalID} goal={TodoObject.goal} goalID={TodoObject.goalID} todoList={TodoObject.todo}/>
           )
         })
       }

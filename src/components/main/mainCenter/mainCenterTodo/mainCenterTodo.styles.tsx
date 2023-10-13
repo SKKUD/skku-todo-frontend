@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+
+import EditIcon from '@mui/icons-material/Edit'; // edit icon
 import CheckIcon from '@mui/icons-material/Check'; // check icon
+import DeleteIcon from '@mui/icons-material/Delete'; // delete icon
 
 export const MainCenterTodoContainer = styled.div`
   width: 95%;
@@ -49,6 +52,8 @@ export const MainCenterTodoContent = styled.div`
   width: 75%;
   color: var(--black, #2C2C2C);
   font-family: "Pretendard-Regular";
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -62,6 +67,7 @@ export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
   border-bottom: 1px solid black;
   color: var(--black, #2C2C2C);
   padding: 0px;
+  padding-bottom: 3px;
   resize: none;
   font-family: "Pretendard-Regular";
   font-size: 14px;
@@ -79,6 +85,21 @@ export const MainCenterTodoButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
+`;
+
+export const MainCenterTodoEditIcon = styled(EditIcon)`
+  width: 15px;
+  height: 15px;
+`;
+
+export const MainCenterTodoCheckIcon = styled(CheckIcon)`
+  width: 15px;
+  height: 15px;
+`;
+
+export const MainCenterTodoDeleteIcon = styled(DeleteIcon)`
+  width: 15px;
+  height: 15px;
 `;
 
 export const MainCenterTodoIconContainer = styled.div`

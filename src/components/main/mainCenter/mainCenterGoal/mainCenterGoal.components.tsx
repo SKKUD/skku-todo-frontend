@@ -15,12 +15,18 @@ import plusButton from "../../../../assets/images/plus.svg";
 
 import MainCenterTodo from "../mainCenterTodo/mainCenterTodo.components";
 
-interface IMainCenterGoal {
-  goal: string,
-  todoList: Array<string>
+interface ITodoObject {
+  todoID: string,
+  todo: string,
 }
 
-const MainCenterGoal = ({goal, todoList}: IMainCenterGoal) => {
+interface IMainCenterGoal {
+  goal: string,
+  goalID: string,
+  todoList: Array<ITodoObject>
+}
+
+const MainCenterGoal = ({goal, goalID, todoList}: IMainCenterGoal) => {
   return (
     <MainCenterGoalWrapper>
       {/* My Goal */}
@@ -35,9 +41,9 @@ const MainCenterGoal = ({goal, todoList}: IMainCenterGoal) => {
       {/* Todo List */}
       <MainCenterGoalTodoList>
         {
-          todoList.map((todo) => {
+          todoList.map((todoObject) => {
             return (
-              <MainCenterTodo todoContent={todo}/>
+              <MainCenterTodo goalID={goalID} todoID={todoObject.todoID} todoContent={todoObject.todo}/>
             )
           })
         }

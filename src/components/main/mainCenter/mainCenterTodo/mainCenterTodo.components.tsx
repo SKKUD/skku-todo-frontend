@@ -9,6 +9,9 @@ import {
   MainCenterTodoCheckBoxChecked,
   MainCenterTodoButtonContainer,
   MainCenterTodoIconContainer,
+  MainCenterTodoEditIcon,
+  MainCenterTodoCheckIcon,
+  MainCenterTodoDeleteIcon
 } from "./mainCenterTodo.styles";
 
 // assets
@@ -18,10 +21,12 @@ import DeleteIcon from '@mui/icons-material/Delete'; // delete icon
 import CheckIcon from '@mui/icons-material/Check'; // check icon
 
 interface IMainCenterTodo {
+  goalID: string,
+  todoID: string,
   todoContent: string,
 }
 
-const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
+const MainCenterTodo = ({goalID, todoID, todoContent}: IMainCenterTodo) => {
   const [currentTodo, setCurrentTodo] = useState<string>(todoContent);
   const [check, setCheck] = useState<boolean>(false)
   const [editMode, setEditMode] = useState<boolean>(false);
@@ -37,16 +42,16 @@ const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
 
   const handleOnClickEdit = () => {
     setEditMode(true);
-    console.log("click edit");
+
   };
 
   const handleOnClickCheck = () => {
     setEditMode(false);
-    console.log("click check");
+
   };
 
   const handleOnClickDelete = () => {
-    console.log("click ");
+
   };
 
   const handleOnChangeTodo = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -77,12 +82,12 @@ const MainCenterTodo = ({todoContent}: IMainCenterTodo) => {
       <MainCenterTodoButtonContainer className="todo_function_container">
         {
           editMode ? (
-            <CheckIcon onClick={handleOnClickCheck} className="todo_edit" style={{width:"15px", height:"15px"}} />
+            <MainCenterTodoCheckIcon onClick={handleOnClickCheck} />
           ) : (
-            <EditIcon onClick={handleOnClickEdit} className="todo_edit" style={{width:"15px", height:"15px"}} />
+            <MainCenterTodoEditIcon onClick={handleOnClickEdit} />
           )
         }
-        <DeleteIcon onClick={handleOnClickDelete} className="todo_delete "style={{width:"15px", height:"15px"}} />
+        <MainCenterTodoDeleteIcon onClick={handleOnClickDelete} />
       </MainCenterTodoButtonContainer>
     </MainCenterTodoContainer>
   )
