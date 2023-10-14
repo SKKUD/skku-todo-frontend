@@ -20,6 +20,8 @@ import EditIcon from '@mui/icons-material/Edit'; // edit icon
 import DeleteIcon from '@mui/icons-material/Delete'; // delete icon
 import CheckIcon from '@mui/icons-material/Check'; // check icon
 
+import dummy from "../../../../utils/data/dummy.json";
+
 interface IMainCenterTodo {
   goalID: string,
   todoID: string,
@@ -42,16 +44,22 @@ const MainCenterTodo = ({goalID, todoID, todoContent}: IMainCenterTodo) => {
 
   const handleOnClickEdit = () => {
     setEditMode(true);
-
   };
 
   const handleOnClickCheck = () => {
-    setEditMode(false);
+    // save it to db or local test
+    // const targetGoal = dummy.todoDummy.find((element) => element.goalID === goalID);
+    // const targetTodo = targetGoal?.todo.find((element) => element.todoID === todoID);
+    // console.log(targetTodo);
+    // console.log(currentTodo);
+    // targetTodo!.todo = currentTodo;
 
+    // set edit mode false
+    setEditMode(false);
   };
 
   const handleOnClickDelete = () => {
-
+    // add delete logic
   };
 
   const handleOnChangeTodo = (event: ChangeEvent<HTMLTextAreaElement>) => {

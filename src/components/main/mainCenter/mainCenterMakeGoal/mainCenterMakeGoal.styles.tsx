@@ -27,11 +27,11 @@ export const MainCenterMakeGoalTextArea = styled(TextareaAutosize)`
   padding-bottom: 3px;
   resize: none;
   font-family: "Pretendard-Regular";
-  font-size: 14px;
+  /* font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: -0.28px;
+  letter-spacing: -0.28px; */
 `
 
 export const MainCenterMakeGoalDone = styled(CheckIcon)`

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const MainCenterTopContainer = styled.div`
   width: 95%;
   height: 42px;
+  padding-left: 3px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,4 +36,10 @@ export const MainCenterTopAddGoal = styled.div`
   line-height: normal;
   letter-spacing: -0.32px;
   cursor: pointer;
+  &:hover {
+    width: 83px;
+    height: 30px;
+    font-size: 18px;
+    transition: all 0.3s;
+  }
 `;

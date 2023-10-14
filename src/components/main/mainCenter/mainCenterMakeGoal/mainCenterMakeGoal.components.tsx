@@ -18,6 +18,8 @@ import {
 // import plus button
 import plusButton from "../../../../assets/images/plus.svg";
 
+import dummy from "../../../../utils/data/dummy.json";
+
 interface IMainCenterMakeGoal {
   makeGoal: boolean,
   setMakeGoal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -31,7 +33,16 @@ const MainCenterMakeGoal = ({makeGoal, setMakeGoal}: IMainCenterMakeGoal) => {
   };
 
   const handleOnClickGoalDone = () => {
+    const goalID: string = "goal" + String(dummy.todoDummy.length + 1);
+    
     // add new goal to db or local test
+    dummy.todoDummy.push({
+      "goalID": goalID,
+      "goal": newGoal,
+      "todo": [
+        
+      ]
+    })
 
     // set newGoal to false
     setMakeGoal(false)

@@ -15,10 +15,16 @@ export const MainCenterTodoContainer = styled.div`
   gap: 10px;
   margin: auto;
   padding-left: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   font-family: "Pretendard-Regular";
   cursor: pointer;
   
   &:hover {
+    border-radius: 2px;
+    background: #F5F5F5;
+    transition: all 0.3s;
+
     .todo_function_container {
       display: flex;
       opacity: 1;
@@ -66,6 +72,7 @@ export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
   border: none;
   border-bottom: 1px solid black;
   color: var(--black, #2C2C2C);
+  background: #F5F5F5;
   padding: 0px;
   padding-bottom: 3px;
   resize: none;
