@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { 
   MainCenterGoalWrapper,
@@ -15,24 +15,48 @@ import plusButton from "../../../../assets/images/plus.svg";
 
 import MainCenterTodo from "../mainCenterTodo/mainCenterTodo.components";
 
-const MainCenterGoal = () => {
+import MainCenterMakeTodo from "../mainCenterMakeTodo/mainCenterMakeTodo.components";
+
+interface ITodoObject {
+  todoID: string,
+  todo: string,
+}
+
+interface IMainCenterGoal {
+  goal: string,
+  goalID: string,
+  todoList: Array<ITodoObject>
+}
+
+const MainCenterGoal = ({goal, goalID, todoList}: IMainCenterGoal) => {
+  const [makeTodo, setMakeTodo] = useState<boolean>(false);
+
+  const handleClickPlus = () => {
+    setMakeTodo(true);
+  };
+
   return (
     <MainCenterGoalWrapper>
       {/* My Goal */}
       <MainCenterGoalContainer>
         <MainCenterGoalNameContainer>
           <MainCenterGoalNameDash />
-          <MainCenterGoalName>학교수업</MainCenterGoalName>
+          <MainCenterGoalName>{goal}</MainCenterGoalName>
         </MainCenterGoalNameContainer>
-        <MainCenterGoalAddButton src={plusButton}/>
+        { !makeTodo && <MainCenterGoalAddButton onClick={handleClickPlus} src={plusButton}/>}
       </MainCenterGoalContainer>
 
       {/* Todo List */}
       <MainCenterGoalTodoList>
-        <MainCenterTodo />
-        <MainCenterTodo />
-        <MainCenterTodo />
+        {
+          todoList.map((todoObject) => {
+            return (
+              <MainCenterTodo goalID={goalID} todoID={todoObject.todoID} todoContent={todoObject.todo}/>
+            )
+          })
+        }
       </MainCenterGoalTodoList>
+      { makeTodo && <MainCenterMakeTodo makeTodo={makeTodo} setMakeTodo={setMakeTodo} goalID={goalID}/>}
     </MainCenterGoalWrapper>
   )
 }

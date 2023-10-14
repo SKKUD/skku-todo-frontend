@@ -18,8 +18,8 @@ export const MainLeftCalendarBox = styled.div`
 
 export const MainLeftCalendarContent = styled(Calendar)`
   border-radius: 15px;
-  max-width: 100%;
   border: none;
+  max-width: 100%;
   margin-bottom: 15px;
   padding: 20px;
 

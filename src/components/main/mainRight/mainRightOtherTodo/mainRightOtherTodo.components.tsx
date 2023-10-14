@@ -1,7 +1,10 @@
 import React from "react";
 import MainRightGoal from "./mainRightGoal/mainRightGoal.components";
-import { MainRightTitle } from "../mainRightGathering/mainRightGathering.styles";
-import { MainRightOtherTodoContainer } from "./mainRightOtherTodo.styles";
+
+import { 
+  MainRightOtherTodoContainer,
+  MainRightOtherTodoTitle
+} from "./mainRightOtherTodo.styles";
 
 const MainRightOtherTodo = () => {
   let dummyTodo1: string[] = [
@@ -14,9 +17,11 @@ const MainRightOtherTodo = () => {
 
   return (
     <MainRightOtherTodoContainer>
-      <MainRightTitle>강유진님의 투두</MainRightTitle>
-      <MainRightGoal goal="학교 수업" todo={dummyTodo1} />
-      <MainRightGoal goal="토익" todo={dummyTodo2} />
+      <MainRightOtherTodoTitle>강유진님의 투두</MainRightOtherTodoTitle>
+
+      {/* goal mapping */}
+      <MainRightGoal goal="학교 수업" todos={dummyTodo1} />
+      <MainRightGoal goal="토익" todos={dummyTodo2} />
     </MainRightOtherTodoContainer>
   );
 };

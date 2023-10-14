@@ -22,12 +22,10 @@ const MainLeftTodayMemo = () => {
 
   const handleContent = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
-    console.log(event.target.value)
   }
 
   useEffect(() => {
     if (message) {
-      console.log("set in local storage " + message);
       localStorage.setItem("message_content", message);
     }
   }, [message])
@@ -47,7 +45,6 @@ const MainLeftTodayMemo = () => {
     }
 
     if (localStorage.getItem("message_fontSize")) {
-      console.log("exist in local storage font size")
       setCurrentFontSize(localStorage.getItem("message_fontSize")!)
     }
   }, [])

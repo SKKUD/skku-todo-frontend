@@ -19,6 +19,14 @@ export const MainCenterGoalContainer = styled.div`
   border-radius: 2px;
   background: var(--back1, #F3F2F0);
   margin: auto;
+  font-family: "Pretendard-Regular";
+  padding-right: 5px;
+
+  .makegoal_container {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s;
+  }
 `;
 
 export const MainCenterGoalNameContainer = styled.div`
@@ -49,5 +57,5 @@ export const MainCenterGoalAddButton = styled.img`
 export const MainCenterGoalTodoList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 `
