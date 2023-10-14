@@ -10,18 +10,19 @@ import MainCenterTop from "./mainCenterTop/mainCenterTop.components";
 import MainCenterGoal from "./mainCenterGoal/mainCenterGoal.components";
 import MainCenterMakeGoal from "./mainCenterMakeGoal/mainCenterMakeGoal.components";
 
-import { TodoDummy } from "../../../utils/data/dummy";
+import dummy from "../../../utils/data/dummy.json";
 
 const MainCenter = () => {
   const [makeGoal, setMakeGoal] = useState<boolean>(false);
+
   return (
     <MainCenterContainer>
       {/* Top part */}
-      <MainCenterTop setMakeGoal={setMakeGoal} />
+      <MainCenterTop makeGoal={makeGoal} setMakeGoal={setMakeGoal} />
 
       {/* Goal mapping */}
       {
-        TodoDummy.map((TodoObject) => {
+        dummy.todoDummy.map((TodoObject) => {
           return (
             <MainCenterGoal key={TodoObject.goalID} goal={TodoObject.goal} goalID={TodoObject.goalID} todoList={TodoObject.todo}/>
           )
@@ -30,7 +31,7 @@ const MainCenter = () => {
 
       {/* new goal added */}
       {
-        makeGoal && <MainCenterMakeGoal />
+        makeGoal && <MainCenterMakeGoal makeGoal={makeGoal} setMakeGoal={setMakeGoal} />
       }
     </MainCenterContainer>
   )

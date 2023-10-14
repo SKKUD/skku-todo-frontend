@@ -17,7 +17,7 @@ export const MainCenterTodoContainer = styled.div`
   padding-left: 15px;
   font-family: "Pretendard-Regular";
   cursor: pointer;
-
+  
   &:hover {
     .todo_function_container {
       display: flex;

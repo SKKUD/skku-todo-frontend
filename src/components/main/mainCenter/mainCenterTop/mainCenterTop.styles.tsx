@@ -34,4 +34,5 @@ export const MainCenterTopAddGoal = styled.div`
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.32px;
+  cursor: pointer;
 `;

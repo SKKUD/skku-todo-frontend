@@ -21,6 +21,12 @@ export const MainCenterGoalContainer = styled.div`
   margin: auto;
   font-family: "Pretendard-Regular";
   padding-right: 5px;
+  
+  .makegoal_container {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s;
+  }
 `;
 
 export const MainCenterGoalNameContainer = styled.div`

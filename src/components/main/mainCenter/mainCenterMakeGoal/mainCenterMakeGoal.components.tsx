@@ -9,26 +9,42 @@ import {
   MainCenterGoalAddButton,
 } from "../mainCenterGoal/mainCenterGoal.styles";
 
-import { MainCenterMakeGoalTextArea } from "./mainCenterMakeGoal.styles";
+import { 
+  MainCenterMakeGoalTextArea,
+  MainCenterMakeGoalContainer,
+  MainCenterMakeGoalDone
+} from "./mainCenterMakeGoal.styles";
 
 // import plus button
 import plusButton from "../../../../assets/images/plus.svg";
 
-const MainCenterMakeGoal = () => {
+interface IMainCenterMakeGoal {
+  makeGoal: boolean,
+  setMakeGoal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const MainCenterMakeGoal = ({makeGoal, setMakeGoal}: IMainCenterMakeGoal) => {
   const [newGoal, setNewGoal] = useState<string>("");
 
   const handleOnChangeMakeGoal = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setNewGoal(event.target.value);
   };
 
+  const handleOnClickGoalDone = () => {
+    // add new goal to db or local test
+
+    // set newGoal to false
+    setMakeGoal(false)
+  };
+
   return (
-    <MainCenterGoalContainer>
+    <MainCenterMakeGoalContainer className="makegoal_container">
       <MainCenterGoalNameContainer>
         <MainCenterGoalNameDash />
         <MainCenterMakeGoalTextArea placeholder="새로운 목표" value={newGoal} onChange={handleOnChangeMakeGoal}/>
       </MainCenterGoalNameContainer>
-      <MainCenterGoalAddButton src={plusButton}/>
-    </MainCenterGoalContainer>
+      <MainCenterMakeGoalDone onClick={handleOnClickGoalDone} />
+    </MainCenterMakeGoalContainer>
   )
 };
 
