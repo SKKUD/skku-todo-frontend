@@ -22,7 +22,12 @@ export const HeaderContent = styled.div`
 export const HeaderLogoContainer = styled.div`
   width: 200px;
   height: 48px;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  font-size: 40px;
+  font-weight: 700;
 `;
 
 export const HeaderButtonContainer = styled.div`

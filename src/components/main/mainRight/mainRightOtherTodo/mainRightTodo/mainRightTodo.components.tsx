@@ -2,21 +2,32 @@ import React from "react";
 
 import {
   MainRightTodoContent,
+  MainRightTodoContentContainer,
   MainRightTodoContainer,
   MainRightTodoCheck,
   MainRightTodoReaction,
 } from "./mainRightTodo.styles";
 
-interface propsType {
+import { 
+  MainCenterTodoCheckBox,
+  MainCenterTodoCheckBoxChecked,
+} from "../../../mainCenter/mainCenterTodo/mainCenterTodo.styles";
+interface IMainRightTodo {
+  // isChecked?: boolean;
   content: string;
 }
 
-const MainRightTodo = (props: propsType) => {
-  const content = props.content;
+const MainRightTodo = ({content}: IMainRightTodo) => {
+
   return (
     <MainRightTodoContainer>
-      <MainRightTodoCheck />
-      <MainRightTodoContent>{content}</MainRightTodoContent>
+      {/* todo content */}
+      <MainRightTodoContentContainer>
+        <MainCenterTodoCheckBox />
+        <MainRightTodoContent>{content}</MainRightTodoContent>
+      </MainRightTodoContentContainer>
+
+      {/* Reaction */}
       <MainRightTodoReaction />
     </MainRightTodoContainer>
   );

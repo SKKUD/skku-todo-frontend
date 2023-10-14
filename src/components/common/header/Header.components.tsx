@@ -18,7 +18,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <HeaderLogoContainer>
-          
+          LOGO
         </HeaderLogoContainer>
         <HeaderButtonContainer>
           <HeaderButtonContent src={Bell}/>

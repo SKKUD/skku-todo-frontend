@@ -4,7 +4,6 @@ import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 
 export const MainCenterMakeTodoContainer = styled.div`
   width: 95%;
-  height: 35px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,6 +15,8 @@ export const MainCenterMakeTodoContainer = styled.div`
   margin-left: 10px;
   padding-right: 5px;
   margin-top: -15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 `;
 
 export const MainCenterMakeTodoTextArea = styled(TextareaAutosize)`
