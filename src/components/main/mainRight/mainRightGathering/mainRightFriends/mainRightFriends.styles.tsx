@@ -22,6 +22,8 @@ export const MainRightAddFriendsBtnContainer = styled.button`
   border: none;
 
   &:hover {
+    
+    transition: all 0.3s;
     .add_friends_btn {
       width: 20px;
       height: 20px;

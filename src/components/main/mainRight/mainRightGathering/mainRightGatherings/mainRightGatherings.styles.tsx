@@ -41,13 +41,22 @@ export const MainRightGatheringIconHeaderCrown = styled.img`
   width: 12px;
   height: 12px;
   z-index: 100;
+  &:hover {
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s;
+  }
 `;
 
 export const MainRightGatheringIconheaderRight = styled.img`
   width: 12px;
   height: 12px;
   z-index: 100;
-
+  &:hover {
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s;
+  }
 `
 
 export const MainRightGatheringIconTitle = styled.div`
@@ -62,6 +71,11 @@ export const MainRightGatheringIconTitle = styled.div`
   line-height: normal;
   letter-spacing: -0.24px;
   z-index: 100;
+
+  &:hover {
+    font-size: 14px;
+    transition: all 0.3s;
+  }
 `;
 
 export const MainRightAddGatheringBtn = styled.button`

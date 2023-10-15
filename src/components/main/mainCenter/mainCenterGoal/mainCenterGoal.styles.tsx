@@ -51,6 +51,12 @@ export const MainCenterGoalName = styled.div`
 export const MainCenterGoalAddButton = styled.img`
   width: 16px;
   height: 16px;
+
+  &:hover {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s;
+  }
 `;
 
 // Todo List
