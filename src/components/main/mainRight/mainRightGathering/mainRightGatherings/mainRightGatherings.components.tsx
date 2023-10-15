@@ -4,30 +4,35 @@ import {
   MainRightGatheringWrapper,
   MainRightGatheringIcon,
   MainRightAddGatheringBtn,
+  MainRightGatheringPlusImg,
+  MainRightGatheringIconHeader,
+  MainRightGatheringIconTitle,
+  MainRightGatheringIconHeaderCrown,
+  MainRightGatheringIconheaderRight,
 } from "./mainRightGatherings.styles";
 
-import Img from "../../../../../assets/images/profile.jpeg";
+import GatheringImage from "../../../../../assets/images/profile.jpeg";
+import GatherPlus from "../../../../../assets/images/GatheringPlus.svg";
+import Crown from "../../../../../assets/images/Crown.svg";
+import Arrow from "../../../../../assets/images/Arrow.svg";
 
 const MainRightGatherings = () => {
   return (
     <MainRightGatheringWrapper>
-      <MainRightGatheringIcon src={Img} />
+      <MainRightGatheringIcon style={{backgroundImage: `url(${GatheringImage})`}}>
+        <MainRightGatheringIconHeader>
+          <MainRightGatheringIconHeaderCrown src={Crown} />
+          <MainRightGatheringIconheaderRight src={Arrow} />
+        </MainRightGatheringIconHeader>
+
+        <MainRightGatheringIconTitle>
+          디쟌과 20
+        </MainRightGatheringIconTitle>
+      </MainRightGatheringIcon>
+
+      {/* Add button */}
       <MainRightAddGatheringBtn>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 30 30"
-          fill="none"
-        >
-          <path
-            d="M27 15H3M15 3V27"
-            stroke="#5F5F5F"
-            stroke-width="5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <MainRightGatheringPlusImg className="gathering_plus_img" src={GatherPlus} />
       </MainRightAddGatheringBtn>
     </MainRightGatheringWrapper>
   );
