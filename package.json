@@ -37,7 +37,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://skkud.github.io/skku-todo-frontend/",
   "eslintConfig": {
     "extends": [
       "react-app",
