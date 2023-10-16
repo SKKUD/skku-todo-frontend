@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/skku-todo-frontend/static/css/main.928f196d.css",
+    "main.js": "/skku-todo-frontend/static/js/main.8613b66e.js",
+    "static/media/profile.jpeg": "/skku-todo-frontend/static/media/profile.8f5591229490560c2161.jpeg",
+    "static/media/lightMode.svg": "/skku-todo-frontend/static/media/lightMode.ebb7482b6456b638c19c7a7119f24781.svg",
+    "static/media/setting.svg": "/skku-todo-frontend/static/media/setting.5a1e80bdb209a4bed66271ae24b06886.svg",
+    "static/media/themeColor.svg": "/skku-todo-frontend/static/media/themeColor.02fc184a4acb1c2a7ad02a42987bc4a3.svg",
+    "static/media/Arrow.svg": "/skku-todo-frontend/static/media/Arrow.ac6f1a9c080efa859a789f51be7c84b5.svg",
+    "static/media/Crown.svg": "/skku-todo-frontend/static/media/Crown.6d66e7e181ae6af9db63153c9c254f00.svg",
+    "static/media/bell.svg": "/skku-todo-frontend/static/media/bell.92d83df86f8c794f299a607d44d7dda1.svg",
+    "index.html": "/skku-todo-frontend/index.html",
+    "static/media/darkMode.svg": "/skku-todo-frontend/static/media/darkMode.0991bb3e498e9109690f39168f673849.svg",
+    "static/media/plus.svg": "/skku-todo-frontend/static/media/plus.8bb1df4b2d5e424d83c4655a61f89462.svg",
+    "static/media/GatheringPlus.svg": "/skku-todo-frontend/static/media/GatheringPlus.cb3b2349416ec8b4853779ff2c03be39.svg",
+    "main.928f196d.css.map": "/skku-todo-frontend/static/css/main.928f196d.css.map",
+    "main.8613b66e.js.map": "/skku-todo-frontend/static/js/main.8613b66e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.928f196d.css",
+    "static/js/main.8613b66e.js"
+  ]
+}
