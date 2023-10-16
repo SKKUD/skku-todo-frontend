@@ -18,6 +18,12 @@ const DropDown = ({visibility}: IDropDown) => {
   return (
     <DropDownContainer open={visibility}>
       <DropDownAlertContainer >
+        {/* Alert mapping */}
+        <Alert />
+        <Alert />
+        <Alert />
+        <Alert />
+        <Alert />
         <Alert />
         <Alert />
         <Alert />

@@ -9,11 +9,12 @@ export const DropDownContainer = styled.div<{open: boolean}>`
   top: 50px;
   right: -5px;
   z-index: 200;
-
+  border-radius: 8px;
+  max-height: 60vh;
+  overflow: scroll;
+  
   opacity: ${props => (props.open ? "1" : "0")};
-  height: ${props => (!props.open && "0")};
-  overflow: hidden;
-  transition: all 0.4s;
+  transition: all 0.25s;
 `;
 
 export const DropDownAlertContainer = styled.div`
