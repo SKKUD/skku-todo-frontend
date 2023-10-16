@@ -7,6 +7,7 @@ import {
   HeaderLogoContainer,
   HeaderButtonContainer,
   HeaderButtonContent,
+  HeaderButtonContentContainer,
 } from "./Header.styles";
 
 // add assets
@@ -18,8 +19,16 @@ import System from "../../../assets/images/setting.svg";
 import ModalLayout from "../modalLayout/ModalLayout.components";
 import ColorModal from "./colorModal/colorModal.components";
 
+// import dropdown
+import DropDown from "./dropdown/DropDown.components";
+
 const Header = () => {
-  const [modalOpen, setModalOpen] = useState(true);
+  // theme modal
+  const [modalOpen, setModalOpen] = useState(false);
+  // alert dropdown
+  const [dropdown, setDropDown] = useState(false);
+
+  // modal function
   const handleModalOpen = () => {
     setModalOpen(true);
   };
@@ -38,10 +47,21 @@ const Header = () => {
           LOGO
         </HeaderLogoContainer>
         <HeaderButtonContainer>
-          <HeaderButtonContent src={Bell}/>
-          <HeaderButtonContent onClick={handleClickTheme} src={ThemeColor}/>
-          <HeaderButtonContent src={System}/>
+          {/* alert */}
+          <HeaderButtonContentContainer>
+            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={Bell} />
+            <DropDown visibility={dropdown} />
+          </HeaderButtonContentContainer>
 
+          {/* theme */}
+          <HeaderButtonContent onClick={handleClickTheme} src={ThemeColor}/>
+
+          {/* system */}
+          <HeaderButtonContent src={System}>
+
+          </HeaderButtonContent>
+
+          {/* modal */}
           <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
             <ColorModal handleModalClose={handleModalClose} />
           </ModalLayout>

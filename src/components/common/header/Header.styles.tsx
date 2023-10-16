@@ -41,6 +41,14 @@ export const HeaderButtonContainer = styled.div`
   padding-right: 20px;
 `;
 
+export const HeaderButtonContentContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const HeaderButtonContent = styled.img`
   width: 28px;
   height: 28px;
