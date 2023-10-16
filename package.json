@@ -37,6 +37,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://ajs3801.github.io/todoView/",
   "eslintConfig": {
     "extends": [
       "react-app",
