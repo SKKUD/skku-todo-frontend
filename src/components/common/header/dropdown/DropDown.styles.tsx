@@ -14,7 +14,8 @@ export const DropDownContainer = styled.div<{open: boolean}>`
   overflow: scroll;
   
   opacity: ${props => (props.open ? "1" : "0")};
-  transition: all 0.25s;
+  height: ${props => (props.open ? "80vh" : "0px")};;
+  transition: all 0.3s;
 `;
 
 export const DropDownAlertContainer = styled.div`
