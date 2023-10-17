@@ -15,6 +15,7 @@ import {
 } from "../../../mainCenter/mainCenterTodo/mainCenterTodo.styles";
 
 import ModalLayout from "../../../../common/modalLayout/ModalLayout.components";
+import ReactionModal from "./ReactionModal/ReactionModal.components";
 
 interface IMainRightTodo {
   // isChecked?: boolean;
@@ -47,7 +48,7 @@ const MainRightTodo = ({content}: IMainRightTodo) => {
 
       {/* Modal */}
       <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
-
+        <ReactionModal handleModalClose={handleModalClose} />
       </ModalLayout>
     </MainRightTodoContainer>
   );
