@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import {
   MainRightTodoContent,
@@ -12,12 +13,26 @@ import {
   MainCenterTodoCheckBox,
   MainCenterTodoCheckBoxChecked,
 } from "../../../mainCenter/mainCenterTodo/mainCenterTodo.styles";
+
+import ModalLayout from "../../../../common/modalLayout/ModalLayout.components";
+
 interface IMainRightTodo {
   // isChecked?: boolean;
   content: string;
 }
 
 const MainRightTodo = ({content}: IMainRightTodo) => {
+  // theme modal
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // modal function
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
   return (
     <MainRightTodoContainer>
@@ -28,7 +43,12 @@ const MainRightTodo = ({content}: IMainRightTodo) => {
       </MainRightTodoContentContainer>
 
       {/* Reaction */}
-      <MainRightTodoReaction />
+      <MainRightTodoReaction onClick={handleModalOpen}/>
+
+      {/* Modal */}
+      <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
+
+      </ModalLayout>
     </MainRightTodoContainer>
   );
 };

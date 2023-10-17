@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import {
   MainRightGatheringWrapper,
@@ -11,12 +12,27 @@ import {
   MainRightGatheringIconheaderRight,
 } from "./mainRightGatherings.styles";
 
+// import assets
 import GatheringImage from "../../../../../assets/images/profile.jpeg";
 import GatherPlus from "../../../../../assets/images/GatheringPlus.svg";
 import Crown from "../../../../../assets/images/Crown.svg";
 import Arrow from "../../../../../assets/images/Arrow.svg";
 
+// import modalLayouts
+import ModalLayout from "../../../../common/modalLayout/ModalLayout.components";
+
 const MainRightGatherings = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // modal function
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+  
   return (
     <MainRightGatheringWrapper>
       <MainRightGatheringIcon style={{backgroundImage: `url(${GatheringImage})`}}>
@@ -34,6 +50,11 @@ const MainRightGatherings = () => {
       <MainRightAddGatheringBtn>
         <MainRightGatheringPlusImg className="gathering_plus_img" src={GatherPlus} />
       </MainRightAddGatheringBtn>
+
+      {/* Modal */}
+      <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
+
+      </ModalLayout>
     </MainRightGatheringWrapper>
   );
 };
