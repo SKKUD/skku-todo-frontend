@@ -49,6 +49,11 @@ export const HeaderButtonContentContainer = styled.div`
   align-items: center;
 `;
 
+export const HeaderPopoverButton = styled.button`
+  border: none;
+  background-color: #FFF;
+`;
+
 export const HeaderButtonContent = styled.img`
   width: 28px;
   height: 28px;

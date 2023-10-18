@@ -8,6 +8,7 @@ import {
   HeaderButtonContainer,
   HeaderButtonContent,
   HeaderButtonContentContainer,
+  HeaderPopoverButton
 } from "./Header.styles";
 
 // add assets
@@ -22,11 +23,26 @@ import ColorModal from "./colorModal/colorModal.components";
 // import dropdown
 import DropDown from "./dropdown/DropDown.components";
 
+// impor system popover
+import SystemPopOver from "./SystemPopover/SystemPopover.components";
+
 const Header = () => {
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
+
   // alert dropdown
   const [dropdown, setDropDown] = useState(false);
+
+  // system popover
+  // 팝업
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+  const PopoverOpen = Boolean(anchorEl);
 
   // modal function
   const handleModalOpen = () => {
@@ -57,9 +73,15 @@ const Header = () => {
           <HeaderButtonContent onClick={handleClickTheme} src={ThemeColor}/>
 
           {/* system */}
-          <HeaderButtonContent src={System}>
+          <HeaderPopoverButton onClick={handleMenuClick}>
+            <HeaderButtonContent src={System} />
+          </HeaderPopoverButton>
 
-          </HeaderButtonContent>
+          <SystemPopOver
+            open={PopoverOpen}
+            anchorEl={anchorEl}
+            handleClose={handlePopoverClose}
+          />
 
           {/* modal */}
           <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
