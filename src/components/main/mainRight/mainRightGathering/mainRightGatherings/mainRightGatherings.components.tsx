@@ -20,6 +20,7 @@ import Arrow from "../../../../../assets/images/Arrow.svg";
 
 // import modalLayouts
 import ModalLayout from "../../../../common/modalLayout/ModalLayout.components";
+import MakeGatheringModal from "./MakeGatheringModal/MakeGatheringModal.components";
 
 const MainRightGatherings = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -32,7 +33,7 @@ const MainRightGatherings = () => {
   const handleModalClose = () => {
     setModalOpen(false);
   };
-  
+
   return (
     <MainRightGatheringWrapper>
       <MainRightGatheringIcon style={{backgroundImage: `url(${GatheringImage})`}}>
@@ -47,13 +48,13 @@ const MainRightGatherings = () => {
       </MainRightGatheringIcon>
 
       {/* Add button */}
-      <MainRightAddGatheringBtn>
+      <MainRightAddGatheringBtn onClick={handleModalOpen}>
         <MainRightGatheringPlusImg className="gathering_plus_img" src={GatherPlus} />
       </MainRightAddGatheringBtn>
 
       {/* Modal */}
       <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
-
+        <MakeGatheringModal handleModalClose={handleModalClose} />
       </ModalLayout>
     </MainRightGatheringWrapper>
   );
