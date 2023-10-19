@@ -6,7 +6,12 @@ import {
   CalendarDaysContainer,
   CalendarCellsContainer,
   CalendarHeaderContainer,
-  CalendarCellRows
+  CalendarCellRows,
+  CalendarHeaderNext,
+  CalendarHeaderPrevious,
+  CalendarHeaderMonth,
+  CalendarDaysContent,
+  CalendarCell
 } from "./mainLeftCalendar.styles";
 
 import { format, addMonths, subMonths } from 'date-fns';
@@ -22,32 +27,23 @@ interface IRenderHeader {
 const RenderHeader = ({ currentMonth, prevMonth, nextMonth }: IRenderHeader) => {
   return (
       <CalendarHeaderContainer>
-          <div className="col col-start">
-              <span className="text">
-                  <span className="text month">
-                      {format(currentMonth, 'M')}월
-                  </span>
-                  {format(currentMonth, 'yyyy')}
-              </span>
-          </div>
-          <div className="col col-end">
-              <div onClick={prevMonth}>이전</div>
-              <div onClick={nextMonth}>이후</div>
-          </div>
+        <CalendarHeaderPrevious onClick={prevMonth}>이전</CalendarHeaderPrevious>
+        <CalendarHeaderMonth>{format(currentMonth, 'M')}월</CalendarHeaderMonth>
+        <CalendarHeaderNext onClick={nextMonth}>이후</CalendarHeaderNext>
       </CalendarHeaderContainer>
   );
 };
 
 const RenderDays = () => {
   const days = [];
-  const date = ['Sun', 'Mon', 'Thu', 'Wed', 'Thrs', 'Fri', 'Sat'];
+  const date = ['일', '월', '화', '수', '목', '금', '토'];
 
   for (let i = 0; i < 7; i++) {
-      days.push(
-          <div className="col" key={i}>
-              {date[i]}
-          </div>,
-      );
+    days.push(
+      <CalendarDaysContent key={i}>
+        {date[i]}
+      </CalendarDaysContent>,
+    );
   }
 
   return <CalendarDaysContainer>{days}</CalendarDaysContainer>;
@@ -75,7 +71,7 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) 
           formattedDate = format(day, 'd');
           const cloneDay = day;
           days.push(
-              <div
+              <CalendarCell
                   className={`col cell ${
                       !isSameMonth(day, monthStart)
                           ? 'disabled'
@@ -97,7 +93,7 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) 
                   >
                       {formattedDate}
                   </span>
-              </div>,
+              </CalendarCell>,
           );
           day = addDays(day, 1);
       }
