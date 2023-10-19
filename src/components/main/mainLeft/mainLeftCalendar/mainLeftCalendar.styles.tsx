@@ -1,80 +1,105 @@
 import styled from "@emotion/styled";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const MainLeftCalendarContainer = styled.div`
   width: 100%;
-  height: 288px;
   background-color: white;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
 `
 
-export const MainLeftCalendarBox = styled.div`
+export const CalendarHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+`
+
+export const CalendarHeaderMonth = styled.div`
+  width: 84px;
+  height: 41px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border-radius: 2px;
+  background: var(--back1, #F3F2F0);
+  color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.12px;
 `;
 
-export const MainLeftCalendarContent = styled(Calendar)`
-  border-radius: 15px;
-  border: none;
-  max-width: 100%;
-  margin-bottom: 15px;
-  padding: 20px;
+export const CalendarHeaderNext = styled(ArrowForwardIosIcon)`
+  width: 24px;
+  height: 24px;
+`;
 
-  .react-calendar__navigation {
-    display: flex;
-    height: 24px;
-    margin-bottom: 1em;
-  }
+export const CalendarHeaderPrevious = styled(ArrowBackIosNewIcon)`
+  width: 24px;
+  height: 24px;
+`;
 
-  .react-calendar__navigation button {
-    min-width: 24px;
-    background-color: none;
-  }
 
-  .react-calendar__navigation button:disabled {
-    background-color: #e8e8e8;
-  }
+export const CalendarDaysContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+`
 
-  .react-calendar__navigation button:enabled:hover,
-  .react-calendar__navigation button:enabled:focus {
-    background-color: #e8e8e8;
-  }
+export const CalendarDaysContent = styled.div`
+  width: 37px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.56px;
+`;
 
-  .react-calendar__month-view__weekdays {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.15em;
-  }
+export const CalendarCellsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 20px;
+`
 
-  .react-calendar__year-view .react-calendar__tile,
-  .react-calendar__decade-view .react-calendar__tile,
-  .react-calendar__century-view .react-calendar__tile {
-    padding: 1.2em 0.5em;
-  }
+export const CalendarCellRows = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+`;
 
-  .react-calendar__tile--hasActive {
-    color: #ffffff;
-    background-color: #797979;
-    border-radius: 5px;
-  }
-
-  .react-calendar__tile--hasActive:enabled:hover,
-  .react-calendar__tile--hasActive:enabled:focus {
-    background-color: #797979;
-  }
-
-  .react-calendar__tile--active {
-    color: #ffffff;
-    background-color: #6a6a6a;
-    border-radius: 7px;
-  }
-
-  .react-calendar__tile--active:enabled:hover,
-  .react-calendar__tile--active:enabled:focus {
-    background-color: #6a6a6a;
-  }
+export const CalendarCell = styled.div`
+  cursor: pointer;
+  width: 37px;
+  height: 37px;
+  border-radius: 3px;
+  background: var(--back1, #F3F2F0);
+  color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
