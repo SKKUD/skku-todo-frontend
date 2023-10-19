@@ -12,7 +12,3 @@ export const MainRightOtherTodoContainer = styled.div`
   padding-left: 8px;
   padding-bottom: 8px;
 `;
-
-export const MainRightGatheringIcon = styled.div``;
-
-export const MainRightAddGatheringBtn = styled.button``;

@@ -8,17 +8,18 @@ export const MainRightTodoContainer = styled.div`
 `;
 
 export const MainRightTodoContent = styled.div`
-  width: 320px;
+  width: 80%;
   height: 32px;
   border-radius: 2px;
   color: #2c2c2c;
   display: flex;
   align-items: center;
-  padding: 10px;
-  font-size: 16px;
+  margin-left: 8px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
+  letter-spacing: -0.28px;
 `;
 
 export const MainRightTodoCheck = styled.div`
@@ -34,4 +35,5 @@ export const MainRightTodoReaction = styled.div`
   height: 24px;
   border-radius: 100px;
   background: #ffdd00;
+  margin-left: 10px;
 `;
