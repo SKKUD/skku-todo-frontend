@@ -1,20 +1,35 @@
 import styled from "@emotion/styled";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 
 export const MainRightTodoContainer = styled.div`
+  width: 95%;
   display: flex;
   flex-direction: row;
-  margin-top: 16px;
+  justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  margin: auto;
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: "Pretendard-Regular";
+  cursor: pointer;
+`;
+
+export const MainRightTodoContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
 `;
 
 export const MainRightTodoContent = styled.div`
-  width: 80%;
-  height: 32px;
-  border-radius: 2px;
-  color: #2c2c2c;
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
+  width: 75%;
+  color: var(--black, #2c2c2c);
+  font-family: "Pretendard-Regular";
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -30,10 +45,13 @@ export const MainRightTodoCheck = styled.div`
   background: #ededed;
 `;
 
-export const MainRightTodoReaction = styled.div`
+export const MainRightTodoReaction = styled(InsertEmoticonIcon)`
   width: 24px;
   height: 24px;
-  border-radius: 100px;
-  background: #ffdd00;
-  margin-left: 10px;
+  padding-right: 5px;
+  &:hover {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s;
+  }
 `;

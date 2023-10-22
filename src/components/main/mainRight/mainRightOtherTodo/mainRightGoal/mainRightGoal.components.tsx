@@ -6,24 +6,38 @@ import {
   MainRightGoalDot,
 } from "./mainRightGoal.styles";
 
-interface propsType {
+import { 
+  MainCenterGoalTodoList,
+  MainCenterGoalWrapper,
+  MainCenterGoalNameDash,
+  MainCenterGoalContainer,
+  MainCenterGoalNameContainer,
+  MainCenterGoalName,
+} from "../../../mainCenter/mainCenterGoal/mainCenterGoal.styles";
+interface IMainRightGoal {
   goal: string;
-  todo: string[];
+  todos: string[];
 }
 
-const MainRightGoal = (props: propsType) => {
-  const goal = props.goal;
-  const todos = props.todo;
+const MainRightGoal = ({goal,todos}: IMainRightGoal) => {
+  
   return (
-    <MainRightGoalContainer>
-      <MainRightGoalHeader>
-        <MainRightGoalDot />
-        {goal}
-      </MainRightGoalHeader>
-      {todos.map((t) => (
-        <MainRightTodo content={t} />
-      ))}
-    </MainRightGoalContainer>
+    <MainCenterGoalWrapper>
+      <MainCenterGoalContainer>
+        <MainCenterGoalNameContainer>
+          <MainCenterGoalNameDash />
+          <MainCenterGoalName>{goal}</MainCenterGoalName>
+        </MainCenterGoalNameContainer>
+      </MainCenterGoalContainer>
+
+      <MainCenterGoalTodoList>
+        {
+          todos.map((todoContent) => (
+            <MainRightTodo content={todoContent} />
+          ))
+        }
+      </MainCenterGoalTodoList>
+    </MainCenterGoalWrapper>
   );
 };
 

@@ -22,11 +22,39 @@ export const HeaderContent = styled.div`
 export const HeaderLogoContainer = styled.div`
   width: 200px;
   height: 48px;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pretendard-Regular";
+  font-size: 40px;
+  font-weight: 700;
 `;
 
 export const HeaderButtonContainer = styled.div`
   width: 200px;
   height: 48px;
-  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
 `;
+
+export const HeaderButtonContentContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const HeaderPopoverButton = styled.button`
+  border: none;
+  background-color: #FFF;
+`;
+
+export const HeaderButtonContent = styled.img`
+  width: 28px;
+  height: 28px;
+`
