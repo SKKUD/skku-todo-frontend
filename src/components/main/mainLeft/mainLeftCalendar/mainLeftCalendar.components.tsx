@@ -120,6 +120,7 @@ const MainLeftCalendar = () => {
     const onDateClick = (day: any) => {
         setSelectedDate(day);
     };
+    
     return (
       <MainLeftCalendarContainer className="calendar">
           <RenderHeader

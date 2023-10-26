@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const MainRightOtherTodoContainer = styled.div`
   width: 100%;
-  border-radius: 8px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 15px;

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const MainRightGatheringContainer = styled.div`
   max-width: 384px;
   height: 261px;
-  border-radius: 8px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   background-color: white;

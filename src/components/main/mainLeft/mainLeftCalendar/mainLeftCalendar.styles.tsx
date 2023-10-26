@@ -102,4 +102,10 @@ export const CalendarCell = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    background-color: grey;
+
+    transition: all 0.3 ease;
+  }
 `;
