@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 
-import EditIcon from '@mui/icons-material/Edit'; // edit icon
-import CheckIcon from '@mui/icons-material/Check'; // check icon
-import DeleteIcon from '@mui/icons-material/Delete'; // delete icon
+import EditIcon from "@mui/icons-material/Edit"; // edit icon
+import CheckIcon from "@mui/icons-material/Check"; // check icon
+import DeleteIcon from "@mui/icons-material/Delete"; // delete icon
+import RoutineIcon from "../../../../assets/images/Vector.svg";
 
 export const MainCenterTodoContainer = styled.div`
   width: 95%;
@@ -19,10 +20,10 @@ export const MainCenterTodoContainer = styled.div`
   padding-bottom: 4px;
   font-family: "Pretendard-Regular";
   cursor: pointer;
-  
+
   &:hover {
     border-radius: 2px;
-    background: #F5F5F5;
+    background: #f5f5f5;
     transition: all 0.3s;
 
     .todo_function_container {
@@ -36,27 +37,33 @@ export const MainCenterTodoCheckBox = styled.div`
   width: 17px;
   height: 17px;
   border-radius: 2px;
-  border: 0.5px solid #B2B2B2;
-  background: #EDEDED;
+  border: 0.5px solid #b2b2b2;
+  background: #ededed;
   flex-grow: 0;
 `;
 
 export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)`
   width: 17px;
   height: 17px;
-  color: #00DDA8;
+  color: #00dda8;
   border-radius: 2px;
-  border: 0.5px solid #B2B2B2;
-  background: #EDEDED;
+  border: 0.5px solid #b2b2b2;
+  background: #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+export const MainCenterTodoContentRoutine = styled.img`
+  background-image: url(${RoutineIcon});
+  width: 7.087px;
+  height: 11.34px;
+  transform: rotate(30deg);
+`;
 
 export const MainCenterTodoContent = styled.div`
   width: 75%;
-  color: var(--black, #2C2C2C);
+  color: var(--black, #2c2c2c);
   font-family: "Pretendard-Regular";
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -65,14 +72,17 @@ export const MainCenterTodoContent = styled.div`
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
+  &.routine::before {
+    content: RoutineIcon;
+  }
 `;
 
 export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
   width: 75%;
   border: none;
   border-bottom: 1px solid black;
-  color: var(--black, #2C2C2C);
-  background: #F5F5F5;
+  color: var(--black, #2c2c2c);
+  background: #f5f5f5;
   padding: 0px;
   padding-bottom: 3px;
   resize: none;
@@ -82,7 +92,7 @@ export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
-`
+`;
 
 export const MainCenterTodoButtonContainer = styled.div`
   opacity: 0;
@@ -115,5 +125,4 @@ export const MainCenterTodoIconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
 `;

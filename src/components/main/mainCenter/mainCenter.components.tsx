@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 // import styles
-import { 
-  MainCenterContainer
-} from "./mainCenter.styles";
+import { MainCenterContainer } from "./mainCenter.styles";
 
 // import components
 import MainCenterTop from "./mainCenterTop/mainCenterTop.components";
@@ -19,22 +17,23 @@ const MainCenter = () => {
     <MainCenterContainer>
       {/* Top part */}
       <MainCenterTop makeGoal={makeGoal} setMakeGoal={setMakeGoal} />
-
       {/* Goal mapping */}
-      {
-        dummy.todoDummy.map((TodoObject) => {
-          return (
-            <MainCenterGoal key={TodoObject.goalID} goal={TodoObject.goal} goalID={TodoObject.goalID} todoList={TodoObject.todo}/>
-          )
-        })
-      }
-
+      {dummy.todoDummy.map((TodoObject) => {
+        return (
+          <MainCenterGoal
+            key={TodoObject.goalID}
+            goal={TodoObject.goal}
+            goalID={TodoObject.goalID}
+            todoList={TodoObject.todo}
+          />
+        );
+      })}
       {/* new goal added */}
-      {
-        makeGoal && <MainCenterMakeGoal makeGoal={makeGoal} setMakeGoal={setMakeGoal} />
-      }
+      {makeGoal && (
+        <MainCenterMakeGoal makeGoal={makeGoal} setMakeGoal={setMakeGoal} />
+      )}
     </MainCenterContainer>
-  )
-}
+  );
+};
 
 export default MainCenter;

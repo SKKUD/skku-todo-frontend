@@ -1,38 +1,62 @@
 {
-  "todoDummy" : [
-    { 
+  "todoDummy": [
+    {
       "goalID": "goal1",
       "goal": "학교수업",
       "todo": [
         {
           "todoID": "goal1todo1",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기",
+          "routine": {
+            "routineDay": ["월"],
+            "routineEndDate": "2023-10-03"
+          }
         },
         {
           "todoID": "goal1todo2",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         },
         {
           "todoID": "goal1todo3",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기가 만약에 두 줄이 된다면 너 우짤래?"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기가 만약에 두 줄이 된다면 너 우짤래?",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         },
         {
           "todoID": "goal1todo4",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         }
       ]
     },
-    { 
+    {
       "goalID": "goal2",
       "goal": "토익",
       "todo": [
         {
           "todoID": "goal2todo1",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         },
         {
           "todoID": "goal2todo2",
-          "todo": "문화산업과데이터분석 5주차 강의 듣기"
+          "todo": "문화산업과데이터분석 5주차 강의 듣기",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         }
       ]
     },
@@ -42,19 +66,23 @@
       "todo": [
         {
           "todoID": "goal3todo1",
-          "todo": "디자인 공부하기"
+          "todo": "디자인 공부하기",
+          "routine": {
+            "routineDay": ["화, 목"],
+            "routineEndDate": "2023-10-23"
+          }
         },
         {
           "todoID": "goal3todo2",
-          "todo": "학교 강의 다 듣기....."
+          "todo": "학교 강의 다 듣기.....",
+          "routine": {
+            "routineDay": [],
+            "routineEndDate": ""
+          }
         }
       ]
     }
   ],
-  "frindTodo" : [
-
-  ],
-  "gathering" : [
-    
-  ]
+  "frindTodo": [],
+  "gathering": []
 }
