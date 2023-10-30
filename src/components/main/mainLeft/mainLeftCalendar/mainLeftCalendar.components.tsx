@@ -66,6 +66,11 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) 
   let day = startDate;
   let formattedDate = '';
 
+  const onClickCell = () => {
+    console.log(currentMonth);
+    console.log()
+  };
+
   while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
           formattedDate = format(day, 'd');
@@ -82,7 +87,7 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) 
                           : 'valid'
                   }`}
                   // key={day}
-                  // onClick={() => onDateClick(parse(cloneDay))}
+                  onClick={() =>onClickCell}
               >
                   <span
                       className={
@@ -120,7 +125,7 @@ const MainLeftCalendar = () => {
     const onDateClick = (day: any) => {
         setSelectedDate(day);
     };
-    
+
     return (
       <MainLeftCalendarContainer className="calendar">
           <RenderHeader
