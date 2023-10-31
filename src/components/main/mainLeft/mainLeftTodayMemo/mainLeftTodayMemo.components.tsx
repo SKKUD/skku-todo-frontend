@@ -6,11 +6,17 @@ import { ChangeEvent } from "react";
 import { 
   MainLeftTodayMemoContainer,
   MainLeftTodayMemoDate,
+  MainLeftTodayMemoYear,
+  MainLeftTodayMemoMonth,
+  MainLeftTodayMemoDay,
   MainLeftTodayMemoContent,
   MainLeftTodayMemoSizeWrapper,
+  MainLeftTodayMemoSvgContainer,
+  MainLeftTodayMemoSvg,
 } from "./mainLeftTodayMemo.styles";
 
 import MainLeftTodayMemoSize from "./mainLeftTodayMemoSize/mainLeftTodayMemoSize.components";
+import MemoSvg from "../../../../assets/images/Memo.svg";
 
 const MainLeftTodayMemo = () => {
   // state
@@ -51,7 +57,15 @@ const MainLeftTodayMemo = () => {
 
   return (
     <MainLeftTodayMemoContainer>
-      <MainLeftTodayMemoDate>{year}년 {month}월 {date}일</MainLeftTodayMemoDate>
+      <MainLeftTodayMemoSvgContainer>
+        <MainLeftTodayMemoSvg src={MemoSvg}/>
+        <MainLeftTodayMemoSvg src={MemoSvg}/>
+      </MainLeftTodayMemoSvgContainer>
+      <MainLeftTodayMemoDate>
+        <MainLeftTodayMemoYear>{year}년</MainLeftTodayMemoYear>
+        <MainLeftTodayMemoMonth>{month}월</MainLeftTodayMemoMonth>
+        <MainLeftTodayMemoDay>{date}일</MainLeftTodayMemoDay>
+      </MainLeftTodayMemoDate>
       <MainLeftTodayMemoContent onChange={(event) => handleContent(event)} value={message} style={{fontSize:`${currentFontSize}px`}} />
       <MainLeftTodayMemoSizeWrapper>
         <MainLeftTodayMemoSize setFontSize={setCurrentFontSize}/>

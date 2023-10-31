@@ -11,17 +11,67 @@ export const MainLeftTodayMemoContainer = styled.div`
   align-items: center;
 `;
 
+export const MainLeftTodayMemoSvgContainer = styled.div`
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -30px;
+  z-index: 1000;
+`
+
+export const MainLeftTodayMemoSvg = styled.img`
+  width: 36px;
+  height: 27px;
+`;
+
 export const MainLeftTodayMemoDate = styled.div`
   width: 95%;
-  height: 40px;
-  font-family: "Pretendard-Regular";
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const MainLeftTodayMemoYear = styled.div`
+  height: 42px;
+  padding: 4px;
   color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: -1.12px;
+  border-radius: 2px;
+  background: var(--back1, #F3F2F0);
+`;
+
+export const MainLeftTodayMemoMonth = styled.div`
+  height: 42px;
+  padding: 4px;
+  color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.12px;
+  border-radius: 2px;
+  background: var(--back1, #F3F2F0);
+`;
+
+export const MainLeftTodayMemoDay = styled.div`
+  height: 42px;
+  padding: 4px;
+  color: var(--grey1, #5F5F5F);
+  font-family: "Pretendard-Regular";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.12px;
+  border-radius: 2px;
+  background: var(--back1, #F3F2F0);
 `;
 
 export const MainLeftTodayMemoContent = styled.textarea`
