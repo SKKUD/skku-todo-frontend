@@ -20,16 +20,31 @@ export const MainCenterTodoContainer = styled.div`
   font-family: "Pretendard-Regular";
   cursor: pointer;
 
+  .todo_function_container {
+    display: flex;
+    flex-direction: row;
+  }
   &:hover {
     border-radius: 2px;
     background: #f5f5f5;
     transition: all 0.3s;
 
-    .todo_function_container {
+    /* .todo_function_container {
       display: flex;
       opacity: 1;
-    }
+    } */
   }
+`;
+
+export const MainCenterTodoRoutineText = styled.div`
+  color: var(--grey2, #8c8c8c);
+  text-align: right;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.2px;
 `;
 
 export const MainCenterTodoCheckBox = styled.div`
@@ -87,7 +102,7 @@ export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
 `;
 
 export const MainCenterTodoButtonContainer = styled.div`
-  opacity: 0;
+  //opacity: 0;
   display: flex;
   flex-direction: row;
   gap: 10px;

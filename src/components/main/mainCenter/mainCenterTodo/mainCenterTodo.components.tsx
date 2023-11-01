@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChangeEvent } from "react";
+import { ChangeEvent, MouseEvent } from "react";
 
 import {
   MainCenterTodoContainer,
@@ -11,7 +11,11 @@ import {
   MainCenterTodoEditIcon,
   MainCenterTodoCheckIcon,
   MainCenterTodoDeleteIcon,
+  MainCenterTodoRoutineText,
 } from "./mainCenterTodo.styles";
+
+import { MainCenterMakeRoutineButton } from "../mainCenterMakeTodo/mainCenterMakeTodo.styles";
+import MainCenterMakeRoutine from "../mainCenterMakeRoutine/mainCenterMakeRoutine.components";
 
 // assets
 import Check from "../../../../assets/images/check.svg";
@@ -39,10 +43,16 @@ const MainCenterTodo = ({
   todoContent,
   routine,
 }: IMainCenterTodo) => {
-  console.log("todoID", todoID, todoContent, "routine", routine);
   const [currentTodo, setCurrentTodo] = useState<string>(todoContent);
   const [check, setCheck] = useState<boolean>(false);
   const [editMode, setEditMode] = useState<boolean>(false);
+  const [isHover, setIsHover] = useState<boolean>(false);
+  const [editRoutine, setEditRoutine] = useState<boolean>(false);
+  const [newRoutine, setNewRoutine] = useState<IRoutine>({
+    routineDay: routine?.routineDay,
+    routineEndDate: routine?.routineEndDate,
+  });
+
   // handle function
   const handleCheck = () => {
     setCheck(!check);
@@ -66,48 +76,97 @@ const MainCenterTodo = ({
 
     // set edit mode false
     setEditMode(false);
+    setEditRoutine(false);
   };
 
   const handleOnClickDelete = () => {
-    // add delete logic
+    console.log("delete");
+    dummy.todoDummy
+      .find((element) => element.goalID === goalID)
+      ?.todo.filter((element) => element.todoID !== todoID);
   };
 
+  const handleEditRoutine = () => {
+    setEditRoutine(!editRoutine);
+  };
   const handleOnChangeTodo = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setCurrentTodo(event.target.value);
   };
 
+  const handleMouseOver = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHover(false);
+  };
+
   return (
-    <MainCenterTodoContainer className="todo_hover_point">
-      {/* check box point */}
-      {check ? (
-        <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} />
-      ) : (
-        <MainCenterTodoCheckBox onClick={handleCheck} />
-      )}
-      {/* todo content show */}
-      {editMode ? (
-        <MainCenterTodoContentEdit
-          onChange={handleOnChangeTodo}
-          value={currentTodo}
-        />
-      ) : routine?.routineDay?.length !== 0 ? (
-        <>
-          <img src={Routine} />
-          <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
-        </>
-      ) : (
-        <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
-      )}
-      {/* todo button (edit, delete) */}
-      <MainCenterTodoButtonContainer className="todo_function_container">
-        {editMode ? (
-          <MainCenterTodoCheckIcon onClick={handleOnClickCheck} />
+    <>
+      <MainCenterTodoContainer
+        className="todo_hover_point"
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
+        {/* check box point */}
+        {check ? (
+          <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} />
         ) : (
-          <MainCenterTodoEditIcon onClick={handleOnClickEdit} />
+          <MainCenterTodoCheckBox onClick={handleCheck} />
         )}
-        <MainCenterTodoDeleteIcon onClick={handleOnClickDelete} />
-      </MainCenterTodoButtonContainer>
-    </MainCenterTodoContainer>
+        {/* todo content show */}
+        {editMode ? (
+          <MainCenterTodoContentEdit
+            onChange={handleOnChangeTodo}
+            value={currentTodo}
+          />
+        ) : routine?.routineDay?.length !== 0 &&
+          routine?.routineDay !== null ? (
+          <>
+            <img src={Routine} />
+            <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
+          </>
+        ) : (
+          <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
+        )}
+        {/* todo button (edit, delete) */}
+        <MainCenterTodoButtonContainer className="todo_function_container">
+          {isHover ? (
+            editMode ? (
+              <>
+                <MainCenterTodoCheckIcon onClick={handleOnClickCheck} />
+                <MainCenterTodoDeleteIcon onClick={handleOnClickDelete} />
+                <MainCenterMakeRoutineButton onClick={handleEditRoutine}>
+                  루틴
+                </MainCenterMakeRoutineButton>
+              </>
+            ) : (
+              <>
+                <MainCenterTodoEditIcon onClick={handleOnClickEdit} />
+                <MainCenterTodoDeleteIcon onClick={handleOnClickDelete} />
+              </>
+            )
+          ) : (
+            <MainCenterTodoRoutineText>
+              {routine?.routineDay?.toString()}
+            </MainCenterTodoRoutineText>
+          )}
+        </MainCenterTodoButtonContainer>
+      </MainCenterTodoContainer>
+      {editRoutine ? (
+        <MainCenterMakeRoutine
+          routine={{
+            routineDay: newRoutine?.routineDay,
+            routineEndDate: newRoutine?.routineEndDate,
+          }}
+          setRoutine={setNewRoutine}
+          todoID={todoID}
+          goalID={goalID}
+        />
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 
