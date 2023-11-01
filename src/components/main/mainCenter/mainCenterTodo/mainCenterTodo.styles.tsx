@@ -5,7 +5,6 @@ import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import EditIcon from "@mui/icons-material/Edit"; // edit icon
 import CheckIcon from "@mui/icons-material/Check"; // check icon
 import DeleteIcon from "@mui/icons-material/Delete"; // delete icon
-import RoutineIcon from "../../../../assets/images/Vector.svg";
 
 export const MainCenterTodoContainer = styled.div`
   width: 95%;
@@ -52,13 +51,6 @@ export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const MainCenterTodoContentRoutine = styled.img`
-  background-image: url(${RoutineIcon});
-  width: 7.087px;
-  height: 11.34px;
-  transform: rotate(30deg);
 `;
 
 export const MainCenterTodoContent = styled.div`

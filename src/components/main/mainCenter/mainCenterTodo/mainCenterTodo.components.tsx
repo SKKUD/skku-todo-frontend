@@ -8,8 +8,6 @@ import {
   MainCenterTodoContentEdit,
   MainCenterTodoCheckBoxChecked,
   MainCenterTodoButtonContainer,
-  MainCenterTodoIconContainer,
-  MainCenterTodoContentRoutine,
   MainCenterTodoEditIcon,
   MainCenterTodoCheckIcon,
   MainCenterTodoDeleteIcon,
@@ -21,6 +19,7 @@ import EditIcon from "@mui/icons-material/Edit"; // edit icon
 import DeleteIcon from "@mui/icons-material/Delete"; // delete icon
 import CheckIcon from "@mui/icons-material/Check"; // check icon
 import dummy from "../../../../utils/data/dummy.json";
+import Routine from "../../../../assets/images/Vector.svg";
 
 interface IRoutine {
   routineDay?: string[] | undefined | null;
@@ -93,7 +92,7 @@ const MainCenterTodo = ({
         />
       ) : routine?.routineDay?.length !== 0 ? (
         <>
-          <MainCenterTodoContentRoutine />
+          <img src={Routine} />
           <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
         </>
       ) : (
