@@ -29,8 +29,22 @@ const ColorModal: FC<SendMessageProps> = ({ handleModalClose }) => {
     // set current color to useState
     setCurrentColor(color);
 
-    // 
-  };  
+    // save it to localStorage
+    localStorage.setItem("themeColor", String(color));
+
+    // reload page
+    window.location.reload();
+  };
+
+  // get theme color from localStorage
+  useEffect(() => {
+    const themeColor = localStorage.getItem("themeColor")
+
+    if (themeColor) {
+      setCurrentColor(Number(themeColor));
+    }
+
+  }, [])
   return (
     <ColorModalContainer>
       {/* Header */}
