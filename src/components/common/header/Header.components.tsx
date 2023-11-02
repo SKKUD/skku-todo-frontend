@@ -8,7 +8,8 @@ import {
   HeaderButtonContainer,
   HeaderButtonContent,
   HeaderButtonContentContainer,
-  HeaderPopoverButton
+  HeaderPopoverButton,
+  HeaderGatheringButton
 } from "./Header.styles";
 
 // add assets
@@ -54,15 +55,29 @@ const Header = () => {
 
   const handleClickTheme = () => {
     handleModalOpen();
-  }
+  };
+
+  const handleClickGathering = () => {
+
+  };
 
   return (
     <HeaderContainer>
       <HeaderContent>
+        {/* logo container */}
         <HeaderLogoContainer>
           LOGO
         </HeaderLogoContainer>
+
+        {/* button container */}
         <HeaderButtonContainer>
+          {/* 모임 */}
+          <HeaderButtonContentContainer>
+            <HeaderGatheringButton onClick={handleClickGathering}>
+              모임
+            </HeaderGatheringButton>
+          </HeaderButtonContentContainer>
+      
           {/* alert */}
           <HeaderButtonContentContainer>
             <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={Bell} />

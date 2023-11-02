@@ -30,6 +30,19 @@ export const HeaderLogoContainer = styled.div`
   font-weight: 700;
 `;
 
+export const HeaderGatheringButton = styled.button`
+  width: 42px;
+  border: none;
+  color: var(--grey1, #5F5F5F);
+  background: none;
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0px;
+`;
+
 export const HeaderButtonContainer = styled.div`
   width: 200px;
   height: 48px;
@@ -37,7 +50,7 @@ export const HeaderButtonContainer = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
+  gap: 17px;
   padding-right: 20px;
 `;
 

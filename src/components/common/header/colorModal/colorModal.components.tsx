@@ -13,7 +13,7 @@ import {
   ColorModalColorChoosen,
 } from "./colorModal.styles";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import LightMode from "../../../../assets/images/lightMode.svg";
 import DarkMode from "../../../../assets/images/darkMode.svg";
@@ -26,9 +26,11 @@ const ColorModal: FC<SendMessageProps> = ({ handleModalClose }) => {
   const [currentColor, setCurrentColor] = useState<number>(0);
 
   const handleOnClickColor = (color: number) => {
+    // set current color to useState
     setCurrentColor(color);
-  };
 
+    // 
+  };  
   return (
     <ColorModalContainer>
       {/* Header */}
