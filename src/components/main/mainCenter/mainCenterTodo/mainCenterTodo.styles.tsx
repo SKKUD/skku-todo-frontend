@@ -7,7 +7,7 @@ import CheckIcon from "@mui/icons-material/Check"; // check icon
 import DeleteIcon from "@mui/icons-material/Delete"; // delete icon
 import RoutineIcon from "../../../../assets/images/Vector.svg";
 
-export const MainCenterTodoContainer = styled.div`
+export const MainCenterTodoContainer = styled.div<{lightBgColor: string}>`
   width: 95%;
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@ export const MainCenterTodoContainer = styled.div`
 
   &:hover {
     border-radius: 2px;
-    background: #f5f5f5;
+    background: ${props => props.lightBgColor};
     transition: all 0.3s;
 
     .todo_function_container {
@@ -33,22 +33,22 @@ export const MainCenterTodoContainer = styled.div`
   }
 `;
 
-export const MainCenterTodoCheckBox = styled.div`
+export const MainCenterTodoCheckBox = styled.div<{checkBgColor: string}>`
   width: 17px;
   height: 17px;
   border-radius: 2px;
   border: 0.5px solid #b2b2b2;
-  background: #ededed;
+  background: ${props => props.checkBgColor};
   flex-grow: 0;
 `;
 
-export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)`
+export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)<{checkBgColor: string}>`
   width: 17px;
   height: 17px;
   color: #00dda8;
   border-radius: 2px;
   border: 0.5px solid #b2b2b2;
-  background: #ededed;
+  background: ${props => props.checkBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,9 +61,9 @@ export const MainCenterTodoContentRoutine = styled.img`
   transform: rotate(30deg);
 `;
 
-export const MainCenterTodoContent = styled.div`
+export const MainCenterTodoContent = styled.div<{textColor: string}>`
   width: 75%;
-  color: var(--black, #2c2c2c);
+  color: var(--black, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -104,7 +104,8 @@ export const MainCenterTodoButtonContainer = styled.div`
   transition: all 0.3s;
 `;
 
-export const MainCenterTodoEditIcon = styled(EditIcon)`
+export const MainCenterTodoEditIcon = styled(EditIcon)<{themeColor: string}>`
+  fill: ${props => props.themeColor};
   width: 15px;
   height: 15px;
 `;
@@ -114,7 +115,8 @@ export const MainCenterTodoCheckIcon = styled(CheckIcon)`
   height: 15px;
 `;
 
-export const MainCenterTodoDeleteIcon = styled(DeleteIcon)`
+export const MainCenterTodoDeleteIcon = styled(DeleteIcon)<{themeColor: string}>`
+  fill: ${props => props.themeColor};
   width: 15px;
   height: 15px;
 `;

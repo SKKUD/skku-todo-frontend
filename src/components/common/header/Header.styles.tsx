@@ -62,9 +62,9 @@ export const HeaderButtonContentContainer = styled.div`
   align-items: center;
 `;
 
-export const HeaderPopoverButton = styled.button`
+export const HeaderPopoverButton = styled.button<{backgroundColor: string}>`
   border: none;
-  background-color: #FFF;
+  background-color: ${props => props.backgroundColor};
 `;
 
 export const HeaderButtonContent = styled.img`

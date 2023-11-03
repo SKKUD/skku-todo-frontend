@@ -17,6 +17,10 @@ import Bell from "../../../assets/images/bell.svg";
 import ThemeColor from "../../../assets/images/themeColor.svg";
 import System from "../../../assets/images/setting.svg";
 
+import DarkBell from "../../../assets/images/bell_dark.svg";
+import DarkThemeColor from "../../../assets/images/color_dark.svg";
+import DarkSystem from "../../../assets/images/settingDarkMode.svg";
+
 // import modal
 import ModalLayout from "../modalLayout/ModalLayout.components";
 import ColorModal from "./colorModal/colorModal.components";
@@ -98,17 +102,17 @@ const Header = () => {
           </HeaderButtonContentContainer>
       
           {/* alert */}
-          <HeaderButtonContentContainer>
-            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={Bell} />
+          <HeaderButtonContentContainer >
+            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={(theme==="1" ? DarkBell : Bell)} />
             <DropDown visibility={dropdown} />
           </HeaderButtonContentContainer>
 
           {/* theme */}
-          <HeaderButtonContent onClick={handleClickTheme} src={ThemeColor}/>
+          <HeaderButtonContent onClick={handleClickTheme} src={(theme==="1" ? DarkThemeColor : ThemeColor)}/>
 
           {/* system */}
-          <HeaderPopoverButton onClick={handleMenuClick}>
-            <HeaderButtonContent src={System} />
+          <HeaderPopoverButton backgroundColor={backgroundColor} onClick={handleMenuClick}>
+            <HeaderButtonContent src={(theme==="1" ? DarkSystem : System)} />
           </HeaderPopoverButton>
 
           <SystemPopOver

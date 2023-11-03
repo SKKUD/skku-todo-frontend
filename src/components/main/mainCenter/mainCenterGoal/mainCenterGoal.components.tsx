@@ -16,6 +16,7 @@ import plusButton from "../../../../assets/images/plus.svg";
 import MainCenterTodo from "../mainCenterTodo/mainCenterTodo.components";
 
 import MainCenterMakeTodo from "../mainCenterMakeTodo/mainCenterMakeTodo.components";
+import { light } from "@mui/material/styles/createPalette";
 
 interface IRoutine {
   routineDay?: string[] | undefined | null;
@@ -32,9 +33,13 @@ interface IMainCenterGoal {
   goal: string;
   goalID: string;
   todoList: Array<ITodoObject>;
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
+  checkBgColor: string,
 }
 
-const MainCenterGoal = ({ goal, goalID, todoList }: IMainCenterGoal) => {
+const MainCenterGoal = ({ goal, goalID, todoList, textColor, backgroundColor, lightBgColor, checkBgColor}: IMainCenterGoal) => {
   const [makeTodo, setMakeTodo] = useState<boolean>(false);
   const [makeRoutine, setMakeRoutine] = useState<boolean>(false);
   const handleClickPlus = () => {
@@ -44,10 +49,10 @@ const MainCenterGoal = ({ goal, goalID, todoList }: IMainCenterGoal) => {
   return (
     <MainCenterGoalWrapper>
       {/* My Goal */}
-      <MainCenterGoalContainer>
+      <MainCenterGoalContainer lightBgColor={lightBgColor}>
         <MainCenterGoalNameContainer>
           <MainCenterGoalNameDash />
-          <MainCenterGoalName>{goal}</MainCenterGoalName>
+          <MainCenterGoalName textColor={textColor}>{goal}</MainCenterGoalName>
         </MainCenterGoalNameContainer>
         {!makeTodo && (
           <MainCenterGoalAddButton onClick={handleClickPlus} src={plusButton} />
@@ -63,6 +68,10 @@ const MainCenterGoal = ({ goal, goalID, todoList }: IMainCenterGoal) => {
               todoID={todoObject.todoID}
               todoContent={todoObject.todo}
               routine={todoObject.routine}
+              textColor={textColor}
+              backgroundColor={backgroundColor}
+              lightBgColor={lightBgColor}
+              checkBgColor={checkBgColor}
             />
           );
         })}

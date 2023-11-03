@@ -20,9 +20,12 @@ import ReactionModal from "./ReactionModal/ReactionModal.components";
 interface IMainRightTodo {
   // isChecked?: boolean;
   content: string;
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
 }
 
-const MainRightTodo = ({content}: IMainRightTodo) => {
+const MainRightTodo = ({content, textColor, backgroundColor, lightBgColor}: IMainRightTodo) => {
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -39,12 +42,12 @@ const MainRightTodo = ({content}: IMainRightTodo) => {
     <MainRightTodoContainer>
       {/* todo content */}
       <MainRightTodoContentContainer>
-        <MainCenterTodoCheckBox />
-        <MainRightTodoContent>{content}</MainRightTodoContent>
+        <MainCenterTodoCheckBox checkBgColor={lightBgColor} />
+        <MainRightTodoContent textColor={textColor}>{content}</MainRightTodoContent>
       </MainRightTodoContentContainer>
 
       {/* Reaction */}
-      <MainRightTodoReaction onClick={handleModalOpen}/>
+      <MainRightTodoReaction themeColor={textColor} onClick={handleModalOpen}/>
 
       {/* Modal */}
       <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>

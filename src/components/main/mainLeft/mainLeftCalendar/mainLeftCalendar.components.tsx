@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // import styled components
 import { 
@@ -14,6 +14,9 @@ import {
   CalendarCell
 } from "./mainLeftCalendar.styles";
 
+import { useRecoilValue } from 'recoil';
+import { themeColor } from '../../../../recoil/recoil';
+
 import { format, addMonths, subMonths } from 'date-fns';
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
 import { isSameMonth, isSameDay, addDays, parse } from 'date-fns';
@@ -22,25 +25,31 @@ interface IRenderHeader {
   currentMonth: any;
   prevMonth: any;
   nextMonth: any;
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
 }
 
-const RenderHeader = ({ currentMonth, prevMonth, nextMonth }: IRenderHeader) => {
+const RenderHeader = ({ currentMonth, prevMonth, nextMonth, textColor, backgroundColor, lightBgColor }: IRenderHeader) => {
   return (
       <CalendarHeaderContainer>
-        <CalendarHeaderPrevious onClick={prevMonth}>이전</CalendarHeaderPrevious>
-        <CalendarHeaderMonth>{format(currentMonth, 'M')}월</CalendarHeaderMonth>
-        <CalendarHeaderNext onClick={nextMonth}>이후</CalendarHeaderNext>
+        <CalendarHeaderPrevious themeColor={textColor} onClick={prevMonth}>이전</CalendarHeaderPrevious>
+        <CalendarHeaderMonth textColor={textColor} lightBgColor={lightBgColor}>{format(currentMonth, 'M')}월</CalendarHeaderMonth>
+        <CalendarHeaderNext themeColor={textColor} onClick={nextMonth}>이후</CalendarHeaderNext>
       </CalendarHeaderContainer>
   );
 };
 
-const RenderDays = () => {
+interface IRenderDays {
+  textColor: string;
+}
+const RenderDays = ({textColor}: IRenderDays) => {
   const days = [];
   const date = ['일', '월', '화', '수', '목', '금', '토'];
 
   for (let i = 0; i < 7; i++) {
     days.push(
-      <CalendarDaysContent key={i}>
+      <CalendarDaysContent textColor={textColor} key={i}>
         {date[i]}
       </CalendarDaysContent>,
     );
@@ -53,9 +62,12 @@ interface IRenderCells {
   currentMonth: any;
   selectedDate: any;
   onDateClick: any;
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
 }
 
-const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) => {
+const RenderCells = ({ currentMonth, selectedDate, onDateClick, textColor, backgroundColor, lightBgColor}: IRenderCells) => {
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
@@ -72,6 +84,8 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }: IRenderCells) 
           const cloneDay = day;
           days.push(
               <CalendarCell
+                  lightBgColor={lightBgColor}
+                  textColor={textColor}
                   className={`col cell ${
                       !isSameMonth(day, monthStart)
                           ? 'disabled'
@@ -111,6 +125,24 @@ const MainLeftCalendar = () => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState(new Date());
 
+    const theme = useRecoilValue(themeColor);
+
+    const [textColor, setTextColor] = useState<string>("#5F5F5F");
+    const [backgroundColor, setBackgroundColor] = useState<string>("#FCFCFC");
+    const [lightBgColor, setLightBgColor] = useState<string>("#F5F4F6");
+
+    useEffect(() => {
+      if (theme === "1") {
+        setTextColor("#FCFCFC");
+        setBackgroundColor("#5F5F5F");
+        setLightBgColor("#8C8C8C");
+      } else {
+        setTextColor("#5F5F5F");
+        setBackgroundColor("#FCFCFC");
+        setLightBgColor("#F5F4F6");
+      }
+    }, [theme]);
+
     const prevMonth = () => {
         setCurrentMonth(subMonths(currentMonth, 1));
     };
@@ -120,18 +152,25 @@ const MainLeftCalendar = () => {
     const onDateClick = (day: any) => {
         setSelectedDate(day);
     };
+    
     return (
-      <MainLeftCalendarContainer className="calendar">
+      <MainLeftCalendarContainer backgroundColor={backgroundColor} className="calendar">
           <RenderHeader
               currentMonth={currentMonth}
               prevMonth={prevMonth}
               nextMonth={nextMonth}
+              textColor={textColor}
+              backgroundColor={backgroundColor}
+              lightBgColor={lightBgColor}
           />
-          <RenderDays />
+          <RenderDays textColor={textColor}/>
           <RenderCells
               currentMonth={currentMonth}
               selectedDate={selectedDate}
               onDateClick={onDateClick}
+              textColor={textColor}
+              backgroundColor={backgroundColor}
+              lightBgColor={lightBgColor}
           />
       </ MainLeftCalendarContainer>
   );
