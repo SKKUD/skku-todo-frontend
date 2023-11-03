@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
-export const MainLeftSubProfileContainer = styled.div`
+export const MainLeftSubProfileContainer = styled.div<{backgroundColor: string}>`
   width: 100%;
   height: 208px;
-  background-color: white;
+  background-color: ${props => props.backgroundColor};
   border-radius: 15px;
   display: flex;
   align-items: center;

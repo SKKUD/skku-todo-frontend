@@ -15,12 +15,12 @@ export const MainLeftProfilePhoto = styled.img`
   border-radius: 5px;
 `
 
-export const MainLeftProfileHello = styled.div`
+export const MainLeftProfileHello = styled.div<{textColor: string}>`
   height: 42px;
   display: flex;
   font-family: "Pretendard-Regular";
   align-items: center;
-  color: #000;
+  color: ${props => props.textColor};
   font-size: 24px;
   font-style: normal;
   font-weight: 600;

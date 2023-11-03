@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 import { 
@@ -27,7 +27,15 @@ import DropDown from "./dropdown/DropDown.components";
 // impor system popover
 import SystemPopOver from "./SystemPopover/SystemPopover.components";
 
+import { themeColor } from "../../../recoil/recoil";
+import { useRecoilValue } from "recoil";
+
 const Header = () => {
+  const theme = useRecoilValue(themeColor);
+  
+  const [backgroundColor, setBackgroundColor] = useState<string>("#FCFCFC");
+  const [textColor, setTextColor] = useState<string>("#5F5F5F")
+
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -61,8 +69,19 @@ const Header = () => {
 
   };
 
+  useEffect(() => {
+    if (theme === "1") { // if dark mode
+      setBackgroundColor("#3D3D3D");
+      setTextColor("#FCFCFC");
+    }
+    else {
+      setBackgroundColor("#FCFCFC");
+      setTextColor("#5F5F5F");
+    }
+  }, [theme]);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer theme={backgroundColor}>
       <HeaderContent>
         {/* logo container */}
         <HeaderLogoContainer>
@@ -73,7 +92,7 @@ const Header = () => {
         <HeaderButtonContainer>
           {/* 모임 */}
           <HeaderButtonContentContainer>
-            <HeaderGatheringButton onClick={handleClickGathering}>
+            <HeaderGatheringButton onClick={handleClickGathering} textColor={textColor}>
               모임
             </HeaderGatheringButton>
           </HeaderButtonContentContainer>

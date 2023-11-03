@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<{theme: string}>`
   width: 100%;
   height: 64px;
-  background-color: white;
+  background-color: ${props => props.theme};
   margin: auto;
   display: flex;
   align-items: center;
@@ -30,10 +30,10 @@ export const HeaderLogoContainer = styled.div`
   font-weight: 700;
 `;
 
-export const HeaderGatheringButton = styled.button`
+export const HeaderGatheringButton = styled.button<{textColor: string}>`
   width: 42px;
   border: none;
-  color: var(--grey1, #5F5F5F);
+  color: var(--grey1, ${props => props.textColor});
   background: none;
   font-family: "Pretendard-Regular";
   font-size: 16px;

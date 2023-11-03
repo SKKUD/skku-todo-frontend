@@ -15,6 +15,9 @@ import {
 
 import { FC, useEffect, useState } from "react";
 
+import { themeColor } from "../../../../recoil/recoil";
+import { useRecoilState } from "recoil";
+
 import LightMode from "../../../../assets/images/lightMode.svg";
 import DarkMode from "../../../../assets/images/darkMode.svg";
 
@@ -23,6 +26,8 @@ interface SendMessageProps {
 }
 
 const ColorModal: FC<SendMessageProps> = ({ handleModalClose }) => {
+  const [theme, setTheme] = useRecoilState(themeColor);
+  
   const [currentColor, setCurrentColor] = useState<number>(0);
 
   const handleOnClickColor = (color: number) => {
@@ -31,9 +36,9 @@ const ColorModal: FC<SendMessageProps> = ({ handleModalClose }) => {
 
     // save it to localStorage
     localStorage.setItem("themeColor", String(color));
-
-    // reload page
-    window.location.reload();
+    
+    // save it to recoil
+    setTheme(String(color));
   };
 
   // get theme color from localStorage
