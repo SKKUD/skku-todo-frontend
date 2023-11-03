@@ -15,7 +15,6 @@ const MainLeft = () => {
   return (
     <MainLeftContainer>
       <MainLeftProfile />
-      <MainLeftGraph />
       <MainLeftTodayMemo />
       <MainLeftCalendar />
     </MainLeftContainer>

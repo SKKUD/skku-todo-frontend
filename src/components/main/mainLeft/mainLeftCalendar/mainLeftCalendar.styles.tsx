@@ -60,8 +60,8 @@ export const CalendarDaysContainer = styled.div`
 `
 
 export const CalendarDaysContent = styled.div<{textColor: string}>`
-  width: 37px;
-  height: 37px;
+  width: 32px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,8 +91,8 @@ export const CalendarCellRows = styled.div`
 
 export const CalendarCell = styled.div<{lightBgColor: string, textColor: string}>`
   cursor: pointer;
-  width: 37px;
-  height: 37px;
+  width: 32px;
+  height: 32px;
   border-radius: 3px;
   background: var(--back1, ${props => props.lightBgColor});
   color: var(--grey1, ${props => props.textColor});

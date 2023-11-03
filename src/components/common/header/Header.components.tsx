@@ -34,6 +34,9 @@ import SystemPopOver from "./SystemPopover/SystemPopover.components";
 import { themeColor } from "../../../recoil/recoil";
 import { useRecoilValue } from "recoil";
 
+import Logo from "../../../assets/images/logo.svg";
+import Group from "../../../assets/images/groupIcon.svg";
+
 const Header = () => {
   const theme = useRecoilValue(themeColor);
   
@@ -88,17 +91,13 @@ const Header = () => {
     <HeaderContainer theme={backgroundColor}>
       <HeaderContent>
         {/* logo container */}
-        <HeaderLogoContainer>
-          LOGO
-        </HeaderLogoContainer>
+        <HeaderLogoContainer src={Logo}/>
 
         {/* button container */}
         <HeaderButtonContainer>
           {/* 모임 */}
           <HeaderButtonContentContainer>
-            <HeaderGatheringButton onClick={handleClickGathering} textColor={textColor}>
-              모임
-            </HeaderGatheringButton>
+            <HeaderGatheringButton onClick={handleClickGathering} src={Group}/>
           </HeaderButtonContentContainer>
       
           {/* alert */}

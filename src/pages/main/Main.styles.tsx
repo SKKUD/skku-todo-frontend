@@ -8,11 +8,16 @@ export const MainBackground = styled.div<{ theme: string }>`
 
 export const MainContainer = styled.div`
   width: 80%;
-  max-width: 1280px;
+  max-width: 1024px;
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
   margin: auto;
+
+  @media (max-width: 824px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `

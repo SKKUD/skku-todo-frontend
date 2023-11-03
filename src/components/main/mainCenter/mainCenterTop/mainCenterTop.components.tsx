@@ -22,7 +22,7 @@ const MainCenterTop = ({makeGoal, setMakeGoal,textColor,backgroundColor,lightBgC
 
   return (
     <MainCenterTopContainer>
-      <MainCenterTopMyTodo textColor={textColor}>나의 투두</MainCenterTopMyTodo>
+      <MainCenterTopMyTodo textColor={textColor}>TODO</MainCenterTopMyTodo>
       { !makeGoal && <MainCenterTopAddGoal lightBgColor={lightBgColor} textColor={textColor} onClick={handleOnClickAddGoal}>목표 추가</MainCenterTopAddGoal> }
     </MainCenterTopContainer>
   )
