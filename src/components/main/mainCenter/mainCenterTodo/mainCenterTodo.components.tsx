@@ -32,6 +32,10 @@ interface IMainCenterTodo {
   todoID: string;
   todoContent: string;
   routine?: IRoutine;
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
+  checkBgColor: string;
 }
 
 const MainCenterTodo = ({
@@ -39,6 +43,10 @@ const MainCenterTodo = ({
   todoID,
   todoContent,
   routine,
+  textColor,
+  backgroundColor,
+  lightBgColor,
+  checkBgColor,
 }: IMainCenterTodo) => {
   console.log("todoID", todoID, todoContent, "routine", routine);
   const [currentTodo, setCurrentTodo] = useState<string>(todoContent);
@@ -78,12 +86,12 @@ const MainCenterTodo = ({
   };
 
   return (
-    <MainCenterTodoContainer className="todo_hover_point">
+    <MainCenterTodoContainer lightBgColor={lightBgColor} className="todo_hover_point">
       {/* check box point */}
       {check ? (
-        <MainCenterTodoCheckBoxChecked onClick={handleNotCheck} />
+        <MainCenterTodoCheckBoxChecked checkBgColor={checkBgColor} onClick={handleNotCheck} />
       ) : (
-        <MainCenterTodoCheckBox onClick={handleCheck} />
+        <MainCenterTodoCheckBox checkBgColor={checkBgColor} onClick={handleCheck} />
       )}
       {/* todo content show */}
       {editMode ? (
@@ -94,19 +102,19 @@ const MainCenterTodo = ({
       ) : routine?.routineDay?.length !== 0 ? (
         <>
           <MainCenterTodoContentRoutine />
-          <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
+          <MainCenterTodoContent textColor={textColor}>{currentTodo}</MainCenterTodoContent>
         </>
       ) : (
-        <MainCenterTodoContent>{currentTodo}</MainCenterTodoContent>
+        <MainCenterTodoContent textColor={textColor}>{currentTodo}</MainCenterTodoContent>
       )}
       {/* todo button (edit, delete) */}
       <MainCenterTodoButtonContainer className="todo_function_container">
         {editMode ? (
           <MainCenterTodoCheckIcon onClick={handleOnClickCheck} />
         ) : (
-          <MainCenterTodoEditIcon onClick={handleOnClickEdit} />
+          <MainCenterTodoEditIcon themeColor={textColor} onClick={handleOnClickEdit} />
         )}
-        <MainCenterTodoDeleteIcon onClick={handleOnClickDelete} />
+        <MainCenterTodoDeleteIcon themeColor={textColor} onClick={handleOnClickDelete} />
       </MainCenterTodoButtonContainer>
     </MainCenterTodoContainer>
   );

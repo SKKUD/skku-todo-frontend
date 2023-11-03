@@ -17,23 +17,37 @@ import {
 interface IMainRightGoal {
   goal: string;
   todos: string[];
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
 }
 
-const MainRightGoal = ({goal,todos}: IMainRightGoal) => {
+const MainRightGoal = ({
+  goal,
+  todos,
+  textColor,
+  backgroundColor,
+  lightBgColor,
+}: IMainRightGoal) => {
   
   return (
     <MainCenterGoalWrapper>
-      <MainCenterGoalContainer>
+      <MainCenterGoalContainer lightBgColor={lightBgColor}>
         <MainCenterGoalNameContainer>
           <MainCenterGoalNameDash />
-          <MainCenterGoalName>{goal}</MainCenterGoalName>
+          <MainCenterGoalName textColor={textColor}>{goal}</MainCenterGoalName>
         </MainCenterGoalNameContainer>
       </MainCenterGoalContainer>
 
       <MainCenterGoalTodoList>
         {
           todos.map((todoContent) => (
-            <MainRightTodo content={todoContent} />
+            <MainRightTodo 
+              content={todoContent} 
+              textColor={textColor}
+              backgroundColor={backgroundColor}
+              lightBgColor={lightBgColor}
+            />
           ))
         }
       </MainCenterGoalTodoList>

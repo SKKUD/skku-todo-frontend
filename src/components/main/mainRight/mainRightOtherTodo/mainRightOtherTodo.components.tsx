@@ -6,7 +6,17 @@ import {
   MainRightOtherTodoTitle
 } from "./mainRightOtherTodo.styles";
 
-const MainRightOtherTodo = () => {
+interface IMainRightOtherTodo {
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
+}
+
+const MainRightOtherTodo = ({
+  textColor,
+  backgroundColor,
+  lightBgColor,
+}: IMainRightOtherTodo) => {
   let dummyTodo1: string[] = [
     "문화산업데이터분석 5주차 강의 듣기",
     "문화산업데이터분석 1주차 강의 듣기",
@@ -16,12 +26,24 @@ const MainRightOtherTodo = () => {
   let dummyTodo2: string[] = ["토익 1주차 강의 듣기", "토익 5주차 강의 듣기"];
 
   return (
-    <MainRightOtherTodoContainer>
+    <MainRightOtherTodoContainer backgroundColor={backgroundColor}>
       <MainRightOtherTodoTitle>강유진님의 투두</MainRightOtherTodoTitle>
 
       {/* goal mapping */}
-      <MainRightGoal goal="학교 수업" todos={dummyTodo1} />
-      <MainRightGoal goal="토익" todos={dummyTodo2} />
+      <MainRightGoal 
+        goal="학교 수업"
+        todos={dummyTodo1} 
+        textColor={textColor}
+        backgroundColor={backgroundColor}
+        lightBgColor={lightBgColor}
+      />
+      <MainRightGoal 
+        goal="토익" 
+        todos={dummyTodo2} 
+        textColor={textColor}
+        backgroundColor={backgroundColor}
+        lightBgColor={lightBgColor}
+      />
     </MainRightOtherTodoContainer>
   );
 };

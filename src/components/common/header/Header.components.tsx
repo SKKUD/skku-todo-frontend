@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 import { 
@@ -8,13 +8,18 @@ import {
   HeaderButtonContainer,
   HeaderButtonContent,
   HeaderButtonContentContainer,
-  HeaderPopoverButton
+  HeaderPopoverButton,
+  HeaderGatheringButton
 } from "./Header.styles";
 
 // add assets
 import Bell from "../../../assets/images/bell.svg";
 import ThemeColor from "../../../assets/images/themeColor.svg";
 import System from "../../../assets/images/setting.svg";
+
+import DarkBell from "../../../assets/images/bell_dark.svg";
+import DarkThemeColor from "../../../assets/images/color_dark.svg";
+import DarkSystem from "../../../assets/images/settingDarkMode.svg";
 
 // import modal
 import ModalLayout from "../modalLayout/ModalLayout.components";
@@ -26,7 +31,15 @@ import DropDown from "./dropdown/DropDown.components";
 // impor system popover
 import SystemPopOver from "./SystemPopover/SystemPopover.components";
 
+import { themeColor } from "../../../recoil/recoil";
+import { useRecoilValue } from "recoil";
+
 const Header = () => {
+  const theme = useRecoilValue(themeColor);
+  
+  const [backgroundColor, setBackgroundColor] = useState<string>("#FCFCFC");
+  const [textColor, setTextColor] = useState<string>("#5F5F5F")
+
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -54,27 +67,52 @@ const Header = () => {
 
   const handleClickTheme = () => {
     handleModalOpen();
-  }
+  };
+
+  const handleClickGathering = () => {
+
+  };
+
+  useEffect(() => {
+    if (theme === "1") { // if dark mode
+      setBackgroundColor("#3D3D3D");
+      setTextColor("#FCFCFC");
+    }
+    else {
+      setBackgroundColor("#FCFCFC");
+      setTextColor("#5F5F5F");
+    }
+  }, [theme]);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer theme={backgroundColor}>
       <HeaderContent>
+        {/* logo container */}
         <HeaderLogoContainer>
           LOGO
         </HeaderLogoContainer>
+
+        {/* button container */}
         <HeaderButtonContainer>
-          {/* alert */}
+          {/* 모임 */}
           <HeaderButtonContentContainer>
-            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={Bell} />
+            <HeaderGatheringButton onClick={handleClickGathering} textColor={textColor}>
+              모임
+            </HeaderGatheringButton>
+          </HeaderButtonContentContainer>
+      
+          {/* alert */}
+          <HeaderButtonContentContainer >
+            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={(theme==="1" ? DarkBell : Bell)} />
             <DropDown visibility={dropdown} />
           </HeaderButtonContentContainer>
 
           {/* theme */}
-          <HeaderButtonContent onClick={handleClickTheme} src={ThemeColor}/>
+          <HeaderButtonContent onClick={handleClickTheme} src={(theme==="1" ? DarkThemeColor : ThemeColor)}/>
 
           {/* system */}
-          <HeaderPopoverButton onClick={handleMenuClick}>
-            <HeaderButtonContent src={System} />
+          <HeaderPopoverButton backgroundColor={backgroundColor} onClick={handleMenuClick}>
+            <HeaderButtonContent src={(theme==="1" ? DarkSystem : System)} />
           </HeaderPopoverButton>
 
           <SystemPopOver

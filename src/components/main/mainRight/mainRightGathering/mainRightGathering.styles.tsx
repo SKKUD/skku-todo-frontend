@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 
-export const MainRightGatheringContainer = styled.div`
+export const MainRightGatheringContainer = styled.div<{backgroundColor: string}>`
   max-width: 384px;
   height: 261px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: ${props => props.backgroundColor};
   padding: 16px;
 `;
 

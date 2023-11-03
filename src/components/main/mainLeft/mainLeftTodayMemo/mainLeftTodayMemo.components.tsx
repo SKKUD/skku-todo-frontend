@@ -18,6 +18,9 @@ import {
 import MainLeftTodayMemoSize from "./mainLeftTodayMemoSize/mainLeftTodayMemoSize.components";
 import MemoSvg from "../../../../assets/images/Memo.svg";
 
+import { themeColor } from "../../../../recoil/recoil";
+import { useRecoilValue } from "recoil";
+
 const MainLeftTodayMemo = () => {
   // state
   const [currentFontSize, setCurrentFontSize] = useState<string>("18");
@@ -26,6 +29,24 @@ const MainLeftTodayMemo = () => {
   const [date, setDate] = useState<number>();
   const [message, setMessage] = useState<string>("");
 
+  const theme = useRecoilValue(themeColor);
+
+  const [textColor, setTextColor] = useState<string>("#5F5F5F");
+  const [backgroundColor, setBackgroundColor] = useState<string>("#FCFCFC");
+  const [lightBackgroundColor, setLightBackgroundColor] = useState<string>("#F4F3F6");
+
+  useEffect(() => {
+    if (theme === "1") {
+      setTextColor("#FCFCFC");
+      setBackgroundColor("#3D3D3D");
+      setLightBackgroundColor("#636363");
+    } else {
+      setTextColor("#5F5F5F");
+      setBackgroundColor("#FCFCFC");
+      setLightBackgroundColor("#F4F3F6");
+    }
+
+  }, [theme]);
   const handleContent = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
   }
@@ -56,17 +77,17 @@ const MainLeftTodayMemo = () => {
   }, [])
 
   return (
-    <MainLeftTodayMemoContainer>
+    <MainLeftTodayMemoContainer backgroundColor={backgroundColor}>
       <MainLeftTodayMemoSvgContainer>
         <MainLeftTodayMemoSvg src={MemoSvg}/>
         <MainLeftTodayMemoSvg src={MemoSvg}/>
       </MainLeftTodayMemoSvgContainer>
       <MainLeftTodayMemoDate>
-        <MainLeftTodayMemoYear>{year}년</MainLeftTodayMemoYear>
-        <MainLeftTodayMemoMonth>{month}월</MainLeftTodayMemoMonth>
-        <MainLeftTodayMemoDay>{date}일</MainLeftTodayMemoDay>
+        <MainLeftTodayMemoYear textColor={textColor} lightBackgroundColor={lightBackgroundColor}>{year}년</MainLeftTodayMemoYear>
+        <MainLeftTodayMemoMonth textColor={textColor} lightBackgroundColor={lightBackgroundColor}>{month}월</MainLeftTodayMemoMonth>
+        <MainLeftTodayMemoDay textColor={textColor} lightBackgroundColor={lightBackgroundColor}>{date}일</MainLeftTodayMemoDay>
       </MainLeftTodayMemoDate>
-      <MainLeftTodayMemoContent onChange={(event) => handleContent(event)} value={message} style={{fontSize:`${currentFontSize}px`}} />
+      <MainLeftTodayMemoContent backgroundColor={lightBackgroundColor} onChange={(event) => handleContent(event)} value={message} style={{fontSize:`${currentFontSize}px`}} />
       <MainLeftTodayMemoSizeWrapper>
         <MainLeftTodayMemoSize setFontSize={setCurrentFontSize}/>
       </MainLeftTodayMemoSizeWrapper>

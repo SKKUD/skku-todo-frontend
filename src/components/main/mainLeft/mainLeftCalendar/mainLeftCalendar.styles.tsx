@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { themeColor } from "../../../../recoil/recoil";
 
-export const MainLeftCalendarContainer = styled.div`
+export const MainLeftCalendarContainer = styled.div<{backgroundColor: string}>`
   width: 100%;
-  background-color: white;
+  background-color: ${props => props.backgroundColor};
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -20,15 +21,15 @@ export const CalendarHeaderContainer = styled.div`
   margin-top: 20px;
 `
 
-export const CalendarHeaderMonth = styled.div`
+export const CalendarHeaderMonth = styled.div<{lightBgColor: string, textColor: string}>`
   width: 84px;
   height: 41px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 2px;
-  background: var(--back1, #F3F2F0);
-  color: var(--grey1, #5F5F5F);
+  background: var(--back1, ${props => props.lightBgColor});
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
@@ -37,12 +38,14 @@ export const CalendarHeaderMonth = styled.div`
   letter-spacing: -1.12px;
 `;
 
-export const CalendarHeaderNext = styled(ArrowForwardIosIcon)`
+export const CalendarHeaderNext = styled(ArrowForwardIosIcon)<{themeColor: string}>`
+  fill: ${props => props.themeColor};
   width: 24px;
   height: 24px;
 `;
 
-export const CalendarHeaderPrevious = styled(ArrowBackIosNewIcon)`
+export const CalendarHeaderPrevious = styled(ArrowBackIosNewIcon)<{themeColor: string}>`
+  fill: ${props => props.themeColor};
   width: 24px;
   height: 24px;
 `;
@@ -56,13 +59,13 @@ export const CalendarDaysContainer = styled.div`
   gap: 3px;
 `
 
-export const CalendarDaysContent = styled.div`
+export const CalendarDaysContent = styled.div<{textColor: string}>`
   width: 37px;
   height: 37px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--grey1, #5F5F5F);
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 14px;
   font-style: normal;
@@ -86,13 +89,13 @@ export const CalendarCellRows = styled.div`
   gap: 3px;
 `;
 
-export const CalendarCell = styled.div`
+export const CalendarCell = styled.div<{lightBgColor: string, textColor: string}>`
   cursor: pointer;
   width: 37px;
   height: 37px;
   border-radius: 3px;
-  background: var(--back1, #F3F2F0);
-  color: var(--grey1, #5F5F5F);
+  background: var(--back1, ${props => props.lightBgColor});
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 14px;
   font-style: normal;

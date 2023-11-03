@@ -1,5 +1,9 @@
 import { createTheme } from "@mui/material";
 import "./font.css";
+import { themeColor } from "../../recoil/recoil";
+import { useRecoilState } from "recoil";
+
+// console.log(background);
 
 export const conTheme = createTheme({
   palette: {

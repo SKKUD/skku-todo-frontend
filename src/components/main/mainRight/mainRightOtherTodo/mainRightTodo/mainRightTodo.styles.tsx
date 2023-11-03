@@ -24,9 +24,9 @@ export const MainRightTodoContentContainer = styled.div`
   gap: 15px;
 `;
 
-export const MainRightTodoContent = styled.div`
+export const MainRightTodoContent = styled.div<{textColor: string}>`
   width: 75%;
-  color: var(--black, #2c2c2c);
+  color: var(--black, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -45,7 +45,8 @@ export const MainRightTodoCheck = styled.div`
   background: #ededed;
 `;
 
-export const MainRightTodoReaction = styled(InsertEmoticonIcon)`
+export const MainRightTodoReaction = styled(InsertEmoticonIcon)<{themeColor: string}>`
+  fill: ${props => props.themeColor};
   width: 24px;
   height: 24px;
   padding-right: 5px;

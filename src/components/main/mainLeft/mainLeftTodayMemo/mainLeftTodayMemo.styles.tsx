@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
-export const MainLeftTodayMemoContainer = styled.div`
+export const MainLeftTodayMemoContainer = styled.div<{backgroundColor: string}>`
   width: 100%;
   height: 320px;
   padding-top: 20px;
-  background-color: white;
+  background-color: ${props => props.backgroundColor};
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -32,10 +32,10 @@ export const MainLeftTodayMemoDate = styled.div`
   gap: 5px;
 `;
 
-export const MainLeftTodayMemoYear = styled.div`
+export const MainLeftTodayMemoYear = styled.div<{textColor: string, lightBackgroundColor: string}>`
   height: 42px;
   padding: 4px;
-  color: var(--grey1, #5F5F5F);
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
@@ -43,13 +43,13 @@ export const MainLeftTodayMemoYear = styled.div`
   line-height: normal;
   letter-spacing: -1.12px;
   border-radius: 2px;
-  background: var(--back1, #F3F2F0);
+  background: var(--back1, ${props => props.lightBackgroundColor});
 `;
 
-export const MainLeftTodayMemoMonth = styled.div`
+export const MainLeftTodayMemoMonth = styled.div<{textColor: string, lightBackgroundColor: string}>`
   height: 42px;
   padding: 4px;
-  color: var(--grey1, #5F5F5F);
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
@@ -57,13 +57,13 @@ export const MainLeftTodayMemoMonth = styled.div`
   line-height: normal;
   letter-spacing: -1.12px;
   border-radius: 2px;
-  background: var(--back1, #F3F2F0);
+  background: var(--back1, ${props => props.lightBackgroundColor});
 `;
 
-export const MainLeftTodayMemoDay = styled.div`
+export const MainLeftTodayMemoDay = styled.div<{textColor: string, lightBackgroundColor: string}>`
   height: 42px;
   padding: 4px;
-  color: var(--grey1, #5F5F5F);
+  color: var(--grey1, ${props => props.textColor});
   font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
@@ -71,10 +71,10 @@ export const MainLeftTodayMemoDay = styled.div`
   line-height: normal;
   letter-spacing: -1.12px;
   border-radius: 2px;
-  background: var(--back1, #F3F2F0);
+  background: var(--back1, ${props => props.lightBackgroundColor});
 `;
 
-export const MainLeftTodayMemoContent = styled.textarea`
+export const MainLeftTodayMemoContent = styled.textarea<{backgroundColor: string}>`
   width: 95%;
   height: 243px;
   margin-top: 5px;
@@ -83,7 +83,7 @@ export const MainLeftTodayMemoContent = styled.textarea`
   font-family: "Pretendard-Regular";
   border: none;
   resize: none;
-  background-color: #F3F2F0;
+  background-color: ${props => props.backgroundColor};
   border-radius: 5px;
   padding: 10px;
 `

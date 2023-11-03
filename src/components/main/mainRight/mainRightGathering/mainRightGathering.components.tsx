@@ -6,10 +6,19 @@ import {
   MainRightTitle,
 } from "./mainRightGathering.styles";
 
-const MainRightGathering = () => {
+interface IMainRightGathering {
+  textColor: string;
+  backgroundColor: string;
+  lightBgColor: string;
+}
+const MainRightGathering = ({
+  textColor,
+  backgroundColor,
+  lightBgColor,
+}: IMainRightGathering) => {
   return (
-    <MainRightGatheringContainer>
-      <MainRightTitle>강유진님의 모임</MainRightTitle>
+    <MainRightGatheringContainer backgroundColor={backgroundColor}>
+      {/* <MainRightTitle>강유진님의 모임</MainRightTitle> */}
       <MainRightGatherings />
       <MainRightFriends />
     </MainRightGatheringContainer>

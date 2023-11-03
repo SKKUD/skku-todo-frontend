@@ -9,7 +9,7 @@ export const MainCenterGoalWrapper = styled.div`
 `
 
 // Goal Container
-export const MainCenterGoalContainer = styled.div`
+export const MainCenterGoalContainer = styled.div<{lightBgColor: string}>`
   width: 95%;
   height: 32px;
   display: flex;
@@ -17,7 +17,7 @@ export const MainCenterGoalContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   border-radius: 2px;
-  background: var(--back1, #F3F2F0);
+  background: var(--back1, ${props => props.lightBgColor});
   margin: auto;
   font-family: "Pretendard-Regular";
   padding-right: 5px;
@@ -44,8 +44,9 @@ export const MainCenterGoalNameDash = styled.div`
   margin-right: 8px;
 `;
 
-export const MainCenterGoalName = styled.div`
+export const MainCenterGoalName = styled.div<{textColor: string}>`
   text-align: left;
+  color: ${props => props.textColor};
 `;
 
 export const MainCenterGoalAddButton = styled.img`
