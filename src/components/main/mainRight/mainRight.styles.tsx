@@ -8,4 +8,10 @@ export const MainRightContainer = styled.div`
   padding-bottom: 30px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 824px) {
+    width: 100%;
+    max-width: 420px;
+
+  }
 `;

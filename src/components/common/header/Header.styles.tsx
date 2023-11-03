@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div<{theme: string}>`
 
 export const HeaderContent = styled.div`
   width: 80%;
-  max-width: 1280px;
+  max-width: 1024px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,7 +19,7 @@ export const HeaderContent = styled.div`
   margin: auto;
 `;
 
-export const HeaderLogoContainer = styled.div`
+export const HeaderLogoContainer = styled.img`
   width: 200px;
   height: 48px;
   display: flex;
@@ -30,17 +30,11 @@ export const HeaderLogoContainer = styled.div`
   font-weight: 700;
 `;
 
-export const HeaderGatheringButton = styled.button<{textColor: string}>`
-  width: 42px;
+export const HeaderGatheringButton = styled.img`
+  width: 28px;
+  height: 28px;
   border: none;
-  color: var(--grey1, ${props => props.textColor});
   background: none;
-  font-family: "Pretendard-Regular";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 0px;
 `;
 
 export const HeaderButtonContainer = styled.div`

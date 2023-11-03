@@ -21,6 +21,12 @@ import { format, addMonths, subMonths } from 'date-fns';
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
 import { isSameMonth, isSameDay, addDays, parse } from 'date-fns';
 
+import MemoSvg from "../../../../assets/images/Memo.svg";
+
+import { 
+  MainLeftTodayMemoSvgContainer,
+  MainLeftTodayMemoSvg,
+} from '../mainLeftTodayMemo/mainLeftTodayMemo.styles';
 interface IRenderHeader {
   currentMonth: any;
   prevMonth: any;
@@ -155,6 +161,10 @@ const MainLeftCalendar = () => {
     
     return (
       <MainLeftCalendarContainer backgroundColor={backgroundColor} className="calendar">
+          {/* <MainLeftTodayMemoSvgContainer>
+            <MainLeftTodayMemoSvg src={MemoSvg}/>
+            <MainLeftTodayMemoSvg src={MemoSvg}/>
+          </MainLeftTodayMemoSvgContainer> */}
           <RenderHeader
               currentMonth={currentMonth}
               prevMonth={prevMonth}

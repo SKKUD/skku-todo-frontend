@@ -29,7 +29,7 @@ const Main = () => {
   useEffect(() => {
     if (theme) {
       if (theme === "0") { // light mode
-        setBackgroundColor("#EBEAE5")
+        setBackgroundColor("#DFDDD4")
       }
   
       else if (theme === "1") { // dark mode

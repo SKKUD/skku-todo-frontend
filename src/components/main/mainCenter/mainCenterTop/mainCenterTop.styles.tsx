@@ -13,19 +13,19 @@ export const MainCenterTopContainer = styled.div`
 
 export const MainCenterTopMyTodo = styled.div<{textColor: string}>`
   color: ${props => props.textColor};
-  font-size: 18px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 900;
   line-height: normal;
-  letter-spacing: -0.36px;
+  letter-spacing: -0.48px;
 `;
 
 export const MainCenterTopAddGoal = styled.div<{lightBgColor: string, textColor: string}>`
   width: 76px;
   height: 27px;
   border-radius: 2px;
-  background: var(--background, ${props => props.lightBgColor});
-  color: ${props => props.textColor};
+  background: var(--background, #5DC2AA);
+  color: #FCFCFC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,9 +37,6 @@ export const MainCenterTopAddGoal = styled.div<{lightBgColor: string, textColor:
   letter-spacing: -0.32px;
   cursor: pointer;
   &:hover {
-    width: 83px;
-    height: 30px;
-    font-size: 18px;
-    transition: all 0.3s;
+
   }
 `;

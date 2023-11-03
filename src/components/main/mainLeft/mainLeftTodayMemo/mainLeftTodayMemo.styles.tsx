@@ -44,6 +44,14 @@ export const MainLeftTodayMemoYear = styled.div<{textColor: string, lightBackgro
   letter-spacing: -1.12px;
   border-radius: 2px;
   background: var(--back1, ${props => props.lightBackgroundColor});
+
+  @media (max-width: 1033px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 935px) {
+    font-size: 21px;
+  }
 `;
 
 export const MainLeftTodayMemoMonth = styled.div<{textColor: string, lightBackgroundColor: string}>`
@@ -58,6 +66,14 @@ export const MainLeftTodayMemoMonth = styled.div<{textColor: string, lightBackgr
   letter-spacing: -1.12px;
   border-radius: 2px;
   background: var(--back1, ${props => props.lightBackgroundColor});
+
+  @media (max-width: 1033px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 935px) {
+    font-size: 21px;
+  }
 `;
 
 export const MainLeftTodayMemoDay = styled.div<{textColor: string, lightBackgroundColor: string}>`
@@ -72,6 +88,14 @@ export const MainLeftTodayMemoDay = styled.div<{textColor: string, lightBackgrou
   letter-spacing: -1.12px;
   border-radius: 2px;
   background: var(--back1, ${props => props.lightBackgroundColor});
+
+  @media (max-width: 1033px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 935px) {
+    font-size: 21px;
+  }
 `;
 
 export const MainLeftTodayMemoContent = styled.textarea<{backgroundColor: string}>`
