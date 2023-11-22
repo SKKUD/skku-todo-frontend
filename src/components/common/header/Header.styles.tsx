@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div<{theme: string}>`
 `;
 
 export const HeaderContent = styled.div`
-  width: 80%;
+  width: 85%;
   max-width: 1024px;
   display: flex;
   flex-direction: row;

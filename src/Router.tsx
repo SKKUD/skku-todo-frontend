@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/common/header/Header.components";
 import Landing from "./pages/landing/Landing.components";
 import Main from "./pages/main/Main.components";
+import Gathering from "./pages/gathering/Gathering.components";
 
 declare global {
   interface Window {
@@ -20,6 +21,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Landing />} /> {/* 서비스 소개 */}
         <Route path="/:id" element={<Main />} /> {/* 메인페이지 */}
+        <Route path="/:id/gathering" element={<Gathering />} /> {/* 모임페이지 */}
       </Routes>
     </BrowserRouter>
   );
