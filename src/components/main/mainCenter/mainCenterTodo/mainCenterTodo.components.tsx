@@ -86,12 +86,21 @@ const MainCenterTodo = ({
   };
 
   return (
-    <MainCenterTodoContainer lightBgColor={lightBgColor} className="todo_hover_point">
+    <MainCenterTodoContainer
+      lightBgColor={lightBgColor}
+      className="todo_hover_point"
+    >
       {/* check box point */}
       {check ? (
-        <MainCenterTodoCheckBoxChecked checkBgColor={checkBgColor} onClick={handleNotCheck} />
+        <MainCenterTodoCheckBoxChecked
+          checkBgColor={checkBgColor}
+          onClick={handleNotCheck}
+        />
       ) : (
-        <MainCenterTodoCheckBox checkBgColor={checkBgColor} onClick={handleCheck} />
+        <MainCenterTodoCheckBox
+          checkBgColor={checkBgColor}
+          onClick={handleCheck}
+        />
       )}
       {/* todo content show */}
       {editMode ? (
@@ -102,19 +111,29 @@ const MainCenterTodo = ({
       ) : routine?.routineDay?.length !== 0 ? (
         <>
           <MainCenterTodoContentRoutine />
-          <MainCenterTodoContent textColor={textColor}>{currentTodo}</MainCenterTodoContent>
+          <MainCenterTodoContent textColor={textColor}>
+            {currentTodo}
+          </MainCenterTodoContent>
         </>
       ) : (
-        <MainCenterTodoContent textColor={textColor}>{currentTodo}</MainCenterTodoContent>
+        <MainCenterTodoContent textColor={textColor}>
+          {currentTodo}
+        </MainCenterTodoContent>
       )}
       {/* todo button (edit, delete) */}
       <MainCenterTodoButtonContainer className="todo_function_container">
         {editMode ? (
           <MainCenterTodoCheckIcon onClick={handleOnClickCheck} />
         ) : (
-          <MainCenterTodoEditIcon themeColor={textColor} onClick={handleOnClickEdit} />
+          <MainCenterTodoEditIcon
+            themeColor={textColor}
+            onClick={handleOnClickEdit}
+          />
         )}
-        <MainCenterTodoDeleteIcon themeColor={textColor} onClick={handleOnClickDelete} />
+        <MainCenterTodoDeleteIcon
+          themeColor={textColor}
+          onClick={handleOnClickDelete}
+        />
       </MainCenterTodoButtonContainer>
     </MainCenterTodoContainer>
   );
