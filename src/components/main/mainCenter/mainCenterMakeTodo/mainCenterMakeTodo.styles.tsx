@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 
 export const MainCenterMakeTodoContainer = styled.div`
   width: 95%;
@@ -9,8 +9,8 @@ export const MainCenterMakeTodoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 2px;
-  border: 0.5px solid var(--grey3, #B2B2B2);
-  background: #FFF;
+  border: 0.5px solid var(--grey3, #b2b2b2);
+  background: #fff;
   padding-left: 30px;
   margin-left: 10px;
   padding-right: 5px;
@@ -40,7 +40,7 @@ export const MainCenterMakeTodoButton = styled.button`
   width: 53px;
   justify-content: center;
   align-items: center;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: "Pretendard-Regular";
   font-size: 12px;
@@ -49,7 +49,6 @@ export const MainCenterMakeTodoButton = styled.button`
   line-height: normal;
   letter-spacing: -0.24px;
   border-radius: 2px;
-  background: var(--main, #00DDA8);
+  background: var(--main, #00dda8);
   border: none;
-
 `;
