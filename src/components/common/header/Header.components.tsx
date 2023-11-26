@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { 
+import {
   HeaderContainer,
   HeaderContent,
   HeaderLogoContainer,
@@ -9,7 +10,7 @@ import {
   HeaderButtonContent,
   HeaderButtonContentContainer,
   HeaderPopoverButton,
-  HeaderGatheringButton
+  HeaderGatheringButton,
 } from "./Header.styles";
 
 // add assets
@@ -39,9 +40,9 @@ import Group from "../../../assets/images/groupIcon.svg";
 
 const Header = () => {
   const theme = useRecoilValue(themeColor);
-  
+
   const [backgroundColor, setBackgroundColor] = useState<string>("#FCFCFC");
-  const [textColor, setTextColor] = useState<string>("#5F5F5F")
+  const [textColor, setTextColor] = useState<string>("#5F5F5F");
 
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
@@ -60,6 +61,11 @@ const Header = () => {
   };
   const PopoverOpen = Boolean(anchorEl);
 
+  const navigate = useNavigate();
+  const navigateToMain = () => {
+    navigate("/todoView");
+  };
+
   // modal function
   const handleModalOpen = () => {
     setModalOpen(true);
@@ -72,16 +78,14 @@ const Header = () => {
     handleModalOpen();
   };
 
-  const handleClickGathering = () => {
-
-  };
+  const handleClickGathering = () => {};
 
   useEffect(() => {
-    if (theme === "1") { // if dark mode
+    if (theme === "1") {
+      // if dark mode
       setBackgroundColor("#3D3D3D");
       setTextColor("#FCFCFC");
-    }
-    else {
+    } else {
       setBackgroundColor("#FCFCFC");
       setTextColor("#5F5F5F");
     }
@@ -91,27 +95,36 @@ const Header = () => {
     <HeaderContainer theme={backgroundColor}>
       <HeaderContent>
         {/* logo container */}
-        <HeaderLogoContainer src={Logo}/>
+        <HeaderLogoContainer src={Logo} onClick={navigateToMain} />
 
         {/* button container */}
         <HeaderButtonContainer>
           {/* 모임 */}
           <HeaderButtonContentContainer>
-            <HeaderGatheringButton onClick={handleClickGathering} src={Group}/>
+            <HeaderGatheringButton onClick={handleClickGathering} src={Group} />
           </HeaderButtonContentContainer>
-      
+
           {/* alert */}
-          <HeaderButtonContentContainer >
-            <HeaderButtonContent onClick={() => setDropDown(!dropdown)} src={(theme==="1" ? DarkBell : Bell)} />
+          <HeaderButtonContentContainer>
+            <HeaderButtonContent
+              onClick={() => setDropDown(!dropdown)}
+              src={theme === "1" ? DarkBell : Bell}
+            />
             <DropDown visibility={dropdown} />
           </HeaderButtonContentContainer>
 
           {/* theme */}
-          <HeaderButtonContent onClick={handleClickTheme} src={(theme==="1" ? DarkThemeColor : ThemeColor)}/>
+          <HeaderButtonContent
+            onClick={handleClickTheme}
+            src={theme === "1" ? DarkThemeColor : ThemeColor}
+          />
 
           {/* system */}
-          <HeaderPopoverButton backgroundColor={backgroundColor} onClick={handleMenuClick}>
-            <HeaderButtonContent src={(theme==="1" ? DarkSystem : System)} />
+          <HeaderPopoverButton
+            backgroundColor={backgroundColor}
+            onClick={handleMenuClick}
+          >
+            <HeaderButtonContent src={theme === "1" ? DarkSystem : System} />
           </HeaderPopoverButton>
 
           <SystemPopOver
@@ -121,13 +134,16 @@ const Header = () => {
           />
 
           {/* modal */}
-          <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>
+          <ModalLayout
+            modalOpen={modalOpen}
+            handleModalClose={handleModalClose}
+          >
             <ColorModal handleModalClose={handleModalClose} />
           </ModalLayout>
         </HeaderButtonContainer>
       </HeaderContent>
     </HeaderContainer>
-  )
-}
+  );
+};
 
 export default Header;
