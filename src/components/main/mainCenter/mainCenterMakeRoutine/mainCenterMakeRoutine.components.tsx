@@ -53,7 +53,7 @@ const MainCenterMakeRoutine = ({
       routineDay: clicked,
       routineEndDate: endDate,
     });
-  }, [clicked, endDate]);
+  }, [clicked, endDate, setRoutine]);
 
   return (
     <MainCenterMakeRoutineContainer>
@@ -71,17 +71,19 @@ const MainCenterMakeRoutine = ({
         );
       })}
 
+      {endDate && (
+        <>
+          <MainCenterMakeRoutineDateText>
+            {endDate}까지
+          </MainCenterMakeRoutineDateText>
+        </>
+      )}
       {/* 날짜 선택 */}
       <MainCenterMakeRoutineDatePicker
         type={"date"}
         onChange={handleClickDate}
-        className={`${endDate ? "date-picked" : ""}`}
+        // className={`${endDate ? "date-picked" : ""}`}
       />
-      {endDate && (
-        <MainCenterMakeRoutineDateText>
-          {endDate}까지
-        </MainCenterMakeRoutineDateText>
-      )}
     </MainCenterMakeRoutineContainer>
   );
 };

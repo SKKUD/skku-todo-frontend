@@ -52,3 +52,22 @@ export const MainCenterMakeTodoButton = styled.button`
   background: var(--main, #00dda8);
   border: none;
 `;
+
+export const MainCenterMakeRoutineButton = styled.button`
+  height: 26px;
+  width: 53px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard-Regular";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  border-radius: 2px;
+  background: var(--main, #00dda8);
+  border: none;
+  margin-left: 10px;
+`;

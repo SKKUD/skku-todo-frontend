@@ -5,9 +5,8 @@ import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import EditIcon from "@mui/icons-material/Edit"; // edit icon
 import CheckIcon from "@mui/icons-material/Check"; // check icon
 import DeleteIcon from "@mui/icons-material/Delete"; // delete icon
-import RoutineIcon from "../../../../assets/images/Vector.svg";
 
-export const MainCenterTodoContainer = styled.div<{lightBgColor: string}>`
+export const MainCenterTodoContainer = styled.div<{ lightBgColor: string }>`
   width: 95%;
   display: flex;
   flex-direction: row;
@@ -21,9 +20,13 @@ export const MainCenterTodoContainer = styled.div<{lightBgColor: string}>`
   font-family: "Pretendard-Regular";
   cursor: pointer;
 
+  .todo_function_container {
+    display: flex;
+    flex-direction: row;
+  }
   &:hover {
     border-radius: 2px;
-    background: ${props => props.lightBgColor};
+    background: ${(props) => props.lightBgColor};
     transition: all 0.3s;
 
     .todo_function_container {
@@ -33,37 +36,43 @@ export const MainCenterTodoContainer = styled.div<{lightBgColor: string}>`
   }
 `;
 
-export const MainCenterTodoCheckBox = styled.div<{checkBgColor: string}>`
+export const MainCenterTodoRoutineText = styled.div`
+  color: var(--grey2, #8c8c8c);
+  text-align: right;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.2px;
+`;
+
+export const MainCenterTodoCheckBox = styled.div<{ checkBgColor: string }>`
   width: 17px;
   height: 17px;
   border-radius: 2px;
   border: 0.5px solid #b2b2b2;
-  background: ${props => props.checkBgColor};
+  background: ${(props) => props.checkBgColor};
   flex-grow: 0;
 `;
 
-export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)<{checkBgColor: string}>`
+export const MainCenterTodoCheckBoxChecked = styled(CheckIcon)<{
+  checkBgColor: string;
+}>`
   width: 17px;
   height: 17px;
   color: #00dda8;
   border-radius: 2px;
   border: 0.5px solid #b2b2b2;
-  background: ${props => props.checkBgColor};
+  background: ${(props) => props.checkBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export const MainCenterTodoContentRoutine = styled.img`
-  background-image: url(${RoutineIcon});
-  width: 7.087px;
-  height: 11.34px;
-  transform: rotate(30deg);
-`;
-
-export const MainCenterTodoContent = styled.div<{textColor: string}>`
+export const MainCenterTodoContent = styled.div<{ textColor: string }>`
   width: 75%;
-  color: var(--black, ${props => props.textColor});
+  color: var(--black, ${(props) => props.textColor});
   font-family: "Pretendard-Regular";
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -95,7 +104,7 @@ export const MainCenterTodoContentEdit = styled(TextareaAutosize)`
 `;
 
 export const MainCenterTodoButtonContainer = styled.div`
-  opacity: 0;
+  //opacity: 0;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -104,8 +113,8 @@ export const MainCenterTodoButtonContainer = styled.div`
   transition: all 0.3s;
 `;
 
-export const MainCenterTodoEditIcon = styled(EditIcon)<{themeColor: string}>`
-  fill: ${props => props.themeColor};
+export const MainCenterTodoEditIcon = styled(EditIcon)<{ themeColor: string }>`
+  fill: ${(props) => props.themeColor};
   width: 15px;
   height: 15px;
 `;
@@ -115,8 +124,10 @@ export const MainCenterTodoCheckIcon = styled(CheckIcon)`
   height: 15px;
 `;
 
-export const MainCenterTodoDeleteIcon = styled(DeleteIcon)<{themeColor: string}>`
-  fill: ${props => props.themeColor};
+export const MainCenterTodoDeleteIcon = styled(DeleteIcon)<{
+  themeColor: string;
+}>`
+  fill: ${(props) => props.themeColor};
   width: 15px;
   height: 15px;
 `;

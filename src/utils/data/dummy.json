@@ -68,7 +68,7 @@
           "todoID": "goal3todo1",
           "todo": "디자인 공부하기",
           "routine": {
-            "routineDay": ["화, 목"],
+            "routineDay": ["화", "목"],
             "routineEndDate": "2023-10-23"
           }
         },

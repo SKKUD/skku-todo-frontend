@@ -9,7 +9,7 @@ import {
   MainRightTodoReaction,
 } from "./mainRightTodo.styles";
 
-import { 
+import {
   MainCenterTodoCheckBox,
   MainCenterTodoCheckBoxChecked,
 } from "../../../mainCenter/mainCenterTodo/mainCenterTodo.styles";
@@ -25,7 +25,12 @@ interface IMainRightTodo {
   lightBgColor: string;
 }
 
-const MainRightTodo = ({content, textColor, backgroundColor, lightBgColor}: IMainRightTodo) => {
+const MainRightTodo = ({
+  content,
+  textColor,
+  backgroundColor,
+  lightBgColor,
+}: IMainRightTodo) => {
   // theme modal
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -43,11 +48,13 @@ const MainRightTodo = ({content, textColor, backgroundColor, lightBgColor}: IMai
       {/* todo content */}
       <MainRightTodoContentContainer>
         <MainCenterTodoCheckBox checkBgColor={lightBgColor} />
-        <MainRightTodoContent textColor={textColor}>{content}</MainRightTodoContent>
+        <MainRightTodoContent textColor={textColor}>
+          {content}
+        </MainRightTodoContent>
       </MainRightTodoContentContainer>
 
       {/* Reaction */}
-      <MainRightTodoReaction themeColor={textColor} onClick={handleModalOpen}/>
+      <MainRightTodoReaction themeColor={textColor} onClick={handleModalOpen} />
 
       {/* Modal */}
       <ModalLayout modalOpen={modalOpen} handleModalClose={handleModalClose}>

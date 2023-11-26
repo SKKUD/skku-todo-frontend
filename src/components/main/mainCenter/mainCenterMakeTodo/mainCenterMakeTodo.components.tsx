@@ -5,11 +5,11 @@ import {
   MainCenterMakeTodoContainer,
   MainCenterMakeTodoTextArea,
   MainCenterMakeTodoButton,
+  MainCenterMakeRoutineButton,
 } from "./mainCenterMakeTodo.styles";
 
 import dummy from "../../../../utils/data/dummy.json";
 import MainCenterMakeRoutine from "../mainCenterMakeRoutine/mainCenterMakeRoutine.components";
-import { ConstructionOutlined } from "@mui/icons-material";
 
 interface IMainCenterMakeTodo {
   makeTodo: boolean;
@@ -27,7 +27,7 @@ const MainCenterMakeTodo = ({
 // setMakeRoutine,
 IMainCenterMakeTodo) => {
   const [todoContent, setTodoContent] = useState<string>("");
-
+  const [clickRoutine, setClickRoutine] = useState<boolean>(false);
   interface IRoutine {
     routineDay?: string[] | undefined | null;
     routineEndDate?: string | undefined | null;
@@ -67,6 +67,10 @@ IMainCenterMakeTodo) => {
     // set make todo false
     setMakeTodo(false);
   };
+
+  const handleClickRoutine = () => {
+    setClickRoutine(true);
+  };
   return (
     <>
       <MainCenterMakeTodoContainer>
@@ -78,14 +82,24 @@ IMainCenterMakeTodo) => {
         <MainCenterMakeTodoButton onClick={handleClickCheck}>
           확인
         </MainCenterMakeTodoButton>
+        {clickRoutine ? (
+          ""
+        ) : (
+          <MainCenterMakeRoutineButton onClick={handleClickRoutine}>
+            루틴
+          </MainCenterMakeRoutineButton>
+        )}
       </MainCenterMakeTodoContainer>
-
-      <MainCenterMakeRoutine
-        routine={routine}
-        setRoutine={setRoutine}
-        todoID={makeTodoID}
-        goalID={goalID}
-      ></MainCenterMakeRoutine>
+      {clickRoutine ? (
+        <MainCenterMakeRoutine
+          routine={routine}
+          setRoutine={setRoutine}
+          todoID={makeTodoID}
+          goalID={goalID}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 };

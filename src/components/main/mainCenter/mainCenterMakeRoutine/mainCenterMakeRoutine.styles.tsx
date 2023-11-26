@@ -52,12 +52,12 @@ export const MainCenterMakeRoutineDatePicker = styled.input`
     display: none;
   }
 
-  &.date-picked {
+  /* &.date-picked {
     ::-webkit-calendar-picker-indicator {
       -webkit-appearance: none;
       display: none;
     }
-  }
+  } */
 `;
 
 export const MainCenterMakeRoutineDateText = styled.div`
