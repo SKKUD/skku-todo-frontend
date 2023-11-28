@@ -45,10 +45,16 @@ export const GatheringMyTownComponentContainer = styled.div`
 export const GatheringMyTownComponent = styled.div`
   width: 100%;
   height: 100%;
-  background-color: black;
   border-radius: 8px;
   position: relative;
   background-size: cover; 
+  color: #FFF;
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
 
   &::before {
     position: absolute;
@@ -59,5 +65,47 @@ export const GatheringMyTownComponent = styled.div`
     height: 100%;
     background-color: rgba(0,0,0,0.3);
     border-radius: 8px;
+    z-index: 5;
   }
+`;
+
+export const GatheringMyTownComponentTitle = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-family: "Pretendard-Regular";
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  z-index: 101;
+  padding-bottom: 10px;
+`;
+export const GatheringMyTownPlus = styled.button`
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #f3f2f0;
+  border: none;
+
+  &:hover {
+    .mytown_plus {
+      width: 70px;
+      height: 70px;
+      transition: all 0.3s;
+    }
+
+    transition: all 0.3s;
+    background-color: #d6d6d6;
+  }
+`;
+
+export const GatheringMyTownPlusIcon = styled.img`
+  width: 50px;
+  height: 50px;
 `;
