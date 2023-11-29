@@ -37,7 +37,7 @@ const GatheringMyTown = () => {
       setIsFourth(true);
     }
   };
-
+  
   return (
     <GatheringMyTownContainer>
       <GatheringMyTownTitle>town</GatheringMyTownTitle>
