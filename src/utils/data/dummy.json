@@ -84,5 +84,17 @@
     }
   ],
   "frindTodo": [],
-  "gathering": []
+  "gathering": [
+    {
+      "townID": "town1",
+      "townName": "스꾸디 2팀",
+      "townGoal": "투두타운",
+      "townMemberNum": 7,
+      "townManager": "강유진",
+      "townRoutine": [
+        { "routineName": "디자인팀 스터디", "routineDay": ["목"] },
+        { "routineName": "개발팀 스터디", "routineDay": ["월", "수"] }
+      ]
+    }
+  ]
 }

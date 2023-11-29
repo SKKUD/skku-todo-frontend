@@ -14,6 +14,7 @@ export const GatheringMemberContainer = styled.div`
     display: block;
     padding-bottom: 100%;
   } */
+
 `;
 
 export const GatheringMemberTitle = styled.p`

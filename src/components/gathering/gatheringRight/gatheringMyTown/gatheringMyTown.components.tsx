@@ -1,6 +1,6 @@
 import React from "react";
 
-import { 
+import {
   GatheringMyTownContainer,
   GatheringMyTownTitle,
   GatheringMyTownComponentContainer,
@@ -42,11 +42,9 @@ const GatheringMyTown = ({GatheringNameList, setWhichGathering}: IGatheringTown)
       setIsFourth(true);
     }
   };
-
   const onClickGathering = (gatheringNumber: number) => {
     setWhichGathering(gatheringNumber);
   };
-
   return (
     <GatheringMyTownContainer>
       <GatheringMyTownTitle>town</GatheringMyTownTitle>
@@ -64,7 +62,7 @@ const GatheringMyTown = ({GatheringNameList, setWhichGathering}: IGatheringTown)
         { !isFourth && <GatheringMyTownPlus><GatheringMyTownPlusIcon className="mytown_plus" src={PlusIcon} onClick={onClickPlusButton} /></GatheringMyTownPlus>}
       </GatheringMyTownComponentContainer>
     </GatheringMyTownContainer>
-  )
+  );
 };
 
 export default GatheringMyTown;
