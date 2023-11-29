@@ -8,11 +8,12 @@ export const GatheringMemberContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  &::after {
+  padding-bottom: 10px;
+  /* &::after {
     content: "";
     display: block;
     padding-bottom: 100%;
-  }
+  } */
 `;
 
 export const GatheringMemberTitle = styled.p`
@@ -90,7 +91,7 @@ export const GatheringMemberPlusButton = styled.button`
       height: 20px;
       transition: all 0.3s;
     }
-    
+
     transition: all 0.3s;
     background-color: #d6d6d6;
   }
