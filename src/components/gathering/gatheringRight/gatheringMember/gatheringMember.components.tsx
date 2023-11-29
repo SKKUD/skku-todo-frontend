@@ -16,29 +16,39 @@ import PlusImg from "../../../../assets/images/plus.svg";
 
 const TownerMembers = ["김XX", "아XX", "신XX", "안XX", "정XX", "모XX", "세글자", "이름임", "신이XX"];
 
-const GatheringMember = () => {
-  
+interface IGatheringMember {
+  whichGathering: number;
+  GatheringTowner: Array<string>;
+};
+
+const GatheringMember = ({whichGathering, GatheringTowner}: IGatheringMember) => {
+
   return (
-    <GatheringMemberContainer>
-      <GatheringMemberTitle>towner</GatheringMemberTitle>
-      <GatheringMemberGrid>
-        {
-          TownerMembers.map((name) => {
-            return (
-              <GatheringMemberComponentsContainer>
-                <GatheringMemberComponentsContent style={{backgroundImage: `url(${GatheringImage})`}} />
-                <GatheringMemberComponentsTitle>
-                  {name}
-                </GatheringMemberComponentsTitle>
-              </GatheringMemberComponentsContainer>
-            );
-          })
-        }
-        <GatheringMemberPlusButton>
-          <GatheringMemberPlusImg className="GatheringMemberPlus" src={PlusImg} />
-        </GatheringMemberPlusButton>
-      </GatheringMemberGrid>
-    </GatheringMemberContainer>
+    <div>
+      {
+        (whichGathering !== -1) &&
+        <GatheringMemberContainer>
+          <GatheringMemberTitle>towner</GatheringMemberTitle>
+          <GatheringMemberGrid>
+            {
+              GatheringTowner.map((name) => {
+                return (
+                  <GatheringMemberComponentsContainer>
+                    <GatheringMemberComponentsContent style={{backgroundImage: `url(${GatheringImage})`}} />
+                    <GatheringMemberComponentsTitle>
+                      {name}
+                    </GatheringMemberComponentsTitle>
+                  </GatheringMemberComponentsContainer>
+                );
+              })
+            }
+            <GatheringMemberPlusButton>
+              <GatheringMemberPlusImg className="GatheringMemberPlus" src={PlusImg} />
+            </GatheringMemberPlusButton>
+          </GatheringMemberGrid>
+        </GatheringMemberContainer>
+      }
+    </div>
   )
 };
 
