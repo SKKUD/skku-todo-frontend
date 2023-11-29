@@ -2,16 +2,20 @@ import React from "react";
 
 import { 
   GatheringMemberContainer, 
+  GatheringMemberComponentsContainer,
+  GatheringMemberComponentsContent,
+  GatheringMemberComponentsTitle,
+  GatheringMemberTitle,
 } from "./gatheringMember.styles";
 
-import { useRef } from "react";
-
 const GatheringMember = () => {
-  const MemberRef = useRef(null);
 
   return (
-    <GatheringMemberContainer ref={MemberRef}>
-      
+    <GatheringMemberContainer>
+      <GatheringMemberTitle>towner</GatheringMemberTitle>
+      <GatheringMemberComponentsContainer>
+        
+      </GatheringMemberComponentsContainer>
     </GatheringMemberContainer>
   )
 };

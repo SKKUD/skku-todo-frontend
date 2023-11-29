@@ -78,7 +78,7 @@ export const GatheringMyTownComponentTitle = styled.div`
   align-items: end;
   font-family: "Pretendard-Regular";
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -86,6 +86,7 @@ export const GatheringMyTownComponentTitle = styled.div`
   z-index: 101;
   padding-bottom: 10px;
 `;
+
 export const GatheringMyTownPlus = styled.button`
   width: 100%;
   height: 100%;
