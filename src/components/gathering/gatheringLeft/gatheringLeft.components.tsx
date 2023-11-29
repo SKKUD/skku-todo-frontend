@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import GatheringImage from "./gatheringImage/gatheringImage.components";
@@ -19,6 +20,7 @@ const GatheringLeft = () => {
   const navigateToMain = () => {
     navigate("/todoView");
   };
+  const [isAbout, setIsAbout] = useState(false);
   return (
     <GatheringContainer>
       <GatheringTop>
@@ -28,10 +30,15 @@ const GatheringLeft = () => {
         />
         <AboutDiv>
           <AboutTown>타운이란?</AboutTown>
-          <AboutIcon src={AboutTownIcon} />
+          <AboutIcon
+            onClick={() => {
+              setIsAbout(!isAbout);
+            }}
+            src={AboutTownIcon}
+          />
         </AboutDiv>
       </GatheringTop>
-      <GatheringImage />
+      <GatheringImage isAbout={isAbout} />
       <GatheringDesc />
     </GatheringContainer>
   );
