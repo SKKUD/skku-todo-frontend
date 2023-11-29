@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const GatheringImgContainer = styled.div`
   width: 100%;
-  height: 36.05%;
+  height: 237px;
   border-radius: 9px;
   background: var(--white, #fcfcfc);
 `;

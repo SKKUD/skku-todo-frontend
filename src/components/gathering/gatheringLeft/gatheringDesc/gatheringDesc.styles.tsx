@@ -2,13 +2,15 @@ import styled from "@emotion/styled";
 
 export const GatheringDescContainer = styled.div`
   width: 100%;
-  height: 60%;
+  /* height: 450px; */
   border-radius: 9px;
   background: var(--white, #fcfcfc);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 `;
 
 export const GatheringDescTitle = styled.div`

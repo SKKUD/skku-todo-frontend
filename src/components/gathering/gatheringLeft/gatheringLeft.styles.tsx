@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const GatheringContainer = styled.div`
   width: 65%;
+  height: 800px;
   display: flex;
   flex-direction: column;
   gap: 20px;

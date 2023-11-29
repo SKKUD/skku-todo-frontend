@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const MainBackground = styled.div<{ theme: string }>`
   width: 100%;
-  background-color: ${props => props.theme};
+  background-color: ${(props) => props.theme};
   padding-top: 10px;
 `;
 
@@ -20,4 +20,4 @@ export const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`
+`;

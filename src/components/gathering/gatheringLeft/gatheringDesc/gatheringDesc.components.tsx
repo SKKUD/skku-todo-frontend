@@ -63,14 +63,6 @@ const GatheringDesc = () => {
             </GatheringDescLightText>
           </GatheringDescBlock>
         ))}
-        {/* <GatheringDescBlock>
-          <GatheringDescText>디자인팀 스터디</GatheringDescText>
-          <GatheringDescLightText>목</GatheringDescLightText>
-        </GatheringDescBlock>
-        <GatheringDescBlock>
-          <GatheringDescText>디자인팀 스터디</GatheringDescText>
-          <GatheringDescLightText>월, 수</GatheringDescLightText>
-        </GatheringDescBlock> */}
       </GatheringDescBottom>
     </GatheringDescContainer>
   );
