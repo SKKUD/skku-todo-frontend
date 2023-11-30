@@ -27,11 +27,15 @@ const GatheringDesc = () => {
   const townRoutine: Array<{ routineName: string; routineDay: string[] }> =
     gathering!["townRoutine"];
 
+  const handleEdit = () => {};
   return (
     <GatheringDescContainer>
       <GatheringDescTop>
         <GatheringDescTitle>{gathering!["townName"]}</GatheringDescTitle>
-        <GatheringEditBtn style={{ backgroundImage: `url(${EditIcon})` }} />
+        <GatheringEditBtn
+          onClick={handleEdit}
+          style={{ backgroundImage: `url(${EditIcon})` }}
+        />
       </GatheringDescTop>
       <GatheringDescMiddle>
         <GatheringProfileImg
