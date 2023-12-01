@@ -15,7 +15,7 @@ export const GatheringDescContainer = styled.div`
 
 export const GatheringDescTitle = styled.div`
   color: var(--black, #202020);
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -25,7 +25,7 @@ export const GatheringDescTitle = styled.div`
 
 export const GatheringDescLightText = styled.div`
   color: var(--grey2, #8c8c8c);
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -35,7 +35,7 @@ export const GatheringDescLightText = styled.div`
 export const GatheringDescText = styled.div`
   color: var(--black, #202020);
   text-align: right;
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
