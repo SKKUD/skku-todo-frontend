@@ -32,7 +32,7 @@ export const NavigateToMainBtn = styled.button`
 
 export const AboutTown = styled.div`
   color: var(--grey2, #8c8c8c);
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
