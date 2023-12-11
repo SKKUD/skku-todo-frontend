@@ -17,10 +17,11 @@ import { useState } from "react";
 
 interface IGatheringTown {
   GatheringNameList: Array<string>;
+  setLeftWhichGathering: React.Dispatch<React.SetStateAction<number>>;
   setWhichGathering: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const GatheringMyTown = ({GatheringNameList, setWhichGathering}: IGatheringTown) => {
+const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGathering}: IGatheringTown) => {
   const [currentTown, setCurrentTown] = useState<number>(0);
   const [isFirst, setIsFirst] = useState<boolean>(false);
   const [isSecond, setIsSecond] = useState<boolean>(false);
@@ -44,6 +45,7 @@ const GatheringMyTown = ({GatheringNameList, setWhichGathering}: IGatheringTown)
   };
   const onClickGathering = (gatheringNumber: number) => {
     setWhichGathering(gatheringNumber);
+    setLeftWhichGathering(gatheringNumber);
   };
   return (
     <GatheringMyTownContainer>

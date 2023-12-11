@@ -17,7 +17,19 @@ import {
   AboutDiv,
 } from "./gatheringLeft.styles";
 
-const GatheringLeft = () => {
+interface IGatheringInfo {
+  GatheringName: string,
+  GatheringGoal: string,
+  GatheringManager: string,
+  Towner: Array<string>,
+}
+
+interface IGatheringLeft {
+  data: Array<IGatheringInfo>,
+  leftWhichGathering: number, 
+}
+
+const GatheringLeft = ({data, leftWhichGathering}: IGatheringLeft) => {
   const [isAbout, setIsAbout] = useState(false);
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
@@ -47,13 +59,18 @@ const GatheringLeft = () => {
           />
         </AboutDiv>
       </GatheringTop>
+
       {
         isEdit ? (
           <GatheringEdit />
         ) : (
           <div>
             <GatheringImage isAbout={isAbout} />
-            <GatheringDesc isEdit={isEdit} setIsEdit={setIsEdit}/>
+            {
+              (leftWhichGathering !== -1) && (
+                <GatheringDesc GatheringData={data[leftWhichGathering]} isEdit={isEdit} setIsEdit={setIsEdit}/>
+              )
+            }
           </div>
         )
       }
