@@ -5,6 +5,7 @@ export const GatheringImgContainer = styled.div`
   height: 237px;
   border-radius: 9px;
   background: var(--white, #fcfcfc);
+  margin-bottom: 20px;
 `;
 
 export const GatheringMainImg = styled.div`

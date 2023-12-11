@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import GatheringImage from "./gatheringImage/gatheringImage.components";
 import GatheringDesc from "./gatheringDesc/gatheringDesc.components";
+import GatheringEdit from "./gatheringEdit/gatheringEdit.components";
+
 import AboutTownIcon from "../../../assets/images/aboutTown.svg";
 import BackIcon from "../../../assets/images/back-icon.svg";
 import {
@@ -16,16 +18,23 @@ import {
 } from "./gatheringLeft.styles";
 
 const GatheringLeft = () => {
-  const navigate = useNavigate();
-  const navigateToMain = () => {
-    navigate("/todoView");
-  };
   const [isAbout, setIsAbout] = useState(false);
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+  const onClickGatheringTop = () => {
+    if (isEdit===true) {
+      setIsEdit(false);
+    } else {
+      navigate("/todoView");
+    }
+  };
+
   return (
     <GatheringContainer>
       <GatheringTop>
         <NavigateToMainBtn
-          onClick={navigateToMain}
+          onClick={onClickGatheringTop}
           style={{ backgroundImage: `url(${BackIcon})` }}
         />
         <AboutDiv>
@@ -38,8 +47,16 @@ const GatheringLeft = () => {
           />
         </AboutDiv>
       </GatheringTop>
-      <GatheringImage isAbout={isAbout} />
-      <GatheringDesc />
+      {
+        isEdit ? (
+          <GatheringEdit />
+        ) : (
+          <div>
+            <GatheringImage isAbout={isAbout} />
+            <GatheringDesc isEdit={isEdit} setIsEdit={setIsEdit}/>
+          </div>
+        )
+      }
     </GatheringContainer>
   );
 };

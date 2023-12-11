@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   GatheringDescContainer,
   GatheringDescBlock,
@@ -17,7 +18,12 @@ import EditIcon from "../../../../assets/images/gatheringEdit.svg";
 import GatheringProfile from "../../../../assets/images/GatheringProfile.svg";
 import dummy from "../../../../utils/data/dummy.json";
 
-const GatheringDesc = () => {
+interface IGatheringDesc {
+  isEdit: boolean,
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const GatheringDesc = ({isEdit, setIsEdit}: IGatheringDesc) => {
   const gathering = dummy.gathering.find(
     (element) => element["townID"] === "town1"
   );
@@ -31,7 +37,7 @@ const GatheringDesc = () => {
     <GatheringDescContainer>
       <GatheringDescTop>
         <GatheringDescTitle>{gathering!["townName"]}</GatheringDescTitle>
-        <GatheringEditBtn style={{ backgroundImage: `url(${EditIcon})` }} />
+        <GatheringEditBtn onClick={() => setIsEdit(!isEdit)} style={{ backgroundImage: `url(${EditIcon})` }} />
       </GatheringDescTop>
       <GatheringDescMiddle>
         <GatheringProfileImg
