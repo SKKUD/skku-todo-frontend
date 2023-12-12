@@ -15,9 +15,13 @@ interface IGatheringInfo {
 interface IGatheringRight {
   data: Array<IGatheringInfo>,
   setLeftWhichGathering: React.Dispatch<React.SetStateAction<number>>;
+  isCreate: boolean,
+  setIsCreate: React.Dispatch<React.SetStateAction<boolean>>;
+  isEdit: boolean,
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringRight = ({data, setLeftWhichGathering}: IGatheringRight) => {
+const GatheringRight = ({data, setLeftWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit}: IGatheringRight) => {
   const [whichGathering, setWhichGathering] = useState<number>(-1);
   const [GatheringNameList, setGatheringNameList] = useState<Array<string>>([]);
   const [GatheringMemberList, setGatheringMemberList] = useState<Array<string>>([]);
@@ -35,7 +39,15 @@ const GatheringRight = ({data, setLeftWhichGathering}: IGatheringRight) => {
 
   return (
     <GatheringRightContainer>
-      <GatheringMyTown setWhichGathering={setWhichGathering} setLeftWhichGathering={setLeftWhichGathering} GatheringNameList={GatheringNameList} />
+      <GatheringMyTown 
+        setWhichGathering={setWhichGathering} 
+        setLeftWhichGathering={setLeftWhichGathering} 
+        GatheringNameList={GatheringNameList} 
+        isCreate={isCreate}
+        setIsCreate={setIsCreate}
+        isEdit={isEdit}
+        setIsEdit={setIsEdit}
+      />
       <GatheringMember whichGathering={whichGathering} GatheringTowner={GatheringMemberList}/>
     </GatheringRightContainer>
   );

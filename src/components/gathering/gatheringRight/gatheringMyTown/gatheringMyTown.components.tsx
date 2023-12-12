@@ -19,9 +19,13 @@ interface IGatheringTown {
   GatheringNameList: Array<string>;
   setLeftWhichGathering: React.Dispatch<React.SetStateAction<number>>;
   setWhichGathering: React.Dispatch<React.SetStateAction<number>>;
+  isCreate: boolean,
+  setIsCreate: React.Dispatch<React.SetStateAction<boolean>>;
+  isEdit: boolean,
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGathering}: IGatheringTown) => {
+const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit}: IGatheringTown) => {
   const [currentTown, setCurrentTown] = useState<number>(0);
   const [isFirst, setIsFirst] = useState<boolean>(false);
   const [isSecond, setIsSecond] = useState<boolean>(false);
@@ -29,24 +33,19 @@ const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGath
   const [isFourth, setIsFourth] = useState<boolean>(false);
 
   const onClickPlusButton = () => {
-    if (currentTown === 0) {
-      setCurrentTown(1);
-      setIsFirst(true);
-    } else if (currentTown === 1) {
-      setCurrentTown(2);
-      setIsSecond(true);
-    } else if (currentTown === 2) {
-      setCurrentTown(3);
-      setIsThird(true);
-    }else if (currentTown === 3) {
-      setCurrentTown(4);
-      setIsFourth(true);
-    }
+    setIsEdit(false)
+    setIsCreate(true)
+    setWhichGathering(-1);
+    setLeftWhichGathering(-1);
   };
+
   const onClickGathering = (gatheringNumber: number) => {
     setWhichGathering(gatheringNumber);
     setLeftWhichGathering(gatheringNumber);
+    setIsEdit(false)
+    setIsCreate(false)
   };
+
   return (
     <GatheringMyTownContainer>
       <GatheringMyTownTitle>town</GatheringMyTownTitle>
