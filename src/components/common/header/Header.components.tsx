@@ -78,7 +78,9 @@ const Header = () => {
     handleModalOpen();
   };
 
-  const handleClickGathering = () => {};
+  const handleClickGathering = () => {
+    navigate("/todoView/gathering");
+  };
 
   useEffect(() => {
     if (theme === "1") {
