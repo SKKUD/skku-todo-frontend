@@ -1,10 +1,15 @@
 import React from "react";
 
+import { 
+  GatheringCreateContainer,
+
+} from "./gatheringCreate.styles";
+
 const GatheringCreate = () => {
   return (
-    <div>
-      GatheringCreate
-    </div>
+    <GatheringCreateContainer>
+      Create Gathering
+    </GatheringCreateContainer>
   )
 };
 

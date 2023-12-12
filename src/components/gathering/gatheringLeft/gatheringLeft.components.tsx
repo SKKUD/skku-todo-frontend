@@ -39,8 +39,9 @@ const GatheringLeft = ({data, leftWhichGathering, isCreate, setIsCreate, isEdit,
 
   const navigate = useNavigate();
   const onClickGatheringTop = () => {
-    if (isEdit===true) {
+    if (isEdit===true || isCreate===true) {
       setIsEdit(false);
+      setIsCreate(false)
     } else {
       navigate("/todoView");
     }
