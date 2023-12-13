@@ -8,6 +8,8 @@ export const MakeGatheringContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  border-radius: 8px;
+  background: var(--white, #FCFCFC);
 `;
 
 // header

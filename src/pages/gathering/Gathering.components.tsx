@@ -32,6 +32,7 @@ const Gathering = () => {
   const [leftWhichGathering, setLeftWhichGathering] = useState<number>(-1);
   const [isCreate, setIsCreate] = useState<boolean>(false);
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isAbout, setIsAbout] = useState(true);
 
   return (
     <GatheringContainer>
@@ -42,6 +43,8 @@ const Gathering = () => {
         setIsCreate={setIsCreate}
         isEdit={isEdit}
         setIsEdit={setIsEdit}
+        isAbout={isAbout}
+        setIsAbout={setIsAbout}
       />
       <GatheringRight 
         data={ArrayGathering}
@@ -50,6 +53,8 @@ const Gathering = () => {
         setIsCreate={setIsCreate}
         isEdit={isEdit}
         setIsEdit={setIsEdit}
+        isAbout={isAbout}
+        setIsAbout={setIsAbout}
       />
     </GatheringContainer>
   )
