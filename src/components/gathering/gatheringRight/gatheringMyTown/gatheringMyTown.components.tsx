@@ -17,15 +17,16 @@ import { useState } from "react";
 
 interface IGatheringTown {
   GatheringNameList: Array<string>;
-  setLeftWhichGathering: React.Dispatch<React.SetStateAction<number>>;
-  setWhichGathering: React.Dispatch<React.SetStateAction<number>>;
+  setLeftWhichGathering: React.Dispatch<React.SetStateAction<number>>,
+  setWhichGathering: React.Dispatch<React.SetStateAction<number>>,
   isCreate: boolean,
-  setIsCreate: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsCreate: React.Dispatch<React.SetStateAction<boolean>>,
   isEdit: boolean,
-  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsAbout: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit}: IGatheringTown) => {
+const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit, setIsAbout}: IGatheringTown) => {
   const [currentTown, setCurrentTown] = useState<number>(0);
   const [isFirst, setIsFirst] = useState<boolean>(false);
   const [isSecond, setIsSecond] = useState<boolean>(false);
@@ -37,13 +38,16 @@ const GatheringMyTown = ({GatheringNameList, setLeftWhichGathering, setWhichGath
     setIsCreate(true)
     setWhichGathering(-1);
     setLeftWhichGathering(-1);
+    setIsAbout(true);
   };
 
   const onClickGathering = (gatheringNumber: number) => {
     setWhichGathering(gatheringNumber);
     setLeftWhichGathering(gatheringNumber);
-    setIsEdit(false)
-    setIsCreate(false)
+    setIsEdit(false);
+    setIsCreate(false);
+    setIsAbout(false);
+
   };
 
   return (

@@ -32,12 +32,14 @@ interface IGatheringLeft {
   setIsCreate: React.Dispatch<React.SetStateAction<boolean>>;
   isEdit: boolean,
   setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  isAbout: boolean,
+  setIsAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringLeft = ({data, leftWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit}: IGatheringLeft) => {
-  const [isAbout, setIsAbout] = useState(false);
+const GatheringLeft = ({data, leftWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit, isAbout, setIsAbout}: IGatheringLeft) => {
 
   const navigate = useNavigate();
+
   const onClickGatheringTop = () => {
     if (isEdit===true || isCreate===true) {
       setIsEdit(false);
