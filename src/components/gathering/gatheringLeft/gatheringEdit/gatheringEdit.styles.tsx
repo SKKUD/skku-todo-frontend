@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 
-export const MakeGatheringContainer = styled.div`
+export const EditGatheringContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ export const MakeGatheringContainer = styled.div`
 `;
 
 // header
-export const MakeGatheringHeader = styled.div`
+export const EditGatheringHeader = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@ export const MakeGatheringHeader = styled.div`
   gap: 5px;
 `;
 
-export const MakeGatheringHeaderTitle = styled.h1`
+export const EditGatheringHeaderTitle = styled.h1`
   color: var(--black, #2C2C2C);
   text-align: center;
   font-family: "Pretendard-Regular";
@@ -35,7 +35,7 @@ export const MakeGatheringHeaderTitle = styled.h1`
   margin-bottom: 5px;
 `;
 
-export const MakeGatheringHeaderDescription = styled.p`
+export const EditGatheringHeaderDescription = styled.p`
   color: var(--grey2, #8C8C8C);
   text-align: center;
   font-family: "Pretendard-Regular";
@@ -49,7 +49,7 @@ export const MakeGatheringHeaderDescription = styled.p`
 `;
 
 // make
-export const MakeGatheringContent = styled.div`
+export const EditGatheringContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -57,13 +57,13 @@ export const MakeGatheringContent = styled.div`
   gap: 24px;
 `;
 
-export const MakeGatheringThumbnailContainer = styled.div`
+export const EditGatheringThumbnailContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 `;
 
-export const MakeGatheringThumbnailTitle = styled.p`
+export const EditGatheringThumbnailTitle = styled.p`
   color: var(--grey2, #8C8C8C);
   font-family: "Pretendard-Regular";
   font-size: 16px;
@@ -74,7 +74,7 @@ export const MakeGatheringThumbnailTitle = styled.p`
   margin-bottom: 5px;
 `;
 
-export const MakeGatheringThumbnail = styled.div`
+export const EditGatheringThumbnail = styled.div`
   width: 134px;
   height: 134px;
   display: flex;
@@ -84,12 +84,12 @@ export const MakeGatheringThumbnail = styled.div`
   border-radius: 8px;
 `;
 
-export const MakeGatheringThumbnailSvg = styled.img`
+export const EditGatheringThumbnailSvg = styled.img`
   width: 134px;
   height: 134px;
 `;
 
-export const MakeGatheringThumbnailDefaultContainer = styled.div`
+export const EditGatheringThumbnailDefaultContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -97,14 +97,14 @@ export const MakeGatheringThumbnailDefaultContainer = styled.div`
   gap: 5px;
 `;
 
-export const MakeGatheringThumbnailDefaultBox = styled.div`
+export const EditGatheringThumbnailDefaultBox = styled.div`
   width: 14px;
   height: 14px;
   border-radius: 2px;
   border: 0.5px solid var(--grey2, #8C8C8C);
 `;
 
-export const MakeGatheringThumbnailDefaultDescription = styled.p`
+export const EditGatheringThumbnailDefaultDescription = styled.p`
   color: var(--grey2, #8C8C8C);
   font-family: "Pretendard-Regular";
   font-size: 12px;
@@ -114,7 +114,7 @@ export const MakeGatheringThumbnailDefaultDescription = styled.p`
   letter-spacing: -0.24px;
 `;
 
-export const MakeGatheringTextAreaContainer = styled.div`
+export const EditGatheringTextAreaContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -122,7 +122,7 @@ export const MakeGatheringTextAreaContainer = styled.div`
   gap: 10px;
 `
 
-export const MakeGatheringLabel = styled.p`
+export const EditGatheringLabel = styled.p`
   color: var(--grey2, #8C8C8C);
   font-family: "Pretendard-Regular";
   font-size: 16px;
@@ -132,7 +132,7 @@ export const MakeGatheringLabel = styled.p`
   margin: 0px;
 `;
 
-export const MakeGatheringTextArea = styled(TextareaAutosize)`
+export const EditGatheringTextArea = styled(TextareaAutosize)`
   width: 384px;
   padding: 10px;
   border-radius: 5px;
@@ -151,7 +151,7 @@ export const MakeGatheringTextArea = styled(TextareaAutosize)`
 
 
 // create button
-export const MakeGatheringButton = styled.button`
+export const EditGatheringButton = styled.button`
   width: 227px;
   height: 55px;
   border: none;
