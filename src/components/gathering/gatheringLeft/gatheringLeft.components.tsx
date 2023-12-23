@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import GatheringImage from "./gatheringImage/gatheringImage.components";
 import GatheringDesc from "./gatheringDesc/gatheringDesc.components";
 import GatheringEdit from "./gatheringEdit/gatheringEdit.components";
@@ -19,31 +18,39 @@ import {
 } from "./gatheringLeft.styles";
 
 interface IGatheringInfo {
-  GatheringName: string,
-  GatheringGoal: string,
-  GatheringManager: string,
-  Towner: Array<string>,
+  GatheringName: string;
+  GatheringGoal: string;
+  GatheringManager: string;
+  Towner: Array<string>;
 }
 
 interface IGatheringLeft {
-  data: Array<IGatheringInfo>,
-  leftWhichGathering: number, 
-  isCreate: boolean,
+  data: Array<IGatheringInfo>;
+  leftWhichGathering: number;
+  isCreate: boolean;
   setIsCreate: React.Dispatch<React.SetStateAction<boolean>>;
-  isEdit: boolean,
+  isEdit: boolean;
   setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
-  isAbout: boolean,
+  isAbout: boolean;
   setIsAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringLeft = ({data, leftWhichGathering, isCreate, setIsCreate, isEdit, setIsEdit, isAbout, setIsAbout}: IGatheringLeft) => {
-
+const GatheringLeft = ({
+  data,
+  leftWhichGathering,
+  isCreate,
+  setIsCreate,
+  isEdit,
+  setIsEdit,
+  isAbout,
+  setIsAbout,
+}: IGatheringLeft) => {
   const navigate = useNavigate();
 
   const onClickGatheringTop = () => {
-    if (isEdit===true || isCreate===true) {
+    if (isEdit === true || isCreate === true) {
       setIsEdit(false);
-      setIsCreate(false)
+      setIsCreate(false);
     } else {
       navigate("/todoView");
     }
@@ -67,28 +74,26 @@ const GatheringLeft = ({data, leftWhichGathering, isCreate, setIsCreate, isEdit,
         </AboutDiv>
       </GatheringTop>
 
-      {
-        isEdit ? (
-          <GatheringEdit />
-        ) : (
-          <div>
-            {
-              isCreate ? (
-                <GatheringCreate />
-              ) : (
-                <div>
-                  <GatheringImage isAbout={isAbout} />
-                  {
-                    (leftWhichGathering !== -1) && (
-                      <GatheringDesc GatheringData={data[leftWhichGathering]} isEdit={isEdit} setIsEdit={setIsEdit}/>
-                    )
-                  }
-                </div>
-              )
-            }
-          </div>
-        )
-      }
+      {isEdit ? (
+        <GatheringEdit />
+      ) : (
+        <div>
+          {isCreate ? (
+            <GatheringCreate />
+          ) : (
+            <div>
+              <GatheringImage isAbout={isAbout} setIsAbout={setIsAbout} />
+              {leftWhichGathering !== -1 && (
+                <GatheringDesc
+                  GatheringData={data[leftWhichGathering]}
+                  isEdit={isEdit}
+                  setIsEdit={setIsEdit}
+                />
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </GatheringContainer>
   );
 };

@@ -19,19 +19,23 @@ import GatheringProfile from "../../../../assets/images/GatheringProfile.svg";
 import dummy from "../../../../utils/data/dummy.json";
 
 interface IGatheringInfo {
-  GatheringName: string,
-  GatheringGoal: string,
-  GatheringManager: string,
-  Towner: Array<string>,
+  GatheringName: string;
+  GatheringGoal: string;
+  GatheringManager: string;
+  Towner: Array<string>;
 }
 
 interface IGatheringDesc {
-  GatheringData: IGatheringInfo,
-  isEdit: boolean,
+  GatheringData: IGatheringInfo;
+  isEdit: boolean;
   setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
+const GatheringDesc = ({
+  GatheringData,
+  isEdit,
+  setIsEdit,
+}: IGatheringDesc) => {
   const gathering = dummy.gathering.find(
     (element) => element["townID"] === "town1"
   );
@@ -45,16 +49,11 @@ const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
   return (
     <GatheringDescContainer>
       <GatheringDescTop>
-<<<<<<< HEAD
-        <GatheringDescTitle>{gathering!["townName"]}</GatheringDescTitle>
+        <GatheringDescTitle>{GatheringData.GatheringName}</GatheringDescTitle>
         <GatheringEditBtn
-          onClick={handleEdit}
+          onClick={() => setIsEdit(!isEdit)}
           style={{ backgroundImage: `url(${EditIcon})` }}
         />
-=======
-        <GatheringDescTitle>{GatheringData.GatheringName}</GatheringDescTitle>
-        <GatheringEditBtn onClick={() => setIsEdit(!isEdit)} style={{ backgroundImage: `url(${EditIcon})` }} />
->>>>>>> 846f87181828b8f468f2313018b2c65876cef45b
       </GatheringDescTop>
       <GatheringDescMiddle>
         <GatheringProfileImg
@@ -71,7 +70,9 @@ const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
           </GatheringExplain>
           <GatheringExplain>
             <GatheringDescLightText>타운 대표</GatheringDescLightText>
-            <GatheringDescText>{GatheringData.GatheringManager}</GatheringDescText>
+            <GatheringDescText>
+              {GatheringData.GatheringManager}
+            </GatheringDescText>
           </GatheringExplain>
         </GatheringExplainWrapper>
       </GatheringDescMiddle>
