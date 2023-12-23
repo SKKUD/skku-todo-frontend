@@ -85,6 +85,10 @@ export const GatheringEditBtn = styled.button`
   background-repeat: none;
   border: none;
   background-color: white;
+  &:hover {
+    width: 26px;
+    height: 26px;
+  }
 `;
 
 export const GatheringProfileImg = styled.div`

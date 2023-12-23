@@ -19,19 +19,23 @@ import GatheringProfile from "../../../../assets/images/GatheringProfile.svg";
 import dummy from "../../../../utils/data/dummy.json";
 
 interface IGatheringInfo {
-  GatheringName: string,
-  GatheringGoal: string,
-  GatheringManager: string,
-  Towner: Array<string>,
+  GatheringName: string;
+  GatheringGoal: string;
+  GatheringManager: string;
+  Towner: Array<string>;
 }
 
 interface IGatheringDesc {
-  GatheringData: IGatheringInfo,
-  isEdit: boolean,
+  GatheringData: IGatheringInfo;
+  isEdit: boolean;
   setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
+const GatheringDesc = ({
+  GatheringData,
+  isEdit,
+  setIsEdit,
+}: IGatheringDesc) => {
   const gathering = dummy.gathering.find(
     (element) => element["townID"] === "town1"
   );
@@ -41,11 +45,15 @@ const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
   const townRoutine: Array<{ routineName: string; routineDay: string[] }> =
     gathering!["townRoutine"];
 
+  const handleEdit = () => {};
   return (
     <GatheringDescContainer>
       <GatheringDescTop>
         <GatheringDescTitle>{GatheringData.GatheringName}</GatheringDescTitle>
-        <GatheringEditBtn onClick={() => setIsEdit(!isEdit)} style={{ backgroundImage: `url(${EditIcon})` }} />
+        <GatheringEditBtn
+          onClick={() => setIsEdit(!isEdit)}
+          style={{ backgroundImage: `url(${EditIcon})` }}
+        />
       </GatheringDescTop>
       <GatheringDescMiddle>
         <GatheringProfileImg
@@ -62,7 +70,9 @@ const GatheringDesc = ({GatheringData, isEdit, setIsEdit}: IGatheringDesc) => {
           </GatheringExplain>
           <GatheringExplain>
             <GatheringDescLightText>타운 대표</GatheringDescLightText>
-            <GatheringDescText>{GatheringData.GatheringManager}</GatheringDescText>
+            <GatheringDescText>
+              {GatheringData.GatheringManager}
+            </GatheringDescText>
           </GatheringExplain>
         </GatheringExplainWrapper>
       </GatheringDescMiddle>
