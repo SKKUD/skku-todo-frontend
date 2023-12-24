@@ -5,7 +5,7 @@ import GatheringImage from "./gatheringImage/gatheringImage.components";
 import GatheringDesc from "./gatheringDesc/gatheringDesc.components";
 import GatheringEdit from "./gatheringEdit/gatheringEdit.components";
 import GatheringCreate from "./gatheringCreate/gatheringCreate.components";
-
+import GatheringCreateLink from "./gatheringCreate/gatheringCreateLink.components";
 import AboutTownIcon from "../../../assets/images/aboutTown.svg";
 import BackIcon from "../../../assets/images/back-icon.svg";
 import {
@@ -33,6 +33,8 @@ interface IGatheringLeft {
   setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
   isAbout: boolean;
   setIsAbout: React.Dispatch<React.SetStateAction<boolean>>;
+  isCreateLink: boolean;
+  setIsCreateLink: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const GatheringLeft = ({
@@ -44,6 +46,8 @@ const GatheringLeft = ({
   setIsEdit,
   isAbout,
   setIsAbout,
+  setIsCreateLink,
+  isCreateLink,
 }: IGatheringLeft) => {
   const navigate = useNavigate();
 
@@ -79,7 +83,17 @@ const GatheringLeft = ({
       ) : (
         <div>
           {isCreate ? (
-            <GatheringCreate />
+            <div>
+              {/* when link is created */}
+              {isCreateLink ? (
+                <GatheringCreateLink />
+              ) : (
+                <GatheringCreate
+                  isCreateLink={isCreateLink}
+                  setIsCreateLink={setIsCreateLink}
+                />
+              )}
+            </div>
           ) : (
             <div>
               <GatheringImage isAbout={isAbout} setIsAbout={setIsAbout} />

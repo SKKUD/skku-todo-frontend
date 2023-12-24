@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 
 export const MakeGatheringContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const MakeGatheringContainer = styled.div`
   align-items: center;
   gap: 30px;
   border-radius: 8px;
-  background: var(--white, #FCFCFC);
+  background: var(--white, #fcfcfc);
 `;
 
 // header
@@ -22,7 +22,7 @@ export const MakeGatheringHeader = styled.div`
 `;
 
 export const MakeGatheringHeaderTitle = styled.h1`
-  color: var(--black, #2C2C2C);
+  color: var(--black, #2c2c2c);
   text-align: center;
   font-family: "Pretendard-Regular";
   font-size: 28px;
@@ -36,7 +36,7 @@ export const MakeGatheringHeaderTitle = styled.h1`
 `;
 
 export const MakeGatheringHeaderDescription = styled.p`
-  color: var(--grey2, #8C8C8C);
+  color: var(--grey2, #8c8c8c);
   text-align: center;
   font-family: "Pretendard-Regular";
   font-size: 20px;
@@ -45,7 +45,6 @@ export const MakeGatheringHeaderDescription = styled.p`
   line-height: normal;
   letter-spacing: -0.4px;
   margin: 0px;
-
 `;
 
 // make
@@ -63,8 +62,8 @@ export const MakeGatheringThumbnailContainer = styled.div`
   justify-content: flex-start;
 `;
 
-export const MakeGatheringThumbnailTitle = styled.p`
-  color: var(--grey2, #8C8C8C);
+export const MakeGatheringTitle = styled.p`
+  color: var(--grey2, #8c8c8c);
   font-family: "Pretendard-Regular";
   font-size: 16px;
   font-style: normal;
@@ -80,7 +79,7 @@ export const MakeGatheringThumbnail = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   border-radius: 8px;
 `;
 
@@ -101,11 +100,11 @@ export const MakeGatheringThumbnailDefaultBox = styled.div`
   width: 14px;
   height: 14px;
   border-radius: 2px;
-  border: 0.5px solid var(--grey2, #8C8C8C);
+  border: 0.5px solid var(--grey2, #8c8c8c);
 `;
 
 export const MakeGatheringThumbnailDefaultDescription = styled.p`
-  color: var(--grey2, #8C8C8C);
+  color: var(--grey2, #8c8c8c);
   font-family: "Pretendard-Regular";
   font-size: 12px;
   font-style: normal;
@@ -120,10 +119,10 @@ export const MakeGatheringTextAreaContainer = styled.div`
   justify-content: flex-start;
   align-items: start;
   gap: 10px;
-`
+`;
 
 export const MakeGatheringLabel = styled.p`
-  color: var(--grey2, #8C8C8C);
+  color: var(--grey2, #8c8c8c);
   font-family: "Pretendard-Regular";
   font-size: 16px;
   font-style: normal;
@@ -136,8 +135,8 @@ export const MakeGatheringTextArea = styled(TextareaAutosize)`
   width: 384px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--grey3, #B2B2B2);
-  background-color: var(--white, #FCFCFC);
+  border: 1px solid var(--grey3, #b2b2b2);
+  background-color: var(--white, #fcfcfc);
   resize: none;
 
   color: black;
@@ -146,9 +145,7 @@ export const MakeGatheringTextArea = styled(TextareaAutosize)`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-
 `;
-
 
 // create button
 export const MakeGatheringButton = styled.button`
@@ -156,8 +153,8 @@ export const MakeGatheringButton = styled.button`
   height: 55px;
   border: none;
   border-radius: 8px;
-  background: var(--main, #00DDA8);
-  color: var(--white, #FCFCFC);
+  background: var(--main, #00dda8);
+  color: var(--white, #fcfcfc);
   text-align: center;
   font-family: "Pretendard-Regular";
   font-size: 24px;
@@ -165,4 +162,62 @@ export const MakeGatheringButton = styled.button`
   font-weight: 800;
   line-height: normal;
   margin-bottom: 40px;
+`;
+
+export const MakeGatheringRoutineWrapper = styled.div`
+  width: 81%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const MakeGatheringRoutine = styled.div``;
+
+export const MakeGatheringRoutineAddBtn = styled.button`
+  width: 70px;
+  height: 27px;
+  background-color: #b2b2b2;
+  color: var(--white, #fcfcfc);
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  border: none;
+  :hover {
+    background-color: #8b8b8b;
+  }
+`;
+
+export const MakeGatheringRoutineTextArea = styled(TextareaAutosize)`
+  width: 81%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--grey3, #b2b2b2);
+  background-color: var(--white, #fcfcfc);
+  resize: none;
+  color: black;
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
+export const MakeGatheringRoutineContainer = styled.div`
+  width: 81%;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 15px;
+  margin-top: -15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 `;

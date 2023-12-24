@@ -28,13 +28,6 @@ const MainCenterMakeRoutine = ({
   goalID,
 }: IMainCenterMakeRoutine) => {
   const day: string[] = ["월", "화", "수", "목", "금", "토", "일"];
-
-  // interface IRoutineData {
-  //   routineDay: string[];
-  //   routineEndDate: string;
-  // }
-  // const [routineData, setRoutineData] = useState<IRoutineData | null>(null);
-
   // 요일 선택
   const [clicked, setClicked] = useState<string[]>([]);
   const handleClickDay = (day: string) => {
