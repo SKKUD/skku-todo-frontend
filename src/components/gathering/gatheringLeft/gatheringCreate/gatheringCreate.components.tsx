@@ -1,6 +1,5 @@
-import React, { ChangeEvent } from "react";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { ChangeEvent, useEffect } from "react";
+import { useState } from "react";
 
 import {
   MakeGatheringContainer,
@@ -19,17 +18,17 @@ import {
   MakeGatheringLabel,
   MakeGatheringTextArea,
   MakeGatheringButton,
-  MakeGatheringRoutine,
   MakeGatheringRoutineTextArea,
   MakeGatheringRoutineAddBtn,
   MakeGatheringRoutineWrapper,
   MakeGatheringRoutineContainer,
+  MakeGatheringBtn,
+  MakeGatheringTodoBox,
+  GatheringTodoBox,
 } from "./gatheringCreate.styles";
 
-import MainCenterMakeRoutine from "../../../main/mainCenter/mainCenterMakeRoutine/mainCenterMakeRoutine.components";
 import Thumbnail from "../../../../assets/images/Gathering.svg";
 import {
-  MainCenterMakeRoutineContainer,
   MainCenterMakeRoutineDatePicker,
   MainCenterMakeRoutineDateText,
   MainCenterMakeRoutineDayButton,
@@ -46,6 +45,7 @@ const GatheringCreate = ({
   setIsCreateLink,
 }: IGatheringCreateDesc) => {
   const day: string[] = ["월", "화", "수", "목", "금", "토", "일", "매일"];
+  const [routineStr, setRoutineStr] = useState<string>("");
   // 요일 선택
   const [clicked, setClicked] = useState<string[]>([]);
   const handleClickDay = (day: string) => {
@@ -53,7 +53,12 @@ const GatheringCreate = ({
       ? setClicked(clicked.filter((clickedDay) => clickedDay !== day))
       : setClicked([...clicked, day]);
   };
-
+  useEffect(() => {
+    if (clicked.length !== 0) {
+      setRoutineStr(" (" + clicked + ")");
+    }
+  }, [clicked]);
+  const [addFinished, setAddFinished] = useState<boolean>(false);
   // 날짜 선택
   const [endDate, setEndDate] = useState<string>("");
   const handleClickDate = (event: ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +66,27 @@ const GatheringCreate = ({
   };
   const handleCreateLink = () => {
     setIsCreateLink(true);
-    console.log(isCreateLink);
+  };
+  const [gatheringRoutine, setGatheringRoutine] = useState<string>("");
+  const [gatheringRoutineList, setGatheringRoutineList] = useState<
+    Array<string>
+  >([]);
+  const handleRoutineAdd = () => {
+    setGatheringRoutineList([
+      ...gatheringRoutineList,
+      gatheringRoutine + routineStr,
+    ]);
+    setGatheringRoutine("");
+    setRoutineStr("");
+    setClicked([]);
+    setEndDate("");
+    setAddFinished(true);
+  };
+  const handleOnChangeTextArea = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setGatheringRoutine(event.target.value);
+  };
+  const handleTodo = () => {
+    setAddFinished(false);
   };
 
   return (
@@ -98,40 +123,65 @@ const GatheringCreate = ({
           <MakeGatheringTextArea />
         </MakeGatheringTextAreaContainer>
       </MakeGatheringContent>
-      <MakeGatheringRoutineWrapper>
-        <MakeGatheringTitle>고정 루틴 투두</MakeGatheringTitle>
-        <MakeGatheringRoutineAddBtn>투두 추가</MakeGatheringRoutineAddBtn>
-      </MakeGatheringRoutineWrapper>
-      <MakeGatheringRoutineTextArea></MakeGatheringRoutineTextArea>
-      <MakeGatheringRoutineContainer>
-        {/* 요일 선택 */}
-        <MainCenterMakeRoutineDayText>요일</MainCenterMakeRoutineDayText>
-        {day.map((day, index) => {
-          return (
-            <MainCenterMakeRoutineDayButton
-              key={index}
-              onClick={() => handleClickDay(day)}
-              className={`${clicked.includes(day) ? "clicked" : ""}`}
-            >
-              {day}
-            </MainCenterMakeRoutineDayButton>
-          );
-        })}
+      <GatheringTodoBox>
+        <MakeGatheringRoutineWrapper>
+          <MakeGatheringTitle>고정 루틴 투두</MakeGatheringTitle>
+          <MakeGatheringRoutineAddBtn onClick={handleTodo}>
+            투두 추가
+          </MakeGatheringRoutineAddBtn>
+        </MakeGatheringRoutineWrapper>
 
-        {endDate && (
+        {gatheringRoutineList.length !== 0 &&
+          gatheringRoutineList.map((routine) => {
+            return <MakeGatheringTodoBox>{routine}</MakeGatheringTodoBox>;
+          })}
+        {addFinished ? (
+          <></>
+        ) : (
           <>
-            <MainCenterMakeRoutineDateText>
-              {endDate}까지
-            </MainCenterMakeRoutineDateText>
+            {" "}
+            <MakeGatheringTodoBox>
+              <MakeGatheringRoutineTextArea
+                onChange={handleOnChangeTextArea}
+                value={gatheringRoutine}
+              />
+              <MakeGatheringBtn onClick={handleRoutineAdd}>
+                확인
+              </MakeGatheringBtn>
+            </MakeGatheringTodoBox>
+            <MakeGatheringRoutineContainer>
+              {/* 요일 선택 */}
+              <MainCenterMakeRoutineDayText>요일</MainCenterMakeRoutineDayText>
+              {day.map((day, index) => {
+                return (
+                  <MainCenterMakeRoutineDayButton
+                    key={index}
+                    onClick={() => handleClickDay(day)}
+                    className={`${clicked.includes(day) ? "clicked" : ""}`}
+                  >
+                    {day}
+                  </MainCenterMakeRoutineDayButton>
+                );
+              })}
+
+              {endDate && (
+                <>
+                  <MainCenterMakeRoutineDateText>
+                    {endDate}까지
+                  </MainCenterMakeRoutineDateText>
+                </>
+              )}
+              {/* 날짜 선택 */}
+              <MainCenterMakeRoutineDatePicker
+                type={"date"}
+                onChange={handleClickDate}
+              />
+            </MakeGatheringRoutineContainer>
           </>
         )}
-        {/* 날짜 선택 */}
-        <MainCenterMakeRoutineDatePicker
-          type={"date"}
-          onChange={handleClickDate}
-        />
-      </MakeGatheringRoutineContainer>
+      </GatheringTodoBox>
       {/* Button */}
+
       <MakeGatheringButton onClick={handleCreateLink}>
         생성하기
       </MakeGatheringButton>

@@ -138,7 +138,6 @@ export const MakeGatheringTextArea = styled(TextareaAutosize)`
   border: 1px solid var(--grey3, #b2b2b2);
   background-color: var(--white, #fcfcfc);
   resize: none;
-
   color: black;
   font-family: "Pretendard-Regular";
   font-size: 16px;
@@ -171,8 +170,6 @@ export const MakeGatheringRoutineWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const MakeGatheringRoutine = styled.div``;
-
 export const MakeGatheringRoutineAddBtn = styled.button`
   width: 70px;
   height: 27px;
@@ -192,18 +189,15 @@ export const MakeGatheringRoutineAddBtn = styled.button`
 `;
 
 export const MakeGatheringRoutineTextArea = styled(TextareaAutosize)`
-  width: 81%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--grey3, #b2b2b2);
-  background-color: var(--white, #fcfcfc);
-  resize: none;
-  color: black;
-  font-family: "Pretendard-Regular";
+  width: 89%;
+  border: none;
+  background-color: transparent;
+  font-family: "Pretendard";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
+  resize: none;
 `;
 
 export const MakeGatheringRoutineContainer = styled.div`
@@ -217,7 +211,49 @@ export const MakeGatheringRoutineContainer = styled.div`
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   background: #fff;
   padding: 15px;
-  margin-top: -15px;
   padding-top: 3px;
   padding-bottom: 3px;
+`;
+
+export const MakeGatheringBtn = styled.button`
+  display: inline-flex;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 2px;
+  background: var(--main, #00dda8);
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  border: none;
+`;
+
+export const MakeGatheringTodoBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 81%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--grey3, #b2b2b2);
+  background-color: var(--white, #fcfcfc);
+  color: var(--grey2, #8c8c8c);
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+export const GatheringTodoBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 `;

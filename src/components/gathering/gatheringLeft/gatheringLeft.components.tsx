@@ -5,7 +5,7 @@ import GatheringImage from "./gatheringImage/gatheringImage.components";
 import GatheringDesc from "./gatheringDesc/gatheringDesc.components";
 import GatheringEdit from "./gatheringEdit/gatheringEdit.components";
 import GatheringCreate from "./gatheringCreate/gatheringCreate.components";
-import GatheringCreateLink from "./gatheringCreate/gatheringCreateLink.components";
+import GatheringCreateLink from "./gatheringCreateLink/gatheringCreateLink.components";
 import AboutTownIcon from "../../../assets/images/aboutTown.svg";
 import BackIcon from "../../../assets/images/back-icon.svg";
 import {
