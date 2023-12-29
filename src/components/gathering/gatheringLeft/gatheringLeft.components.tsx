@@ -59,7 +59,6 @@ const GatheringLeft = ({
       navigate("/todoView");
     }
   };
-
   return (
     <GatheringContainer>
       <GatheringTop>
@@ -79,7 +78,7 @@ const GatheringLeft = ({
       </GatheringTop>
 
       {isEdit ? (
-        <GatheringEdit />
+        <GatheringEdit isEdit={isEdit} setIsEdit={setIsEdit} />
       ) : (
         <div>
           {isCreate ? (

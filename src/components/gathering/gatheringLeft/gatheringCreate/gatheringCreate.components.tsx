@@ -25,9 +25,13 @@ import {
   MakeGatheringBtn,
   MakeGatheringTodoBox,
   GatheringTodoBox,
+  IconImg,
+  IconWrapper,
 } from "./gatheringCreate.styles";
 
 import Thumbnail from "../../../../assets/images/Gathering.svg";
+import EditIcon from "../../../../assets/images/edit.svg";
+import DeleteIcon from "../../../../assets/images/delete.svg";
 import {
   MainCenterMakeRoutineDatePicker,
   MainCenterMakeRoutineDateText,
@@ -71,6 +75,7 @@ const GatheringCreate = ({
   const [gatheringRoutineList, setGatheringRoutineList] = useState<
     Array<string>
   >([]);
+
   const handleRoutineAdd = () => {
     setGatheringRoutineList([
       ...gatheringRoutineList,
@@ -89,6 +94,8 @@ const GatheringCreate = ({
     setAddFinished(false);
   };
 
+  const handleEdit = () => {};
+  const handleDelete = () => {};
   return (
     <MakeGatheringContainer>
       <MakeGatheringHeader>
@@ -133,7 +140,15 @@ const GatheringCreate = ({
 
         {gatheringRoutineList.length !== 0 &&
           gatheringRoutineList.map((routine) => {
-            return <MakeGatheringTodoBox>{routine}</MakeGatheringTodoBox>;
+            return (
+              <MakeGatheringTodoBox>
+                {routine}
+                <IconWrapper>
+                  <IconImg src={EditIcon} onClick={handleEdit} />
+                  <IconImg src={DeleteIcon} onClick={handleDelete} />
+                </IconWrapper>
+              </MakeGatheringTodoBox>
+            );
           })}
         {addFinished ? (
           <></>

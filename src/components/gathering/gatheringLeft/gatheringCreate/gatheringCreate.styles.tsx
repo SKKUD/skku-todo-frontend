@@ -248,6 +248,7 @@ export const MakeGatheringTodoBox = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  justify-content: space-between;
 `;
 
 export const GatheringTodoBox = styled.div`
@@ -255,5 +256,16 @@ export const GatheringTodoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+`;
+
+export const IconImg = styled.img`
+  width: 18px;
+  height: 18px;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
   gap: 8px;
 `;
