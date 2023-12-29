@@ -28,8 +28,8 @@ export const MainCenterMakeRoutineDayText = styled.div`
 `;
 
 export const MainCenterMakeRoutineDayButton = styled.button`
-  width: 21px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
   border-radius: 2px;
   background-color: #f3f2f0;
   font-size: 12px;
